@@ -162,13 +162,13 @@ def risk_analysis(score, skills):
     # --- Risk level ---
     if score < 40:
         risk_level = "High"
-        risk_icon = "🔴"
+        risk_icon = "high"
     elif score <= 70:
         risk_level = "Medium"
-        risk_icon = "🟡"
+        risk_icon = "medium"
     else:
         risk_level = "Low"
-        risk_icon = "🟢"
+        risk_icon = "low"
 
     # --- Explanation ---
     reasons = []
@@ -192,7 +192,7 @@ def risk_analysis(score, skills):
     if score >= 70:
         suggestions.append("Consider tailoring skills to specific job descriptions for even better results.")
     if not suggestions:
-        suggestions.append("Your resume looks well-rounded — keep it updated with new skills!")
+        suggestions.append("Your resume looks well-rounded - keep it updated with new skills!")
 
     return {
         "risk_level": risk_level,
@@ -206,63 +206,63 @@ def risk_analysis(score, skills):
 ROLE_MAP = [
     {
         "role": "Data Scientist",
-        "icon": "🧪",
+        "icon": "DS",
         "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow",
                    "PyTorch", "Pandas", "NumPy", "Scikit-learn", "Data Analysis",
                    "Data Visualization", "R", "MATLAB"],
     },
     {
         "role": "Frontend Developer",
-        "icon": "🎨",
+        "icon": "FE",
         "skills": ["HTML", "CSS", "JavaScript", "React", "Angular", "Vue.js",
                    "TypeScript", "Bootstrap", "Tailwind CSS", "SASS", "Next.js"],
     },
     {
         "role": "Backend Developer",
-        "icon": "⚙️",
+        "icon": "BE",
         "skills": ["Python", "Java", "Node.js", "Flask", "Django", "Spring Boot",
                    "Express.js", "SQL", "REST API", "GraphQL", "Go", "PHP"],
     },
     {
         "role": "Full-Stack Developer",
-        "icon": "🚀",
+        "icon": "FS",
         "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python",
                    "Flask", "Django", "SQL", "MongoDB", "REST API", "Git"],
     },
     {
         "role": "Data Analyst",
-        "icon": "📊",
+        "icon": "DA",
         "skills": ["Python", "SQL", "Pandas", "Data Analysis", "Data Visualization",
                    "Matplotlib", "Seaborn", "Excel", "R", "MySQL", "PostgreSQL"],
     },
     {
         "role": "DevOps Engineer",
-        "icon": "🔧",
+        "icon": "DO",
         "skills": ["Docker", "Kubernetes", "AWS", "Azure", "Google Cloud",
                    "CI/CD", "Jenkins", "Linux", "Git", "Terraform", "Nginx"],
     },
     {
         "role": "Mobile App Developer",
-        "icon": "📱",
+        "icon": "MA",
         "skills": ["Android", "iOS", "React Native", "Flutter", "Kotlin",
                    "Swift", "Dart", "Java", "Firebase"],
     },
     {
         "role": "AI / ML Engineer",
-        "icon": "🤖",
+        "icon": "ML",
         "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow",
                    "PyTorch", "Keras", "Natural Language Processing",
                    "Computer Vision", "Neural Networks", "OpenCV"],
     },
     {
         "role": "Database Administrator",
-        "icon": "🗄️",
+        "icon": "DB",
         "skills": ["SQL", "MySQL", "PostgreSQL", "MongoDB", "Oracle", "Redis",
                    "SQLite", "Firebase", "Cassandra", "DynamoDB"],
     },
     {
         "role": "Cloud Engineer",
-        "icon": "☁️",
+        "icon": "CE",
         "skills": ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes",
                    "Terraform", "Linux", "CI/CD", "Heroku", "Netlify"],
     },
@@ -486,7 +486,7 @@ def simulate_evolution(current_skills, added_skill):
     else:
         reasons.append(f"Adding '{added_skill}' increased your skill count to {len(updated_skills)}.")
         if score_diff > 0:
-            reasons.append(f"Score improved by +{score_diff} points ({before_score['score']} → {after_score['score']}).")
+            reasons.append(f"Score improved by +{score_diff} points ({before_score['score']} -> {after_score['score']}).")
         if before_risk["risk_level"] != after_risk["risk_level"]:
             reasons.append(f"Risk level changed from {before_risk['risk_level']} to {after_risk['risk_level']}.")
         # new career roles

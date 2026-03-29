@@ -5,8 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Access Denied – CareerForge AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
     <link rel="stylesheet" href="/static/style.css" />
     <style>
         .denied-section {
@@ -17,17 +15,25 @@
         }
 
         .denied-icon {
-            font-size: 4rem;
-            margin-bottom: 16px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: rgba(255, 77, 109, .1);
+            border: 2px solid rgba(255, 77, 109, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .denied-section h2 {
+            font-family: var(--font-display);
             font-size: 2rem;
             margin-bottom: 8px;
         }
 
         .denied-section p {
-            color: #64748b;
+            color: var(--text-muted);
             margin-bottom: 28px;
             font-size: 1.05rem;
         }
@@ -38,9 +44,9 @@
             border-radius: 100px;
             font-size: .85rem;
             font-weight: 700;
-            background: rgba(239, 68, 68, .08);
-            border: 1px solid rgba(239, 68, 68, .25);
-            color: #ef4444;
+            background: rgba(255, 77, 109, .08);
+            border: 1px solid rgba(255, 77, 109, .25);
+            color: var(--accent-danger);
             margin-bottom: 24px;
         }
 
@@ -54,40 +60,23 @@
 </head>
 
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-
-    <header>
-        <div class="logo">⚡ CareerForge</div>
-        <nav>
-            {% if role == 'Student' %}
-            <a href="/" class="nav-link">Home</a>
-            {% elif role == 'Recruiter' %}
-            <a href="/" class="nav-link">Home</a>
-            <a href="/recruiter" class="nav-link">Recruiter</a>
-            {% elif role == 'Admin' %}
-            <a href="/" class="nav-link">Home</a>
-            <a href="/recruiter" class="nav-link">Recruiter</a>
-            <a href="/admin" class="nav-link">Admin</a>
-            {% endif %}
-        </nav>
-        <div class="user-bar">
-            <span class="user-email">{{ user }}</span>
-            <span class="role-badge role-{{ role|lower }}">{{ role }}</span>
-            <a href="/logout" class="btn btn-outline btn-sm" title="Logout">🚪 Logout</a>
-        </div>
-    </header>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="grain-overlay"></div>
 
     <main>
         <section class="denied-section">
-            <div class="denied-icon">🚫</div>
+            <div class="denied-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-danger)" stroke-width="2"
+                    width="32" height="32">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                </svg></div>
             <h2>Access <span class="gradient-text">Denied</span></h2>
             <div class="role-info">Your role: {{ role }}</div>
             <p>You don't have permission to access this page. Please navigate to a section available for your role.</p>
             <div class="denied-actions">
                 {% if role == 'Student' %}
-                <a href="/" class="btn btn-primary">Go to Dashboard</a>
+                <a href="/student" class="btn btn-primary">Go to Dashboard</a>
                 {% elif role == 'Recruiter' %}
                 <a href="/recruiter" class="btn btn-primary">Go to Recruiter</a>
                 {% elif role == 'Admin' %}
@@ -98,9 +87,7 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 CareerForge AI &mdash; Final Year Project</p>
-    </footer>
+    <script src="/static/script.js"></script>
 </body>
 
 </html>

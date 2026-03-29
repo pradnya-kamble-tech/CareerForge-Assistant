@@ -4,6 +4,32 @@ from fpdf import FPDF
 from datetime import datetime
 
 
+def _sanitize(text):
+    """Replace Unicode characters unsupported by Helvetica with ASCII equivalents."""
+    if not isinstance(text, str):
+        text = str(text)
+    replacements = {
+        "\u2014": "-",   # em-dash
+        "\u2013": "-",   # en-dash
+        "\u2018": "'",   # left single quote
+        "\u2019": "'",   # right single quote
+        "\u201c": '"',   # left double quote
+        "\u201d": '"',   # right double quote
+        "\u2022": "-",   # bullet
+        "\u2026": "...", # ellipsis
+        "\u00b7": "-",   # middle dot
+        "\u2192": "->",  # right arrow
+        "\u2190": "<-",  # left arrow
+        "\u2713": "[x]", # checkmark
+        "\u2717": "[ ]", # cross
+        "\u00a0": " ",   # non-breaking space
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    # Strip any remaining non-latin1 chars
+    return text.encode("latin-1", errors="replace").decode("latin-1")
+
+
 class ResumeReport(FPDF):
     """Custom PDF class with header/footer for CareerForge reports."""
 
@@ -30,7 +56,7 @@ def _heading(pdf, text):
     pdf.ln(4)
     pdf.set_font("Helvetica", "B", 13)
     pdf.set_text_color(63, 81, 181)
-    pdf.cell(0, 10, text, new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 10, _sanitize(text), new_x="LMARGIN", new_y="NEXT")
     pdf.ln(2)
 
 
@@ -38,14 +64,14 @@ def _label(pdf, text):
     """Render a single line of text."""
     pdf.set_font("Helvetica", "", 10)
     pdf.set_text_color(40, 40, 40)
-    pdf.cell(0, 7, text, new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 7, _sanitize(text), new_x="LMARGIN", new_y="NEXT")
 
 
 def _para(pdf, text):
     """Render a paragraph that may wrap."""
     pdf.set_font("Helvetica", "", 10)
     pdf.set_text_color(60, 60, 60)
-    pdf.multi_cell(0, 6, text, new_x="LMARGIN", new_y="NEXT")
+    pdf.multi_cell(0, 6, _sanitize(text), new_x="LMARGIN", new_y="NEXT")
     pdf.ln(2)
 
 
@@ -53,7 +79,7 @@ def _bold(pdf, text):
     """Render bold text."""
     pdf.set_font("Helvetica", "B", 10)
     pdf.set_text_color(40, 40, 40)
-    pdf.cell(0, 7, text, new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 7, _sanitize(text), new_x="LMARGIN", new_y="NEXT")
 
 
 def generate_report(data):

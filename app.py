@@ -1,6 +1,8 @@
 import os
+import re
 import time
 import json
+from uuid import uuid4
 import logging
 from io import BytesIO
 from functools import wraps
@@ -39,11 +41,22 @@ USERS_FILE = os.path.join(os.path.dirname(__file__), "data", "users.json")
 # Create uploads/ folder if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Store latest analysis for PDF report download
-last_analysis = {}
+# ---------- Validation Config ----------
+MAX_FILE_SIZE = 2 * 1024 * 1024  # 2 MB
+RESUME_KEYWORDS = re.compile(
+    r"\b(education|experience|skills|summary|objective|projects|certifications|achievements|work\s*history)\b",
+    re.IGNORECASE,
+)
 
-# Store all processed candidates for admin dashboard stats
-all_candidates = []
+def validate_resume_content(text):
+    """Return True if extracted text looks like a resume (>= 2 keyword matches)."""
+    matches = set(RESUME_KEYWORDS.findall(text.lower()))
+    return len(matches) >= 2
+
+# ---------- In-memory stores ----------
+all_candidates = []          # admin analytics
+shortlisted_candidates = []  # recruiter decisions
+rejected_candidates = []     # recruiter decisions
 
 
 # ---------- User helpers ----------
@@ -158,7 +171,7 @@ def login():
             return redirect(url_for("recruiter_page"))
         elif user_role == "Admin":
             return redirect(url_for("admin_page"))
-        return redirect(url_for("home"))
+        return redirect(url_for("student_dashboard"))
 
     return render_template("login.html")
 
@@ -184,61 +197,77 @@ def access_denied():
 # ---------- Main Routes ----------
 
 @app.route("/")
-@login_required
-def home():
-    """Render the homepage."""
+def landing():
+    """Render the landing page."""
+    return render_template("landing.html")
+
+
+
+@app.route("/student")
+def student_dashboard():
+    """Render the student dashboard (role-guarded, demo bypass)."""
+    demo_mode = request.args.get("demo") == "1"
+    if not demo_mode:
+        if "user" not in session:
+            flash("Please login to access this page.", "error")
+            return redirect(url_for("login"))
+        if session.get("role") not in ("Student", "Admin"):
+            return redirect(url_for("access_denied"))
     return render_template("index.html",
-                           user=session.get("user"),
-                           role=session.get("role"))
+                           user=session.get("user", "demo@careerforge.com"),
+                           role=session.get("role", "Student"),
+                           demo_mode=demo_mode)
 
 
 @app.route("/upload", methods=["POST"])
 @login_required
 def upload_resume():
-    """Handle PDF resume upload."""
-    # Check if a file was included in the request
+    """Handle PDF resume upload with validation."""
     if "resume" not in request.files:
         return jsonify({"success": False, "message": "No file part in the request."}), 400
 
     file = request.files["resume"]
-
-    # Check if user actually selected a file
     if file.filename == "":
         return jsonify({"success": False, "message": "No file selected."}), 400
 
-    # Validate extension
+    # --- Validation 1: Extension ---
     if not allowed_file(file.filename):
         logger.warning("Invalid file type rejected: %s (user=%s)", file.filename, session.get("user"))
         return jsonify({"success": False, "message": "Only PDF files are allowed."}), 400
 
-    # Save the file
-    filename = secure_filename(file.filename)
+    # --- Validation 2: File size (2 MB) ---
+    file.seek(0, os.SEEK_END)
+    size = file.tell()
+    file.seek(0)
+    if size > MAX_FILE_SIZE:
+        logger.warning("File too large (%d bytes): %s", size, file.filename)
+        return jsonify({"success": False, "message": "File exceeds 2 MB limit."}), 400
+
+    # --- Save with UUID prefix for uniqueness ---
+    raw_name = secure_filename(file.filename)
+    filename = f"{uuid4().hex[:8]}_{raw_name}"
     save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
     file.save(save_path)
     logger.info("Student resume uploaded: %s (user=%s)", filename, session.get("user"))
 
     try:
-        # Extract text from the PDF
         extracted_text = extract_text_from_pdf(save_path)
 
-        # Extract skills from the text
+        # --- Validation 3: Resume content heuristic ---
+        if not validate_resume_content(extracted_text):
+            os.remove(save_path)
+            logger.warning("Rejected non-resume PDF: %s", filename)
+            return jsonify({"success": False, "message": "This file does not appear to be a resume. Please upload a PDF containing sections like Education, Skills, and Experience."}), 400
+
         skill_results = extract_skills(extracted_text)
-
-        # Calculate resume score
         score_results = calculate_score(skill_results)
-
-        # Risk analysis
         risk_results = risk_analysis(score_results["score"], skill_results["skills"])
-
-        # Career trajectory prediction
         career_results = career_prediction(skill_results["skills"])
-
-        # Skill gap analysis
         gap_results = skill_gap_analysis(skill_results["skills"])
 
         result = {
             "success": True,
-            "message": f"✅ '{filename}' uploaded and analysed successfully!",
+            "message": f"'{raw_name}' uploaded and analysed successfully!",
             "filename": filename,
             "size_kb": round(os.path.getsize(save_path) / 1024, 1),
             "extracted_text": extracted_text,
@@ -257,11 +286,9 @@ def upload_resume():
             "skill_gap": gap_results,
         }
 
-        # Store for PDF download
-        last_analysis.update(result)
+        session['last_analysis'] = result
         logger.info("Student analysis complete: %s | score=%d | skills=%d",
                     filename, score_results["score"], skill_results["total"])
-
         return jsonify(result)
 
     except Exception as e:
@@ -273,6 +300,81 @@ def upload_resume():
 def status():
     """Simple API endpoint to verify the server is running."""
     return jsonify({"status": "ok", "project": "CareerForge AI"})
+
+
+@app.route("/api/demo-data")
+def demo_data():
+    """Return pre-analysed sample resume data for demo mode."""
+    sample_text = """
+    PRIYA SHARMA
+    Full Stack Developer | Mumbai, India
+    Email: priya.sharma@email.com | LinkedIn: linkedin.com/in/priyasharma
+
+    SUMMARY
+    Passionate computer science graduate with hands-on experience in web development
+    and data analysis. Seeking a challenging role to leverage my skills in Python,
+    machine learning, and cloud computing.
+
+    EDUCATION
+    B.E. Computer Science, University of Mumbai (2022-2026) – CGPA: 8.5/10
+
+    SKILLS
+    Python, Java, JavaScript, HTML, CSS, SQL, React, Node.js, Flask, Git,
+    Machine Learning, Data Analysis, REST API, MongoDB, Docker, AWS, Linux
+
+    EXPERIENCE
+    Software Development Intern – TechSolutions Pvt. Ltd. (June 2025 - Dec 2025)
+    - Developed RESTful APIs using Flask and Node.js
+    - Built responsive frontends with React and JavaScript
+    - Implemented CI/CD pipelines using Docker and AWS
+
+    PROJECTS
+    1. AI Resume Analyzer – Python, Flask, NLP
+    2. E-Commerce Dashboard – React, Node.js, MongoDB
+    3. Weather Prediction System – Python, Machine Learning, Data Analysis
+
+    CERTIFICATIONS
+    - AWS Cloud Practitioner
+    - Google Data Analytics Certificate
+    """
+
+    try:
+        skill_results = extract_skills(sample_text)
+        score_results = calculate_score(skill_results)
+        risk_results = risk_analysis(score_results["score"], skill_results["skills"])
+        career_results = career_prediction(skill_results["skills"])
+        gap_results = skill_gap_analysis(skill_results["skills"])
+
+        result = {
+            "success": True,
+            "message": "Demo resume analysed successfully!",
+            "filename": "demo_resume_priya_sharma.pdf",
+            "size_kb": 142.5,
+            "extracted_text": sample_text.strip(),
+            "skills": skill_results["skills"],
+            "skills_categorized": skill_results["categorized"],
+            "skills_total": skill_results["total"],
+            "score": score_results["score"],
+            "score_level": score_results["level"],
+            "score_reason": score_results["reason"],
+            "score_breakdown": score_results["breakdown"],
+            "risk_level": risk_results["risk_level"],
+            "risk_icon": risk_results["risk_icon"],
+            "risk_reason": risk_results["reason"],
+            "risk_suggestions": risk_results["suggestions"],
+            "career_predictions": career_results,
+            "skill_gap": gap_results,
+        }
+
+        # Store for PDF download in demo mode too — per-user session
+        session['last_analysis'] = result
+
+        logger.info("Demo mode analysis served")
+        return jsonify(result)
+
+    except Exception as e:
+        logger.error("Demo data generation failed: %s", str(e))
+        return jsonify({"success": False, "message": "Demo data unavailable."}), 500
 
 
 @app.route("/api/all-skills")
@@ -304,14 +406,15 @@ def simulate():
 @login_required
 def download_report():
     """Generate and download a PDF report of the latest analysis."""
-    if not last_analysis:
+    analysis = session.get('last_analysis')
+    if not analysis:
         return jsonify({"success": False, "message": "No analysis available. Upload a resume first."}), 400
 
-    pdf_bytes = generate_report(last_analysis)
+    pdf_bytes = generate_report(analysis)
     buffer = BytesIO(pdf_bytes)
     buffer.seek(0)
 
-    filename = last_analysis.get("filename", "resume").rsplit(".", 1)[0]
+    filename = analysis.get("filename", "resume").rsplit(".", 1)[0]
     return send_file(
         buffer,
         mimetype="application/pdf",
@@ -334,16 +437,9 @@ def recruiter_page():
 @app.route("/recruiter-upload", methods=["POST"])
 @role_required("Recruiter", "Admin")
 def recruiter_upload():
-    """Handle multiple PDF resume uploads and analyse each one.
-
-    - Accepts files from <input name="resumes" multiple>
-    - Validates & saves each PDF (with timestamp deduplication)
-    - Runs the EXISTING analysis pipeline on every resume
-    - Passes a candidates[] list to recruiter.html for display
-    """
+    """Handle multiple PDF resume uploads with validation."""
     files = request.files.getlist("resumes")
 
-    # Guard: no files submitted at all
     if not files or all(f.filename == "" for f in files):
         flash("No files selected. Please choose at least one PDF resume.", "error")
         return render_template("recruiter.html",
@@ -351,44 +447,54 @@ def recruiter_upload():
                                role=session.get("role"))
 
     saved_paths = []
+    skipped = 0
 
     for file in files:
-        if file.filename == "":
-            continue
-        if not allowed_file(file.filename):
+        if file.filename == "" or not allowed_file(file.filename):
+            skipped += 1
             continue
 
-        filename = secure_filename(file.filename)
+        # Size check
+        file.seek(0, os.SEEK_END)
+        if file.tell() > MAX_FILE_SIZE:
+            logger.warning("Recruiter: file too large, skipped: %s", file.filename)
+            skipped += 1
+            file.seek(0)
+            continue
+        file.seek(0)
 
-        # Avoid overwriting: append timestamp if file already exists
+        # UUID-based unique filename
+        raw_name = secure_filename(file.filename)
+        filename = f"{uuid4().hex[:8]}_{raw_name}"
         save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-        if os.path.exists(save_path):
-            name, ext = os.path.splitext(filename)
-            filename = f"{name}_{int(time.time())}{ext}"
-            save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-
         file.save(save_path)
         saved_paths.append((filename, save_path))
 
-    # ---------- Step 3: Analyse each resume ----------
     candidates = []
 
     for filename, path in saved_paths:
         try:
-            # 1. Extract text (parser.py)
             text = extract_text_from_pdf(path)
 
-            # 2. Extract skills (analyzer.py)
+            # Resume content heuristic
+            if not validate_resume_content(text):
+                logger.warning("Recruiter: rejected non-resume: %s", filename)
+                os.remove(path)
+                skipped += 1
+                continue
+
             skill_results = extract_skills(text)
-
-            # 3. Score
             score_results = calculate_score(skill_results)
-
-            # 4. Risk
             risk_results = risk_analysis(score_results["score"], skill_results["skills"])
-
-            # 5. Career prediction
             career_results = career_prediction(skill_results["skills"])
+
+            # Insight tag based on score
+            if score_results["score"] >= 80:
+                insight = "Top Candidate"
+            elif score_results["score"] >= 50:
+                insight = "Strong Match"
+            else:
+                insight = "Needs Improvement"
 
             candidates.append({
                 "filename": filename,
@@ -400,25 +506,27 @@ def recruiter_upload():
                 "risk_level": risk_results["risk_level"],
                 "risk_icon": risk_results["risk_icon"],
                 "career_predictions": career_results,
+                "insight": insight,
             })
             logger.info("Recruiter analysis: %s | score=%d", filename, score_results["score"])
         except Exception as e:
             logger.error("Error processing %s: %s", filename, str(e))
-            continue  # skip bad files gracefully
+            skipped += 1
+            continue
 
     count = len(candidates)
     if count == 0:
-        flash("No valid PDF files were found in your selection.", "error")
+        flash("No valid resume PDFs were found in your selection.", "error")
     else:
-        # ---------- Step 4: Rank candidates by score (highest first) ----------
         candidates = sorted(candidates, key=lambda c: c["score"], reverse=True)
         for rank, candidate in enumerate(candidates, start=1):
             candidate["rank"] = rank
 
-        flash(f"{count} resume{'s' if count != 1 else ''} uploaded and analysed!", "success")
+        msg = f"{count} resume{'s' if count != 1 else ''} uploaded and analysed!"
+        if skipped:
+            msg += f" ({skipped} file{'s' if skipped != 1 else ''} skipped)"
+        flash(msg, "success")
         logger.info("Recruiter batch complete: %d resumes (user=%s)", count, session.get("user"))
-
-        # Persist for admin dashboard stats
         all_candidates.extend(candidates)
 
     return render_template("recruiter.html",
@@ -426,6 +534,48 @@ def recruiter_upload():
                            role=session.get("role"),
                            uploaded_count=count,
                            candidates=candidates)
+
+
+@app.route("/recruiter-decision", methods=["POST"])
+@role_required("Recruiter", "Admin")
+def recruiter_decision():
+    """Track shortlist/reject decisions from the recruiter."""
+    data = request.get_json()
+    if not data:
+        return jsonify({"success": False}), 400
+
+    candidate = {
+        "filename": data.get("filename", "unknown"),
+        "score": data.get("score", 0),
+        "risk_level": data.get("risk_level", "unknown"),
+        "insight": data.get("insight", ""),
+    }
+    decision = data.get("decision", "")
+
+    if decision == "shortlisted":
+        # Remove from rejected if previously there
+        rejected_candidates[:] = [c for c in rejected_candidates if c["filename"] != candidate["filename"]]
+        if not any(c["filename"] == candidate["filename"] for c in shortlisted_candidates):
+            shortlisted_candidates.append(candidate)
+        logger.info("Recruiter shortlisted: %s", candidate["filename"])
+    elif decision == "rejected":
+        shortlisted_candidates[:] = [c for c in shortlisted_candidates if c["filename"] != candidate["filename"]]
+        if not any(c["filename"] == candidate["filename"] for c in rejected_candidates):
+            rejected_candidates.append(candidate)
+        logger.info("Recruiter rejected: %s", candidate["filename"])
+
+    return jsonify({"success": True, "decision": decision})
+
+
+@app.route("/recruiter-results")
+@role_required("Recruiter", "Admin")
+def recruiter_results():
+    """Show shortlisted and rejected candidates."""
+    return render_template("recruiter_results.html",
+                           user=session.get("user"),
+                           role=session.get("role"),
+                           shortlisted=shortlisted_candidates,
+                           rejected=rejected_candidates)
 
 
 # ---------- Admin Routes ----------
@@ -483,14 +633,14 @@ def admin_page():
 
 # ---------- Logs Route (Admin only) ----------
 
-@app.route("/logs")
+@app.route("/admin/logs")
 @role_required("Admin")
 def view_logs():
-    """Show the last 100 log entries."""
+    """Show the last 50 log entries."""
     lines = []
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r", encoding="utf-8") as f:
-            lines = f.readlines()[-100:]
+            lines = f.readlines()[-50:]
     return render_template("logs.html",
                            user=session.get("user"),
                            role=session.get("role"),
