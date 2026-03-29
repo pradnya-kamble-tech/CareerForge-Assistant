@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CareerForge AI – AI-Powered Resume Intelligence System" />
+    <title>CareerForge AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <!-- Ambient background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="logo">⚡ CareerForge</div>
+        <nav>
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#upload-section" class="nav-link">Upload</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+            <a href="#features-section" class="nav-link">Features</a>
+            {% if role in ['Recruiter', 'Admin'] %}
+            <a href="/recruiter" class="nav-link">Recruiter</a>
+            {% endif %}
+            {% if role == 'Admin' %}
+            <a href="/admin" class="nav-link">Admin</a>
+            {% endif %}
+        </nav>
+        <div class="user-bar">
+            <span class="user-email">{{ user }}</span>
+            <span class="role-badge role-{{ role|lower }}">{{ role }}</span>
+            <a href="/logout" class="btn btn-outline btn-sm" title="Logout">🚪 Logout</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <span class="badge">🚀 AI-Powered Resume Intelligence</span>
+            <h1>CareerForge <span class="gradient-text">AI</span></h1>
+            <p class="subtitle">
+                Your intelligent companion for crafting standout resumes,
+                matching skills to opportunities, and accelerating your career.
+            </p>
+            <div class="cta-group">
+                <a href="#upload-section" class="btn btn-primary">Upload Resume</a>
+                <a href="#features-section" class="btn btn-outline">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload-section" class="upload-section">
+            <h2>Upload Your <span class="gradient-text">Resume</span></h2>
+            <p class="section-desc">Drop your PDF resume below and let CareerForge AI do the rest.</p>
+
+            <div id="upload-area" class="upload-area">
+                <div class="upload-icon">📄</div>
+                <p class="upload-label">Drag & drop your PDF here</p>
+                <p class="upload-hint">or click to browse files</p>
+                <input type="file" id="resume-input" accept=".pdf" hidden />
+            </div>
+
+            <!-- File preview -->
+            <div id="file-preview" class="file-preview hidden">
+                <div class="file-info">
+                    <span class="file-icon">📎</span>
+                    <div>
+                        <p id="file-name" class="file-name"></p>
+                        <p id="file-size" class="file-size"></p>
+                    </div>
+                </div>
+                <button id="remove-file-btn" class="remove-file" title="Remove file">✕</button>
+            </div>
+
+            <button id="upload-btn" class="btn btn-primary upload-btn" disabled>Upload Resume</button>
+            <div id="upload-status" class="upload-status hidden"></div>
+        </section>
+
+        <!-- ==================== DASHBOARD ==================== -->
+        <div id="dashboard" class="dashboard hidden">
+
+            <!-- Quick Stats Bar -->
+            <div class="dashboard-header">
+                <h2>📊 Analysis <span class="gradient-text">Dashboard</span></h2>
+                <div class="quick-stats">
+                    <div class="quick-stat">
+                        <span class="quick-stat-val" id="qs-skills">0</span>
+                        <span class="quick-stat-label">Skills</span>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat-val" id="qs-score">0</span>
+                        <span class="quick-stat-label">Score</span>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat-val" id="qs-risk">—</span>
+                        <span class="quick-stat-label">Risk</span>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="quick-stat-val" id="qs-roles">0</span>
+                        <span class="quick-stat-label">Roles</span>
+                    </div>
+                </div>
+                <button id="download-report-btn" class="btn btn-download" title="Download PDF Report">
+                    📥 Download Report
+                </button>
+            </div>
+
+            <!-- 1. Extracted Text (collapsible) -->
+            <section id="results-section" class="dash-card">
+                <div class="dash-card-title" id="toggle-text-btn">
+                    <span><span class="section-num">1</span> Extracted Text</span>
+                    <span class="collapse-icon">▾</span>
+                </div>
+                <div id="text-collapsible" class="collapsible open">
+                    <div class="results-box">
+                        <div class="results-header">
+                            <span id="results-filename" class="results-filename">📄 resume.pdf</span>
+                            <button id="copy-text-btn" class="btn-icon" title="Copy to clipboard">📋 Copy</button>
+                        </div>
+                        <pre id="extracted-text" class="extracted-text"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Detected Skills -->
+            <section id="skills-section" class="dash-card">
+                <div class="dash-card-title">
+                    <span><span class="section-num">2</span> Detected Skills</span>
+                    <span id="skills-count" class="skills-count">0</span>
+                </div>
+                <div id="skills-container" class="skills-container"></div>
+            </section>
+
+            <!-- 3 & 4: Score + Risk side by side -->
+            <div class="dash-row-2">
+                <!-- 3. Resume Score -->
+                <section id="score-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">3</span> Resume Score</span>
+                    </div>
+                    <div class="score-dashboard">
+                        <div class="score-ring-wrap">
+                            <svg class="score-ring" viewBox="0 0 120 120">
+                                <circle class="score-ring-bg" cx="60" cy="60" r="52" />
+                                <circle id="score-ring-fill" class="score-ring-fill" cx="60" cy="60" r="52"
+                                    stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+                            </svg>
+                            <div class="score-value-wrap">
+                                <span id="score-value" class="score-value">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                        </div>
+                        <div class="score-info">
+                            <span id="score-level" class="score-level-badge">—</span>
+                            <p id="score-reason" class="score-reason"></p>
+                            <div class="score-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Skill Score</span>
+                                    <span id="bd-skill" class="breakdown-val">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Diversity</span>
+                                    <span id="bd-diversity" class="breakdown-val">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Skills</span>
+                                    <span id="bd-count" class="breakdown-val">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Categories</span>
+                                    <span id="bd-cats" class="breakdown-val">0</span>
+                                </div>
+                            </div>
+                            <!-- Linear progress bar -->
+                            <div class="score-progress-bar-wrap">
+                                <div class="score-progress-label">
+                                    <span>Resume Strength</span>
+                                    <span id="score-pct-label">0%</span>
+                                </div>
+                                <div class="score-progress-track">
+                                    <div id="score-progress-fill" class="score-progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Risk Analysis -->
+                <section id="risk-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">4</span> Risk Analysis</span>
+                    </div>
+                    <div id="risk-card" class="risk-card">
+                        <div class="risk-header">
+                            <span id="risk-icon" class="risk-icon-lg">🟡</span>
+                            <div>
+                                <span id="risk-level-badge" class="risk-level-badge">—</span>
+                                <p class="risk-label">Risk Level</p>
+                            </div>
+                        </div>
+                        <p id="risk-reason" class="risk-reason"></p>
+                        <div id="risk-suggestions" class="risk-suggestions">
+                            <p class="risk-suggestions-title">💡 Suggestions</p>
+                            <ul id="risk-suggestions-list"></ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 5. Career Trajectory -->
+            <section id="career-section" class="dash-card">
+                <div class="dash-card-title">
+                    <span><span class="section-num">5</span> Career Trajectory</span>
+                </div>
+                <div id="career-container" class="career-container"></div>
+            </section>
+
+            <!-- 6. Skill Gap Analysis -->
+            <section id="gap-section" class="dash-card">
+                <div class="dash-card-title">
+                    <span><span class="section-num">6</span> Skill Gap Analysis</span>
+                    <span class="dash-tag">Explainable AI</span>
+                </div>
+                <div class="gap-content">
+                    <!-- Target role header -->
+                    <div class="gap-target">
+                        <span id="gap-icon" class="gap-target-icon"></span>
+                        <div>
+                            <p class="gap-target-label">Best Matched Role</p>
+                            <h3 id="gap-role" class="gap-target-role">—</h3>
+                        </div>
+                        <div class="gap-progress-wrap">
+                            <div class="gap-progress-track">
+                                <div id="gap-progress-fill" class="gap-progress-fill"></div>
+                            </div>
+                            <span id="gap-pct" class="gap-pct">0% gap</span>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <p id="gap-summary" class="gap-summary"></p>
+
+                    <!-- Missing Skills -->
+                    <div class="gap-group">
+                        <p class="gap-group-title">🔴 Missing Skills <span id="gap-missing-count"
+                                class="gap-group-count">0</span></p>
+                        <div id="gap-missing-list" class="gap-list"></div>
+                    </div>
+
+                    <!-- Recommended Skills -->
+                    <div class="gap-group">
+                        <p class="gap-group-title">💡 Recommended Skills <span id="gap-rec-count"
+                                class="gap-group-count">0</span></p>
+                        <div id="gap-rec-list" class="gap-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Evolution Simulator -->
+            <section id="sim-section" class="dash-card">
+                <div class="dash-card-title">
+                    <span><span class="section-num">7</span> Resume Evolution</span>
+                    <span class="dash-tag">Digital Twin</span>
+                </div>
+                <p class="section-desc" style="margin-bottom:16px">
+                    Simulate adding a new skill and see how your profile improves.
+                </p>
+                <div class="sim-controls">
+                    <select id="sim-skill-select" class="sim-select">
+                        <option value="">— Select a skill to add —</option>
+                    </select>
+                    <button id="sim-btn" class="btn btn-primary sim-btn" disabled>Simulate</button>
+                </div>
+                <div id="sim-result" class="sim-result hidden">
+                    <p id="sim-explanation" class="sim-explanation"></p>
+                    <div class="sim-compare">
+                        <div class="sim-col sim-before">
+                            <span class="sim-col-label">Before</span>
+                            <div class="sim-metric"><span class="sim-metric-label">Score</span><span
+                                    id="sim-before-score" class="sim-metric-val">0</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Level</span><span
+                                    id="sim-before-level" class="sim-metric-val">—</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Risk</span><span id="sim-before-risk"
+                                    class="sim-metric-val">—</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Roles</span><span
+                                    id="sim-before-careers" class="sim-metric-val">0</span></div>
+                        </div>
+                        <div class="sim-arrow">→</div>
+                        <div class="sim-col sim-after">
+                            <span class="sim-col-label">After</span>
+                            <div class="sim-metric"><span class="sim-metric-label">Score</span><span
+                                    id="sim-after-score" class="sim-metric-val">0</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Level</span><span
+                                    id="sim-after-level" class="sim-metric-val">—</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Risk</span><span id="sim-after-risk"
+                                    class="sim-metric-val">—</span></div>
+                            <div class="sim-metric"><span class="sim-metric-label">Roles</span><span
+                                    id="sim-after-careers" class="sim-metric-val">0</span></div>
+                        </div>
+                    </div>
+                    <div id="sim-new-roles" class="sim-new-roles"></div>
+                </div>
+            </section>
+
+        </div><!-- end dashboard -->
+
+        <!-- Features -->
+        <section id="features-section" class="features">
+            <h2 class="features-heading">Key <span class="gradient-text">Features</span></h2>
+            <div class="features-grid">
+                <div class="feature-card" style="--delay: 0s">
+                    <div class="feature-icon">📄</div>
+                    <h3>Resume Parsing</h3>
+                    <p>Upload PDF and get text extracted automatically using AI-powered parsing.</p>
+                </div>
+                <div class="feature-card" style="--delay: 0.08s">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Skill Mining</h3>
+                    <p>Detect technical and soft skills with keyword-based text mining.</p>
+                </div>
+                <div class="feature-card" style="--delay: 0.16s">
+                    <div class="feature-icon">📊</div>
+                    <h3>Scoring & Risk</h3>
+                    <p>Get a score out of 100 with explainable risk analysis.</p>
+                </div>
+                <div class="feature-card" style="--delay: 0.24s">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Career Prediction</h3>
+                    <p>See matched career paths with role-specific match percentages.</p>
+                </div>
+                <div class="feature-card" style="--delay: 0.32s">
+                    <div class="feature-icon">🧬</div>
+                    <h3>Digital Twin</h3>
+                    <p>Simulate skill upgrades and preview career improvements instantly.</p>
+                </div>
+                <div class="feature-card" style="--delay: 0.4s">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Explainable AI</h3>
+                    <p>Every result comes with a clear, understandable explanation.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CareerForge AI &mdash; AI-Powered Resume Intelligence System &mdash; Final Year Project</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

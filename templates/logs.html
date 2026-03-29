@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Logs – CareerForge AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+        .logs-section {
+            max-width: 960px;
+            margin: 60px auto 48px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .logs-section h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .logs-section .section-desc {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .log-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .log-line {
+            font-family: 'Courier New', monospace;
+            font-size: .78rem;
+            padding: 4px 8px;
+            border-bottom: 1px solid #f1f5f9;
+            line-height: 1.6;
+            color: #334155;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .log-line:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .log-line:last-child {
+            border-bottom: none;
+        }
+
+        /* Colour-code log levels */
+        .log-line.level-error {
+            color: #dc2626;
+            background: rgba(239, 68, 68, .04);
+        }
+
+        .log-line.level-warning {
+            color: #d97706;
+            background: rgba(234, 179, 8, .04);
+        }
+
+        .empty-logs {
+            text-align: center;
+            color: #94a3b8;
+            padding: 40px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="logo">⚡ CareerForge</div>
+        <nav>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/recruiter" class="nav-link">Recruiter</a>
+            <a href="/admin" class="nav-link">Admin</a>
+            <a href="/logs" class="nav-link active">Logs</a>
+        </nav>
+        <div class="user-bar">
+            <span class="user-email">{{ user }}</span>
+            <span class="role-badge role-{{ role|lower }}">{{ role }}</span>
+            <a href="/logout" class="btn btn-outline btn-sm" title="Logout">🚪 Logout</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="logs-section">
+            <span class="badge">📋 System Logs</span>
+            <h2>Server <span class="gradient-text">Logs</span></h2>
+            <p class="section-desc">Last 100 log entries (newest at bottom)</p>
+
+            <div class="log-panel">
+                {% if log_lines %}
+                {% for line in log_lines %}
+                <div
+                    class="log-line {% if 'ERROR' in line %}level-error{% elif 'WARNING' in line %}level-warning{% endif %}">
+                    {{ line.strip() }}</div>
+                {% endfor %}
+                {% else %}
+                <div class="empty-logs">No log entries found.</div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CareerForge AI &mdash; System Logs &mdash; Final Year Project</p>
+    </footer>
+</body>
+
+</html>

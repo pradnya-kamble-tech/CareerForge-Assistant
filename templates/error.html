@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ error_code }} – CareerForge AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+        .error-section {
+            max-width: 520px;
+            margin: 120px auto;
+            text-align: center;
+            animation: fadeUp .5s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0A2540, #00C2A8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .error-section h2 {
+            font-size: 1.6rem;
+            margin: 12px 0 8px;
+        }
+
+        .error-section p {
+            color: #64748b;
+            margin-bottom: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="logo">⚡ CareerForge</div>
+        <nav>
+            <a href="/" class="nav-link">Home</a>
+        </nav>
+        <div class="user-bar">
+            {% if user %}
+            <span class="user-email">{{ user }}</span>
+            <span class="role-badge role-{{ role|lower }}">{{ role }}</span>
+            <a href="/logout" class="btn btn-outline btn-sm" title="Logout">🚪 Logout</a>
+            {% else %}
+            <a href="/login" class="btn btn-primary btn-sm">Login</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main>
+        <section class="error-section">
+            <div class="error-code">{{ error_code }}</div>
+            <h2>{{ error_msg }}</h2>
+            <p>Something went wrong. Please navigate back to a safe page.</p>
+            <a href="/" class="btn btn-primary">Go Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CareerForge AI &mdash; Final Year Project</p>
+    </footer>
+</body>
+
+</html>

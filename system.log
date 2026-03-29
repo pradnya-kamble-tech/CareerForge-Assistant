@@ -1,0 +1,42 @@
+2026-03-29 12:13:20 | INFO    | CareerForge AI server starting up...
+2026-03-29 12:13:20 | WARNING |  * Debugger is active!
+2026-03-29 12:13:20 | INFO    |  * Debugger PIN: 115-692-881
+2026-03-29 12:18:07 | INFO    | CareerForge AI server starting up...
+2026-03-29 12:18:07 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-03-29 12:18:07 | INFO    | [33mPress CTRL+C to quit[0m
+2026-03-29 12:18:07 | INFO    |  * Restarting with stat
+2026-03-29 12:18:09 | INFO    | CareerForge AI server starting up...
+2026-03-29 12:18:09 | WARNING |  * Debugger is active!
+2026-03-29 12:18:09 | INFO    |  * Debugger PIN: 115-692-881
+2026-03-29 12:18:10 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:10] "GET /login HTTP/1.1" 200 -
+2026-03-29 12:18:10 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:18:38 | INFO    | User logged in: test@student.com (role=Student)
+2026-03-29 12:18:38 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-29 12:18:38 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:38] "GET / HTTP/1.1" 200 -
+2026-03-29 12:18:38 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:18:39 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-29 12:18:47 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:47] "GET /login HTTP/1.1" 200 -
+2026-03-29 12:18:47 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:18:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:19:27 | INFO    | User logged in: admin@careerforge.com (role=Admin)
+2026-03-29 12:19:27 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-29 12:19:28 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:28] "GET /admin HTTP/1.1" 200 -
+2026-03-29 12:19:28 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:19:41 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:41] "GET /logs HTTP/1.1" 200 -
+2026-03-29 12:19:41 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:19:54 | WARNING | 404 Not Found: /some-fake-page
+2026-03-29 12:19:54 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:54] "[33mGET /some-fake-page HTTP/1.1[0m" 404 -
+2026-03-29 12:19:55 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:19:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:21:25 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:25] "GET / HTTP/1.1" 200 -
+2026-03-29 12:21:25 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:21:25 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:25] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-29 12:21:28 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:28] "GET /login HTTP/1.1" 200 -
+2026-03-29 12:21:29 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-29 12:21:58 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:58] "GET /login HTTP/1.1" 200 -
+2026-03-29 12:21:59 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:59] "GET /static/style.css HTTP/1.1" 200 -
+2026-03-29 12:21:59 | WARNING | 404 Not Found: /favicon.ico
+2026-03-29 12:21:59 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:21:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-29 12:22:46 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:22:46] "GET /login HTTP/1.1" 200 -
+2026-03-29 12:22:46 | INFO    | 127.0.0.1 - - [29/Mar/2026 12:22:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
