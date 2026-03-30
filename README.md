@@ -1,10 +1,8 @@
-# ⚡ CareerForge AI — AI-Powered Resume Intelligence System
+⚡ CareerForge AI — AI-Powered Resume Intelligence System
 
 An intelligent resume analysis platform that parses PDF resumes, extracts skills, scores them, predicts career paths, identifies skill gaps, and generates downloadable PDF reports.
 
----
-
-## 🚀 Features
+🚀 Features
 
 - **PDF Resume Parsing** — Upload a PDF and extract text automatically
 - **Skill Mining** — Keyword-based skill detection across 8+ categories
@@ -18,7 +16,7 @@ An intelligent resume analysis platform that parses PDF resumes, extracts skills
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
 
 ```
 careerforge/
