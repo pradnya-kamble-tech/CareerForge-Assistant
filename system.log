@@ -1039,3 +1039,58 @@
 2026-03-30 01:01:23 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:23] "GET /admin/logs HTTP/1.1" 200 -
 2026-03-30 01:01:23 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
 2026-03-30 01:01:23 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 01:01:34 | INFO    | User logged out
+2026-03-30 01:01:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:34] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-30 01:01:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:34] "GET /login HTTP/1.1" 200 -
+2026-03-30 01:01:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 01:01:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 01:01:34] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-30 10:23:01 | INFO    | CareerForge AI server starting up...
+2026-03-30 10:23:01 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-03-30 10:23:01 | INFO    | [33mPress CTRL+C to quit[0m
+2026-03-30 10:23:01 | INFO    |  * Restarting with stat
+2026-03-30 10:23:02 | INFO    | CareerForge AI server starting up...
+2026-03-30 10:23:02 | WARNING |  * Debugger is active!
+2026-03-30 10:23:02 | INFO    |  * Debugger PIN: 118-216-279
+2026-03-30 10:23:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:23:28] "GET / HTTP/1.1" 200 -
+2026-03-30 10:23:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:23:28] "GET /static/style.css HTTP/1.1" 200 -
+2026-03-30 10:23:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:23:28] "GET /static/script.js HTTP/1.1" 200 -
+2026-03-30 10:23:28 | WARNING | 404 Not Found: /favicon.ico
+2026-03-30 10:23:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:23:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-30 10:24:11 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:11] "GET /login HTTP/1.1" 200 -
+2026-03-30 10:24:11 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 10:24:11 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-30 10:24:13 | INFO    | User logged in: test@student.com (role=Student)
+2026-03-30 10:24:13 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-30 10:24:13 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:13] "GET /student HTTP/1.1" 200 -
+2026-03-30 10:24:13 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 10:24:13 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-30 10:24:20 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-03-30 10:24:20 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:20] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-03-30 10:24:33 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:33] "GET / HTTP/1.1" 200 -
+2026-03-30 10:24:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:34] "GET /static/style.css HTTP/1.1" 200 -
+2026-03-30 10:24:34 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:34] "GET /static/script.js HTTP/1.1" 200 -
+2026-03-30 10:24:35 | WARNING | 404 Not Found: /favicon.ico
+2026-03-30 10:24:35 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-30 10:24:37 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:37] "GET /login HTTP/1.1" 200 -
+2026-03-30 10:24:37 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 10:24:37 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-30 10:24:41 | INFO    | User logged in: pradnyark377@gmail.com (role=Student)
+2026-03-30 10:24:41 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-30 10:24:41 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:41] "GET /student HTTP/1.1" 200 -
+2026-03-30 10:24:41 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-30 10:24:41 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:41] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-30 10:24:48 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-03-30 10:24:48 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:24:48] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-03-30 10:25:10 | INFO    | Student resume uploaded: 2216148d_259-job-resume-template.pdf (user=pradnyark377@gmail.com)
+2026-03-30 10:25:10 | INFO    | Student analysis complete: 2216148d_259-job-resume-template.pdf | score=25 | skills=1
+2026-03-30 10:25:10 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:25:10] "POST /upload HTTP/1.1" 200 -
+2026-03-30 10:25:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:25:28] "POST /simulate HTTP/1.1" 200 -
+2026-03-30 10:25:28 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:25:28] "POST /simulate HTTP/1.1" 200 -
+2026-03-30 10:25:37 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:25:37] "GET /download-report HTTP/1.1" 200 -
+2026-03-30 10:27:41 | INFO    | Student resume uploaded: ca800a08_VishwaNova_ppt.pdf (user=test@student.com)
+2026-03-30 10:27:43 | WARNING | Rejected non-resume PDF: ca800a08_VishwaNova_ppt.pdf
+2026-03-30 10:27:43 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:27:43] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-03-30 10:28:03 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:28:03] "[31m[1mGET /download-report HTTP/1.1[0m" 400 -
