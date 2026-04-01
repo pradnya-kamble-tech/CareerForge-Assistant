@@ -1,122 +1,50 @@
-# database.py — SQLite persistence layer for CareerForge AI
+# database.py — Supabase persistence layer for CareerForge AI
 
-import os
 import json
-import sqlite3
-from datetime import datetime
+from supabase import create_client, Client
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "data", "database.db")
-USERS_JSON = os.path.join(os.path.dirname(__file__), "data", "users.json")
+# ---------- Supabase Configuration ----------
+SUPABASE_URL = "https://vlwougjxmsjmmurbfjdl.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZsd291Z2p4bXNqbW11cmJmamRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzMzNzgsImV4cCI6MjA5MDYwOTM3OH0.Ak0zZDSGmT4vL-d7J-Wdzy4IaQvOchWKdaChpla8BsQ"
 
-
-def _connect():
-    """Return a new SQLite connection with row-factory enabled."""
-    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA journal_mode=WAL")
-    return conn
+_supabase: Client = None
 
 
-# ──────────────────── INIT ────────────────────
+def _get_client() -> Client:
+    """Lazy-initialise and return the Supabase client."""
+    global _supabase
+    if _supabase is None:
+        _supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+    return _supabase
+
 
 def init_db():
-    """Create tables if they don't exist, then migrate users.json."""
-    conn = _connect()
-    cur = conn.cursor()
-
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            id         INTEGER PRIMARY KEY AUTOINCREMENT,
-            email      TEXT    UNIQUE NOT NULL,
-            password   TEXT    NOT NULL,
-            role       TEXT    NOT NULL DEFAULT 'Student',
-            created_at TEXT    DEFAULT (datetime('now'))
-        )
-    """)
-
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS resumes (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT,
-            filename    TEXT    NOT NULL,
-            score       INTEGER DEFAULT 0,
-            score_level TEXT    DEFAULT '',
-            risk_level  TEXT    DEFAULT '',
-            risk_icon   TEXT    DEFAULT '',
-            skills      TEXT    DEFAULT '[]',
-            skills_total INTEGER DEFAULT 0,
-            career_preds TEXT   DEFAULT '[]',
-            insight     TEXT    DEFAULT '',
-            owner       TEXT    DEFAULT '',
-            created_at  TEXT    DEFAULT (datetime('now'))
-        )
-    """)
-
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS decisions (
-            id         INTEGER PRIMARY KEY AUTOINCREMENT,
-            filename   TEXT    NOT NULL,
-            score      INTEGER DEFAULT 0,
-            risk_level TEXT    DEFAULT '',
-            insight    TEXT    DEFAULT '',
-            owner      TEXT    DEFAULT '',
-            decision   TEXT    DEFAULT 'pending',
-            created_at TEXT    DEFAULT (datetime('now'))
-        )
-    """)
-
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS logs (
-            id         INTEGER PRIMARY KEY AUTOINCREMENT,
-            action     TEXT    NOT NULL,
-            user       TEXT    DEFAULT '',
-            detail     TEXT    DEFAULT '',
-            created_at TEXT    DEFAULT (datetime('now'))
-        )
-    """)
-
-    conn.commit()
-
-    # ── Migrate users.json → SQLite (one-time) ──
-    if os.path.exists(USERS_JSON):
-        try:
-            with open(USERS_JSON, "r", encoding="utf-8") as f:
-                users_data = json.load(f)
-            for email, info in users_data.items():
-                try:
-                    cur.execute(
-                        "INSERT OR IGNORE INTO users (email, password, role) VALUES (?, ?, ?)",
-                        (email.lower(), info["password"], info.get("role", "Student")),
-                    )
-                except Exception:
-                    pass
-            conn.commit()
-            # Rename old file so migration doesn't repeat
-            os.rename(USERS_JSON, USERS_JSON + ".migrated")
-        except Exception:
-            pass
-
-    conn.close()
+    """Verify Supabase connection (tables already created via SQL Editor)."""
+    try:
+        sb = _get_client()
+        sb.table("users").select("id").limit(1).execute()
+        print("✅ Supabase connected successfully.")
+    except Exception as e:
+        print(f"⚠️  Supabase connection check failed: {e}")
 
 
 # ──────────────────── USERS ────────────────────
 
 def db_add_user(email, password, role="Student"):
-    conn = _connect()
-    conn.execute(
-        "INSERT INTO users (email, password, role) VALUES (?, ?, ?)",
-        (email.lower(), password, role),
-    )
-    conn.commit()
-    conn.close()
+    sb = _get_client()
+    sb.table("users").insert({
+        "email": email.lower(),
+        "password": password,
+        "role": role,
+    }).execute()
 
 
 def db_get_user(email):
     """Return user dict or None."""
-    conn = _connect()
-    row = conn.execute("SELECT * FROM users WHERE email = ?", (email.lower(),)).fetchone()
-    conn.close()
-    if row:
+    sb = _get_client()
+    result = sb.table("users").select("*").eq("email", email.lower()).limit(1).execute()
+    if result.data:
+        row = result.data[0]
         return {"email": row["email"], "password": row["password"], "role": row["role"]}
     return None
 
@@ -126,51 +54,39 @@ def db_user_exists(email):
 
 
 def db_count_users():
-    conn = _connect()
-    count = conn.execute("SELECT COUNT(*) FROM users").fetchone()[0]
-    conn.close()
-    return count
+    sb = _get_client()
+    result = sb.table("users").select("id", count="exact").execute()
+    return result.count or 0
 
 
 # ──────────────────── RESUMES ────────────────────
 
 def db_add_resume(data):
     """Insert a resume record. `data` is a dict with candidate fields."""
-    conn = _connect()
-    conn.execute(
-        """INSERT INTO resumes
-           (filename, score, score_level, risk_level, risk_icon,
-            skills, skills_total, career_preds, insight, owner)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-        (
-            data.get("filename", ""),
-            data.get("score", 0),
-            data.get("score_level", ""),
-            data.get("risk_level", ""),
-            data.get("risk_icon", ""),
-            json.dumps(data.get("skills", [])),
-            data.get("skills_total", 0),
-            json.dumps(data.get("career_predictions", [])),
-            data.get("insight", ""),
-            data.get("owner", ""),
-        ),
-    )
-    conn.commit()
-    conn.close()
+    sb = _get_client()
+    sb.table("resumes").insert({
+        "filename": data.get("filename", ""),
+        "score": data.get("score", 0),
+        "score_level": data.get("score_level", ""),
+        "risk_level": data.get("risk_level", ""),
+        "risk_icon": data.get("risk_icon", ""),
+        "skills": json.dumps(data.get("skills", [])),
+        "skills_total": data.get("skills_total", 0),
+        "career_preds": json.dumps(data.get("career_predictions", [])),
+        "insight": data.get("insight", ""),
+        "owner": data.get("owner", ""),
+    }).execute()
 
 
 def db_get_resumes(owner=None):
     """Return list of resume dicts. If owner given, filter by it."""
-    conn = _connect()
+    sb = _get_client()
+    query = sb.table("resumes").select("*").order("score", desc=True)
     if owner:
-        rows = conn.execute(
-            "SELECT * FROM resumes WHERE owner = ? ORDER BY score DESC", (owner,)
-        ).fetchall()
-    else:
-        rows = conn.execute("SELECT * FROM resumes ORDER BY score DESC").fetchall()
-    conn.close()
+        query = query.eq("owner", owner)
+    result = query.execute()
     results = []
-    for r in rows:
+    for r in result.data:
         results.append({
             "id": r["id"],
             "filename": r["filename"],
@@ -189,124 +105,111 @@ def db_get_resumes(owner=None):
 
 
 def db_count_resumes():
-    conn = _connect()
-    count = conn.execute("SELECT COUNT(*) FROM resumes").fetchone()[0]
-    conn.close()
-    return count
+    sb = _get_client()
+    result = sb.table("resumes").select("id", count="exact").execute()
+    return result.count or 0
 
 
 # ──────────────────── DECISIONS ────────────────────
 
 def db_add_decision(data):
     """Upsert a shortlist/reject decision for a candidate."""
-    conn = _connect()
+    sb = _get_client()
     # Remove any previous decision for this file by this owner
-    conn.execute(
-        "DELETE FROM decisions WHERE filename = ? AND owner = ?",
-        (data.get("filename", ""), data.get("owner", "")),
-    )
-    conn.execute(
-        """INSERT INTO decisions (filename, score, risk_level, insight, owner, decision)
-           VALUES (?, ?, ?, ?, ?, ?)""",
-        (
-            data.get("filename", ""),
-            data.get("score", 0),
-            data.get("risk_level", ""),
-            data.get("insight", ""),
-            data.get("owner", ""),
-            data.get("decision", "pending"),
-        ),
-    )
-    conn.commit()
-    conn.close()
+    sb.table("decisions").delete().eq(
+        "filename", data.get("filename", "")
+    ).eq(
+        "owner", data.get("owner", "")
+    ).execute()
+
+    sb.table("decisions").insert({
+        "filename": data.get("filename", ""),
+        "score": data.get("score", 0),
+        "risk_level": data.get("risk_level", ""),
+        "insight": data.get("insight", ""),
+        "owner": data.get("owner", ""),
+        "decision": data.get("decision", "pending"),
+    }).execute()
 
 
 def db_get_decisions(owner, decision_type=None):
     """Return decisions for an owner, optionally filtered by type."""
-    conn = _connect()
+    sb = _get_client()
+    query = sb.table("decisions").select("*").eq("owner", owner).order("id", desc=True)
     if decision_type:
-        rows = conn.execute(
-            "SELECT * FROM decisions WHERE owner = ? AND decision = ? ORDER BY id DESC",
-            (owner, decision_type),
-        ).fetchall()
-    else:
-        rows = conn.execute(
-            "SELECT * FROM decisions WHERE owner = ? ORDER BY id DESC", (owner,)
-        ).fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
+        query = query.eq("decision", decision_type)
+    result = query.execute()
+    return result.data
 
 
 # ──────────────────── LOGS ────────────────────
 
 def db_add_log(action, user="system", detail=""):
     """Insert a log entry."""
-    conn = _connect()
-    conn.execute(
-        "INSERT INTO logs (action, user, detail) VALUES (?, ?, ?)",
-        (action, user, detail),
-    )
-    conn.commit()
-    conn.close()
+    try:
+        sb = _get_client()
+        sb.table("logs").insert({
+            "action": action,
+            "user": user,
+            "detail": detail,
+        }).execute()
+    except Exception:
+        pass  # Don't crash the app if logging fails
 
 
 def db_get_logs(limit=50):
     """Return recent log entries."""
-    conn = _connect()
-    rows = conn.execute(
-        "SELECT * FROM logs ORDER BY id DESC LIMIT ?", (limit,)
-    ).fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
+    sb = _get_client()
+    result = sb.table("logs").select("*").order("id", desc=True).limit(limit).execute()
+    return result.data
 
 
 def db_count_logs():
-    conn = _connect()
-    count = conn.execute("SELECT COUNT(*) FROM logs").fetchone()[0]
-    conn.close()
-    return count
+    sb = _get_client()
+    result = sb.table("logs").select("id", count="exact").execute()
+    return result.count or 0
 
 
 # ──────────────────── ADMIN STATS ────────────────────
 
 def db_get_admin_stats():
     """Return aggregated stats for the admin dashboard."""
-    conn = _connect()
-    cur = conn.cursor()
+    sb = _get_client()
 
-    total = cur.execute("SELECT COUNT(*) FROM resumes").fetchone()[0]
-    avg_score = cur.execute("SELECT COALESCE(AVG(score), 0) FROM resumes").fetchone()[0]
-    highest = cur.execute("SELECT COALESCE(MAX(score), 0) FROM resumes").fetchone()[0]
-    lowest = cur.execute("SELECT COALESCE(MIN(score), 0) FROM resumes").fetchone()[0]
+    # Get all resumes
+    all_resumes = sb.table("resumes").select("score,risk_level,skills").execute().data
+
+    total = len(all_resumes)
+    scores = [r["score"] for r in all_resumes]
+    avg_score = round(sum(scores) / total, 1) if total else 0
+    highest = max(scores) if scores else 0
+    lowest = min(scores) if scores else 0
 
     # Score distribution
-    low = cur.execute("SELECT COUNT(*) FROM resumes WHERE score < 40").fetchone()[0]
-    mid = cur.execute("SELECT COUNT(*) FROM resumes WHERE score >= 40 AND score < 70").fetchone()[0]
-    high = cur.execute("SELECT COUNT(*) FROM resumes WHERE score >= 70").fetchone()[0]
+    low = sum(1 for s in scores if s < 40)
+    mid = sum(1 for s in scores if 40 <= s < 70)
+    high = sum(1 for s in scores if s >= 70)
 
     # Risk distribution
-    risk_low = cur.execute("SELECT COUNT(*) FROM resumes WHERE risk_level = 'Low'").fetchone()[0]
-    risk_med = cur.execute("SELECT COUNT(*) FROM resumes WHERE risk_level = 'Medium'").fetchone()[0]
-    risk_high = cur.execute("SELECT COUNT(*) FROM resumes WHERE risk_level = 'High'").fetchone()[0]
+    risk_low = sum(1 for r in all_resumes if r.get("risk_level") == "Low")
+    risk_med = sum(1 for r in all_resumes if r.get("risk_level") == "Medium")
+    risk_high = sum(1 for r in all_resumes if r.get("risk_level") == "High")
 
     # Skill counts
-    rows = cur.execute("SELECT skills FROM resumes").fetchall()
     from collections import Counter
     skill_counts = Counter()
-    for r in rows:
+    for r in all_resumes:
         try:
             skill_counts.update(json.loads(r["skills"]))
         except Exception:
             pass
 
-    total_users = cur.execute("SELECT COUNT(*) FROM users").fetchone()[0]
-    total_logs = cur.execute("SELECT COUNT(*) FROM logs").fetchone()[0]
-
-    conn.close()
+    total_users = db_count_users()
+    total_logs = db_count_logs()
 
     return {
         "total": total,
-        "avg_score": round(avg_score, 1),
+        "avg_score": avg_score,
         "highest_score": highest,
         "lowest_score": lowest,
         "score_dist": {"0-39": low, "40-69": mid, "70-100": high},
