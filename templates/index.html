@@ -389,6 +389,77 @@
                         <div id="sim-new-roles" class="sim-new-roles"></div>
                     </div>
                 </section>
+
+                <!-- 9. Score Trend -->
+                <section id="trend-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">09</span> Score Trend</span>
+                        <span class="dash-tag">Analytics</span>
+                    </div>
+                    <p class="section-desc" style="margin-bottom:12px">Projected score growth based on your current
+                        profile trajectory.</p>
+                    <div style="position:relative;height:220px"><canvas id="scoreTrendChart"></canvas></div>
+                </section>
+
+                <!-- 10. Skill Profile / Competency -->
+                <div class="dash-row-2">
+                    <section id="profile-section" class="dash-card">
+                        <div class="dash-card-title">
+                            <span><span class="section-num">10</span> Skill Profile</span>
+                        </div>
+                        <div style="position:relative;height:260px"><canvas id="skillProfileChart"></canvas></div>
+                    </section>
+
+                    <!-- 11. Industry Benchmark -->
+                    <section id="benchmark-section" class="dash-card">
+                        <div class="dash-card-title">
+                            <span><span class="section-num">11</span> Industry Benchmark</span>
+                        </div>
+                        <p class="section-desc" style="margin-bottom:12px">How you compare to industry standards.</p>
+                        <div style="position:relative;height:220px"><canvas id="benchmarkChart"></canvas></div>
+                    </section>
+                </div>
+
+                <!-- 12. Career Path Timeline -->
+                <section id="timeline-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">12</span> Career Path Timeline</span>
+                        <span class="dash-tag">5-Year</span>
+                    </div>
+                    <div id="career-timeline" class="career-timeline"></div>
+                </section>
+
+                <!-- 13. Salary Projection -->
+                <section id="salary-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">13</span> Salary Projection</span>
+                        <span class="dash-tag">Estimate</span>
+                    </div>
+                    <p class="section-desc" style="margin-bottom:12px">Estimated salary growth based on your skill
+                        level.</p>
+                    <div style="position:relative;height:220px"><canvas id="salaryChart"></canvas></div>
+                </section>
+
+                <!-- 14. Improvement Suggestions -->
+                <section id="improve-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">14</span> Improvement Suggestions</span>
+                        <span class="dash-tag">+% Impact</span>
+                    </div>
+                    <p class="section-desc" style="margin-bottom:12px">Skills that would boost your score the most.</p>
+                    <div id="improve-container" class="improve-container"></div>
+                </section>
+
+                <!-- 15. Learning Path -->
+                <section id="learn-section" class="dash-card">
+                    <div class="dash-card-title">
+                        <span><span class="section-num">15</span> Learning Path</span>
+                    </div>
+                    <p class="section-desc" style="margin-bottom:12px">Recommended resources to close your skill gaps.
+                    </p>
+                    <div id="learn-container" class="learn-container"></div>
+                </section>
+
             </div><!-- end dashboard -->
 
             <!-- Features -->
@@ -458,6 +529,7 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="/static/script.js"></script>
 </body>
 

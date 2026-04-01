@@ -199,7 +199,32 @@
     }
 
     /* ───── DISPLAY RESULTS ───── */
+    /* Chart instance tracker — destroy before re-creating */
+    const _charts = {};
+    function _getOrCreateChart(id, config) {
+        if (_charts[id]) { _charts[id].destroy(); }
+        const ctx = document.getElementById(id);
+        if (!ctx) return null;
+        _charts[id] = new Chart(ctx, config);
+        return _charts[id];
+    }
+
+    function clearPreviousResults() {
+        /* Destroy all Chart.js instances */
+        Object.keys(_charts).forEach(k => { _charts[k].destroy(); delete _charts[k]; });
+        /* Clear dynamic containers */
+        ['skills-container', 'career-container', 'xai-container', 'gap-missing-list',
+            'gap-rec-list', 'risk-suggestions-list', 'sim-new-roles',
+            'career-timeline', 'improve-container', 'learn-container'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = '';
+            });
+        const simResult = document.getElementById('sim-result');
+        if (simResult) simResult.classList.add('hidden');
+    }
+
     function displayResults(data) {
+        clearPreviousResults();
         const dashboard = document.getElementById("dashboard");
         if (dashboard) dashboard.classList.remove("hidden");
 
@@ -212,6 +237,21 @@
         displayExplainability(data);
         populateSimulator(data);
         updateQuickStats(data);
+
+        /* New sections */
+        displayScoreTrend(data);
+        displaySkillProfile(data);
+        displayBenchmark(data);
+        displayCareerTimeline(data);
+        displaySalaryProjection(data);
+        displayImprovements(data);
+        displayLearningPath(data);
+
+        /* Update download report link with analysis_id (Fix 3) */
+        if (data.analysis_id) {
+            const dlLink = document.getElementById("download-report-btn");
+            if (dlLink) dlLink.href = "/download-report/" + data.analysis_id;
+        }
 
         if (dashboard) dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -416,39 +456,57 @@
         if (!container) return;
         container.innerHTML = "";
 
+        /* Use structured explainability object if available, else fallback */
+        const xai = data.explainability || {};
+
         const svgScore = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`;
         const svgRisk = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
         const svgBulb = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>`;
         const svgRocket = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 12A10 10 0 1 1 12 2"/><path d="M22 2L12 12"/><path d="M16 2h6v6"/></svg>`;
         const svgPuzzle = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`;
 
-        const matchPctFn = (p) => p.match ?? p.match_percentage ?? 0;
+        /* Build career matching content from structured data */
+        let careerContent = "No career insights.";
+        if (xai.career_reasons && xai.career_reasons.length) {
+            careerContent = xai.career_reasons.map((c) => `${c.role} (${c.match}%): ${c.reason || ""}`).join("\n");
+        } else if (data.career_predictions && data.career_predictions.length) {
+            const matchPctFn = (p) => p.match ?? p.match_percentage ?? 0;
+            careerContent = data.career_predictions.slice(0, 3).map((p) => `${p.role} (${matchPctFn(p)}%): ${p.reason || ""}`).join("\n");
+        }
+
+        /* Build risk suggestions content */
+        let suggestionsContent = "No suggestions.";
+        const suggestions = xai.risk_suggestions || data.risk_suggestions || [];
+        if (suggestions.length) {
+            suggestionsContent = suggestions.map((s) => "\u2022 " + s).join("\n");
+        }
+
         const cards = [
             {
                 icon: svgScore, title: "Score Analysis", type: "Reason",
                 color: "var(--accent-secondary)", borderColor: "rgba(108,99,255,.4)",
-                content: data.score_reason || "No score reasoning available.",
+                content: xai.score_reason || data.score_reason || "No score reasoning available.",
             },
             {
                 icon: svgRisk, title: "Risk Assessment", type: "Insight",
                 color: data.risk_level === "High" ? "var(--accent-danger)" : data.risk_level === "Low" ? "var(--accent)" : "var(--accent-warn)",
                 borderColor: data.risk_level === "High" ? "rgba(255,77,109,.4)" : data.risk_level === "Low" ? "rgba(0,245,212,.4)" : "rgba(255,182,39,.4)",
-                content: data.risk_reason || "No risk reasoning available.",
+                content: xai.risk_reason || data.risk_reason || "No risk reasoning available.",
             },
             {
                 icon: svgBulb, title: "Risk Mitigation", type: "Recommendation",
                 color: "var(--accent-secondary)", borderColor: "rgba(108,99,255,.4)",
-                content: (data.risk_suggestions || []).map((s) => "\u2022 " + s).join("\n") || "No suggestions.",
+                content: suggestionsContent,
             },
             {
                 icon: svgRocket, title: "Career Matching", type: "Insight",
                 color: "var(--accent)", borderColor: "rgba(0,245,212,.4)",
-                content: (data.career_predictions || []).slice(0, 3).map((p) => `${p.role} (${matchPctFn(p)}%): ${p.reason || ""}`).join("\n") || "No career insights.",
+                content: careerContent,
             },
             {
                 icon: svgPuzzle, title: "Skill Gap Analysis", type: "Recommendation",
                 color: "var(--accent-warn)", borderColor: "rgba(255,182,39,.4)",
-                content: (data.skill_gap || {}).summary || "No skill gap data.",
+                content: xai.skill_gap_reason || (data.skill_gap || {}).summary || "No skill gap data.",
             },
         ];
 
@@ -469,6 +527,253 @@
     }
 
     /* ───── SIMULATOR ───── */
+
+    /* ───── NEW: Score Trend Chart ───── */
+    function displayScoreTrend(data) {
+        const score = data.score || 0;
+        /* Simulated historical trajectory */
+        const trend = [
+            Math.max(10, Math.round(score * 0.35)),
+            Math.max(15, Math.round(score * 0.55)),
+            Math.max(20, Math.round(score * 0.75)),
+            Math.max(25, Math.round(score * 0.88)),
+            score
+        ];
+        _getOrCreateChart('scoreTrendChart', {
+            type: 'line',
+            data: {
+                labels: ['Initial', 'Month 3', 'Month 6', 'Month 9', 'Current'],
+                datasets: [{
+                    label: 'Resume Score',
+                    data: trend,
+                    borderColor: '#00f5d4',
+                    backgroundColor: 'rgba(0,245,212,.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#00f5d4',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { min: 0, max: 100, ticks: { color: '#999' }, grid: { color: 'rgba(255,255,255,.06)' } },
+                    x: { ticks: { color: '#999' }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    /* ───── NEW: Skill Profile Radar ───── */
+    function displaySkillProfile(data) {
+        const cats = data.skills_categorized || {};
+        const CATEGORY_MAP = {
+            'Frontend': ['html', 'css', 'javascript', 'react', 'angular', 'vue.js', 'typescript', 'bootstrap', 'tailwind', 'sass'],
+            'Backend': ['python', 'java', 'node.js', 'flask', 'django', 'spring boot', 'express', 'php', 'ruby', 'go', 'rust', 'c#', '.net', 'c++'],
+            'DevOps': ['docker', 'kubernetes', 'jenkins', 'terraform', 'ci/cd', 'ansible', 'linux', 'git'],
+            'Database': ['sql', 'mongodb', 'postgresql', 'mysql', 'redis', 'firebase', 'dynamodb'],
+            'Cloud': ['aws', 'azure', 'gcp', 'heroku'],
+            'AI/ML': ['machine learning', 'deep learning', 'tensorflow', 'pytorch', 'nlp', 'data analysis', 'data science', 'hadoop', 'spark', 'tableau', 'opencv']
+        };
+        /* Count skills per profile category */
+        const allSkills = [];
+        if (Array.isArray(data.skills)) { data.skills.forEach(s => allSkills.push(s.toLowerCase())); }
+        else if (typeof cats === 'object') { Object.values(cats).forEach(arr => { if (Array.isArray(arr)) arr.forEach(s => allSkills.push(s.toLowerCase())); }); }
+        const labels = [], values = [];
+        for (const [cat, keywords] of Object.entries(CATEGORY_MAP)) {
+            const matched = keywords.filter(k => allSkills.some(s => s.includes(k) || k.includes(s))).length;
+            const pct = Math.round((matched / keywords.length) * 100);
+            labels.push(cat);
+            values.push(pct);
+        }
+        _getOrCreateChart('skillProfileChart', {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Competency %',
+                    data: values,
+                    borderColor: '#6c63ff',
+                    backgroundColor: 'rgba(108,99,255,.15)',
+                    pointBackgroundColor: '#6c63ff',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    r: { min: 0, max: 100, ticks: { color: '#999', backdropColor: 'transparent' }, grid: { color: 'rgba(255,255,255,.08)' }, pointLabels: { color: '#ccc', font: { size: 11 } } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    /* ───── NEW: Industry Benchmark ───── */
+    function displayBenchmark(data) {
+        const score = data.score || 0;
+        _getOrCreateChart('benchmarkChart', {
+            type: 'bar',
+            data: {
+                labels: ['Junior (40)', 'Mid-Level (60)', 'Senior (80)', 'You'],
+                datasets: [{
+                    label: 'Score',
+                    data: [40, 60, 80, score],
+                    backgroundColor: ['rgba(255,182,39,.5)', 'rgba(108,99,255,.5)', 'rgba(0,245,212,.5)', score >= 70 ? 'rgba(0,245,212,.85)' : score >= 40 ? 'rgba(255,182,39,.85)' : 'rgba(255,77,109,.85)'],
+                    borderColor: ['#ffb627', '#6c63ff', '#00f5d4', score >= 70 ? '#00f5d4' : score >= 40 ? '#ffb627' : '#ff4d6d'],
+                    borderWidth: 1,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { min: 0, max: 100, ticks: { color: '#999' }, grid: { color: 'rgba(255,255,255,.06)' } },
+                    y: { ticks: { color: '#ccc' }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    /* ───── NEW: Career Path Timeline ───── */
+    function displayCareerTimeline(data) {
+        const container = document.getElementById('career-timeline');
+        if (!container) return;
+        container.innerHTML = '';
+        const predictions = (data.career_predictions || []).slice(0, 3);
+        if (!predictions.length) { container.innerHTML = '<p style="color:var(--text-muted)">Upload a resume to see your career timeline.</p>'; return; }
+        const years = ['Year 1', 'Year 2-3', 'Year 4-5'];
+        const levels = ['Junior', 'Mid-Level', 'Senior'];
+        const colors = ['var(--accent-warn)', 'var(--accent-secondary)', 'var(--accent)'];
+        let html = '<div class="timeline-track">';
+        predictions.forEach((p, i) => {
+            html += `<div class="timeline-node" style="animation-delay:${i * 0.15}s">
+                <div class="timeline-dot" style="background:${colors[i]}"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year" style="color:${colors[i]}">${years[i]} — ${levels[i]}</span>
+                    <strong class="timeline-role">${p.role}</strong>
+                    <span class="timeline-match">${p.match_percentage || 0}% match</span>
+                </div>
+            </div>`;
+            if (i < predictions.length - 1) html += '<div class="timeline-line"></div>';
+        });
+        html += '</div>';
+        container.innerHTML = html;
+    }
+
+    /* ───── NEW: Salary Projection ───── */
+    function displaySalaryProjection(data) {
+        const score = data.score || 0;
+        /* Base salary in LPA (Indian market approximation) */
+        const base = score >= 70 ? 6 : score >= 40 ? 4 : 2.5;
+        const growthRate = score >= 70 ? 1.25 : score >= 40 ? 1.18 : 1.12;
+        const salaries = [base];
+        for (let y = 1; y <= 4; y++) salaries.push(Math.round(salaries[y - 1] * growthRate * 10) / 10);
+        _getOrCreateChart('salaryChart', {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Projected Salary (LPA)',
+                    data: salaries,
+                    borderColor: '#ffb627',
+                    backgroundColor: 'rgba(255,182,39,.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#ffb627',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#999' } } },
+                scales: {
+                    y: { ticks: { color: '#999', callback: v => v + ' LPA' }, grid: { color: 'rgba(255,255,255,.06)' } },
+                    x: { ticks: { color: '#999' }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    /* ───── NEW: Improvement Suggestions ───── */
+    function displayImprovements(data) {
+        const container = document.getElementById('improve-container');
+        if (!container) return;
+        container.innerHTML = '';
+        const gap = data.skill_gap || {};
+        const missing = gap.missing_skills || [];
+        if (!missing.length) { container.innerHTML = '<p style="color:var(--text-muted)">No specific improvements identified — great profile!</p>'; return; }
+        /* Estimate +% impact per skill */
+        const total = data.skills_total || 1;
+        missing.slice(0, 8).forEach((s, i) => {
+            const skill = s.skill || s;
+            const priority = s.priority || 'Medium';
+            const impact = priority === 'High' ? Math.round(8 + Math.random() * 5) : priority === 'Medium' ? Math.round(4 + Math.random() * 4) : Math.round(2 + Math.random() * 3);
+            const colorClass = priority === 'High' ? 'accent-danger' : priority === 'Medium' ? 'accent-warn' : 'accent';
+            const item = document.createElement('div');
+            item.className = 'improve-item';
+            item.style.animationDelay = (i * 0.06) + 's';
+            item.innerHTML = `
+                <div class="improve-skill">${skill}</div>
+                <div class="improve-impact" style="color:var(--${colorClass})">+${impact}%</div>
+                <div class="improve-bar"><div class="improve-bar-fill" style="width:${impact * 3}%;background:var(--${colorClass})"></div></div>
+                <span class="improve-priority" style="color:var(--${colorClass})">${priority}</span>`;
+            container.appendChild(item);
+        });
+    }
+
+    /* ───── NEW: Learning Path ───── */
+    function displayLearningPath(data) {
+        const container = document.getElementById('learn-container');
+        if (!container) return;
+        container.innerHTML = '';
+        const RESOURCES = {
+            'python': { name: 'Python', link: 'Python for Everybody (Coursera)', type: 'Course' },
+            'java': { name: 'Java', link: 'Java Programming (Udemy)', type: 'Course' },
+            'javascript': { name: 'JavaScript', link: 'JavaScript.info', type: 'Tutorial' },
+            'react': { name: 'React', link: 'React Official Docs', type: 'Docs' },
+            'node.js': { name: 'Node.js', link: 'Node.js Crash Course (YouTube)', type: 'Video' },
+            'docker': { name: 'Docker', link: 'Docker Getting Started', type: 'Docs' },
+            'kubernetes': { name: 'Kubernetes', link: 'K8s Official Tutorial', type: 'Tutorial' },
+            'aws': { name: 'AWS', link: 'AWS Cloud Practitioner (Free)', type: 'Certification' },
+            'azure': { name: 'Azure', link: 'Azure Fundamentals (AZ-900)', type: 'Certification' },
+            'sql': { name: 'SQL', link: 'SQLBolt Interactive Lessons', type: 'Tutorial' },
+            'mongodb': { name: 'MongoDB', link: 'MongoDB University (Free)', type: 'Course' },
+            'machine learning': { name: 'ML', link: 'Andrew Ng ML (Coursera)', type: 'Course' },
+            'tensorflow': { name: 'TensorFlow', link: 'TF Official Tutorials', type: 'Docs' },
+            'flask': { name: 'Flask', link: 'Flask Mega-Tutorial', type: 'Tutorial' },
+            'django': { name: 'Django', link: 'Django Official Tutorial', type: 'Docs' },
+            'git': { name: 'Git', link: 'Git & GitHub Crash Course', type: 'Video' },
+            'typescript': { name: 'TypeScript', link: 'TypeScript Handbook', type: 'Docs' },
+            'go': { name: 'Go', link: 'Go Tour (Official)', type: 'Tutorial' },
+            'rust': { name: 'Rust', link: 'Rust Book (Official)', type: 'Docs' },
+        };
+        const gap = data.skill_gap || {};
+        const missing = gap.missing_skills || [];
+        let count = 0;
+        missing.forEach(s => {
+            const skill = (s.skill || s).toLowerCase();
+            const res = RESOURCES[skill];
+            if (!res || count >= 6) return;
+            count++;
+            const card = document.createElement('div');
+            card.className = 'learn-card';
+            card.style.animationDelay = (count * 0.08) + 's';
+            card.innerHTML = `
+                <div class="learn-header">
+                    <span class="learn-skill">${res.name}</span>
+                    <span class="learn-type">${res.type}</span>
+                </div>
+                <p class="learn-resource">${res.link}</p>`;
+            container.appendChild(card);
+        });
+        if (count === 0) container.innerHTML = '<p style="color:var(--text-muted)">No specific learning recommendations — your skills are well-covered!</p>';
+    }
+
     let currentData = null;
 
     function populateSimulator(data) {

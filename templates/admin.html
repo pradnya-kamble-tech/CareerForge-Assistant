@@ -121,6 +121,26 @@
                     <div class="stat-value">{{ "%.0f"|format(avg_score) }}%</div>
                     <div class="stat-label">Avg Strength</div>
                 </div>
+                <div class="stat-card" style="animation-delay:.36s">
+                    <div class="stat-icon-wrap"><span class="icon-svg"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="var(--accent-secondary)" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg></span></div>
+                    <div class="stat-value">{{ total_users }}</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                <div class="stat-card" style="animation-delay:.42s">
+                    <div class="stat-icon-wrap"><span class="icon-svg"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="var(--accent-warn)" stroke-width="2">
+                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                <line x1="8" y1="6" x2="16" y2="6" />
+                                <line x1="8" y1="10" x2="16" y2="10" />
+                                <line x1="8" y1="14" x2="12" y2="14" />
+                            </svg></span></div>
+                    <div class="stat-value">{{ total_logs }}</div>
+                    <div class="stat-label">Activity Logs</div>
+                </div>
             </div>
 
             <div class="panels-grid">
@@ -130,40 +150,7 @@
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                             <polyline points="17 6 23 6 23 12" />
                         </svg> Score Distribution</h3>
-                    {% set high_count = score_dist['70-100'] %}
-                    {% set mid_count = score_dist['40-69'] %}
-                    {% set low_count = score_dist['0-39'] %}
-
-                    <div class="dist-item">
-                        <span class="dist-label" style="color:var(--accent)">High (70-100)</span>
-                        <div class="dist-bar">
-                            <div class="dist-fill fill-high"
-                                style="width:{{ (high_count / total * 100)|round if total else 0 }}%">
-                                {{ (high_count / total * 100)|round|int if total else 0 }}%
-                            </div>
-                        </div>
-                        <span class="dist-count">{{ high_count }}</span>
-                    </div>
-                    <div class="dist-item">
-                        <span class="dist-label" style="color:var(--accent-warn)">Mid (40-69)</span>
-                        <div class="dist-bar">
-                            <div class="dist-fill fill-mid"
-                                style="width:{{ (mid_count / total * 100)|round if total else 0 }}%">
-                                {{ (mid_count / total * 100)|round|int if total else 0 }}%
-                            </div>
-                        </div>
-                        <span class="dist-count">{{ mid_count }}</span>
-                    </div>
-                    <div class="dist-item">
-                        <span class="dist-label" style="color:var(--accent-danger)">Low (0-39)</span>
-                        <div class="dist-bar">
-                            <div class="dist-fill fill-low"
-                                style="width:{{ (low_count / total * 100)|round if total else 0 }}%">
-                                {{ (low_count / total * 100)|round|int if total else 0 }}%
-                            </div>
-                        </div>
-                        <span class="dist-count">{{ low_count }}</span>
-                    </div>
+                    <canvas id="scoreChart" height="200"></canvas>
                 </div>
 
                 <div class="panel">
@@ -174,20 +161,7 @@
                             <line x1="12" y1="9" x2="12" y2="13" />
                             <line x1="12" y1="17" x2="12.01" y2="17" />
                         </svg> Risk Distribution</h3>
-                    {% for level, color in [('Low','var(--accent)'), ('Medium','var(--accent-warn)'),
-                    ('High','var(--accent-danger)')] %}
-                    {% set count = risk_dist.get(level, 0) %}
-                    <div class="dist-item">
-                        <span class="dist-label" style="color:{{ color }}">{{ level }}</span>
-                        <div class="dist-bar">
-                            <div class="dist-fill fill-risk-{{ level|lower }}"
-                                style="width:{{ (count / total * 100)|round if total else 0 }}%">
-                                {{ (count / total * 100)|round|int if total else 0 }}%
-                            </div>
-                        </div>
-                        <span class="dist-count">{{ count }}</span>
-                    </div>
-                    {% endfor %}
+                    <canvas id="riskChart" height="200"></canvas>
                 </div>
 
                 <div class="panel panel-full">
@@ -231,7 +205,67 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="/static/script.js"></script>
+    {% if total > 0 %}
+    <script>
+        (function () {
+            const gridColor = 'rgba(255,255,255,.08)';
+            const fontColor = '#999';
+
+            /* ── Score Distribution Bar Chart ── */
+            const scoreCtx = document.getElementById('scoreChart');
+            if (scoreCtx) {
+                new Chart(scoreCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Low (0-39)', 'Mid (40-69)', 'High (70-100)'],
+                        datasets: [{
+                            label: 'Candidates',
+                            data: [{{ score_dist['0-39'] }}, {{ score_dist['40-69'] }}, {{ score_dist['70-100'] }}],
+            backgroundColor: ['rgba(255,77,109,.7)', 'rgba(255,182,39,.7)', 'rgba(0,245,212,.7)'],
+                borderColor: ['#ff4d6d', '#ffb627', '#00f5d4'],
+                    borderWidth: 1,
+                        borderRadius: 6
+        }]
+                },
+        options: {
+            responsive: true,
+                plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, ticks: { color: fontColor, stepSize: 1 }, grid: { color: gridColor } },
+                x: { ticks: { color: fontColor }, grid: { display: false } }
+            }
+        }
+            });
+        }
+
+        /* ── Risk Distribution Doughnut Chart ── */
+        const riskCtx = document.getElementById('riskChart');
+        if (riskCtx) {
+            new Chart(riskCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Low', 'Medium', 'High'],
+                    datasets: [{
+                        data: [{{ risk_dist.get('Low', 0) }}, {{ risk_dist.get('Medium', 0) }}, {{ risk_dist.get('High', 0) }}],
+        backgroundColor: ['rgba(0,245,212,.75)', 'rgba(255,182,39,.75)', 'rgba(255,77,109,.75)'],
+            borderColor: ['#00f5d4', '#ffb627', '#ff4d6d'],
+                borderWidth: 1
+                    }]
+                },
+        options: {
+            responsive: true,
+                cutout: '55%',
+                    plugins: {
+                legend: { position: 'bottom', labels: { color: fontColor, padding: 16 } }
+            }
+        }
+            });
+        }
+    }) ();
+    </script>
+    {% endif %}
 </body>
 
 </html>

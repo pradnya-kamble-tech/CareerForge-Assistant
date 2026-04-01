@@ -1094,3 +1094,646 @@
 2026-03-30 10:27:43 | WARNING | Rejected non-resume PDF: ca800a08_VishwaNova_ppt.pdf
 2026-03-30 10:27:43 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:27:43] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
 2026-03-30 10:28:03 | INFO    | 127.0.0.1 - - [30/Mar/2026 10:28:03] "[31m[1mGET /download-report HTTP/1.1[0m" 400 -
+2026-03-31 22:09:02 | INFO    | CareerForge AI server starting up...
+2026-03-31 22:09:02 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-03-31 22:09:02 | INFO    | [33mPress CTRL+C to quit[0m
+2026-03-31 22:09:02 | INFO    |  * Restarting with stat
+2026-03-31 22:09:04 | INFO    | CareerForge AI server starting up...
+2026-03-31 22:09:04 | WARNING |  * Debugger is active!
+2026-03-31 22:09:04 | INFO    |  * Debugger PIN: 106-958-589
+2026-03-31 22:09:41 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:41] "GET / HTTP/1.1" 200 -
+2026-03-31 22:09:41 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:09:41 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:41] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:09:42 | WARNING | 404 Not Found: /favicon.ico
+2026-03-31 22:09:42 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 22:09:51 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:51] "GET /api/status HTTP/1.1" 200 -
+2026-03-31 22:09:57 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:57] "GET / HTTP/1.1" 200 -
+2026-03-31 22:09:57 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:09:57 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:09:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:10:34 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:10:34] "GET / HTTP/1.1" 200 -
+2026-03-31 22:10:34 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:10:34] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:10:34 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:10:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:14:10 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:10] "GET /login HTTP/1.1" 200 -
+2026-03-31 22:14:11 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:14:11 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:14:17 | INFO    | User logged in: test@student.com (role=Student)
+2026-03-31 22:14:17 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-31 22:14:17 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:17] "GET /student HTTP/1.1" 200 -
+2026-03-31 22:14:17 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:14:17 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:14:53 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-03-31 22:14:53 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:14:53] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-03-31 22:15:09 | INFO    | Student resume uploaded: 002e0bce_259-job-resume-template.pdf (user=test@student.com)
+2026-03-31 22:15:10 | INFO    | Student analysis complete: 002e0bce_259-job-resume-template.pdf | score=25 | skills=1
+2026-03-31 22:15:10 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:15:10] "POST /upload HTTP/1.1" 200 -
+2026-03-31 22:17:47 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:17:47] "POST /simulate HTTP/1.1" 200 -
+2026-03-31 22:17:47 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:17:47] "POST /simulate HTTP/1.1" 200 -
+2026-03-31 22:18:15 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:15] "GET /login HTTP/1.1" 200 -
+2026-03-31 22:18:15 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:18:15 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:18:26 | INFO    | User logged in: test@student.com (role=Student)
+2026-03-31 22:18:26 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-31 22:18:26 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:26] "GET /student HTTP/1.1" 200 -
+2026-03-31 22:18:26 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:18:26 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-03-31 22:18:30 | INFO    | User logged out
+2026-03-31 22:18:30 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-31 22:18:30 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:30] "GET /login HTTP/1.1" 200 -
+2026-03-31 22:18:30 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-03-31 22:18:30 | INFO    | 127.0.0.1 - - [31/Mar/2026 22:18:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 14:13:35 | INFO    | CareerForge AI server starting up...
+2026-04-01 14:14:37 | INFO    | CareerForge AI server starting up...
+2026-04-01 14:14:37 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 14:14:37 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 14:14:37 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 14:14:39 | INFO    | CareerForge AI server starting up...
+2026-04-01 14:14:39 | WARNING |  * Debugger is active!
+2026-04-01 14:14:39 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 14:16:01 | INFO    | CareerForge AI server starting up...
+2026-04-01 14:16:01 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 14:16:01 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 14:16:01 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 14:16:02 | INFO    | CareerForge AI server starting up...
+2026-04-01 14:16:02 | WARNING |  * Debugger is active!
+2026-04-01 14:16:02 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 14:16:55 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:16:55] "GET / HTTP/1.1" 200 -
+2026-04-01 14:16:55 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:16:55] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 14:16:55 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:16:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 14:16:57 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 14:16:57 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:16:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 14:17:00 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:00] "GET /login HTTP/1.1" 200 -
+2026-04-01 14:17:00 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 14:17:00 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 14:17:07 | INFO    | User logged in: pradnyark377@gmail.com (role=Student)
+2026-04-01 14:17:07 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 14:17:07 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:07] "GET /student HTTP/1.1" 200 -
+2026-04-01 14:17:07 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 14:17:07 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 14:17:16 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-04-01 14:17:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:16] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-04-01 14:17:24 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:24] "[31m[1mGET /download-report HTTP/1.1[0m" 400 -
+2026-04-01 14:17:41 | INFO    | Student resume uploaded: 198a23b3_259-job-resume-template.pdf (user=pradnyark377@gmail.com)
+2026-04-01 14:17:41 | INFO    | Student analysis complete: 198a23b3_259-job-resume-template.pdf | score=25 | skills=1 | id=1226f153c28a4ee3b89e5501ebb326ce
+2026-04-01 14:17:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 14:17:41] "POST /upload HTTP/1.1" 200 -
+2026-04-01 15:13:38 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 15:13:39 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\report_generator.py', reloading
+2026-04-01 15:13:39 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\analyzer.py', reloading
+2026-04-01 15:13:40 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:13:42 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:13:42 | WARNING |  * Debugger is active!
+2026-04-01 15:13:42 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:19:43 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:33:22 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:33:22 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 15:33:22 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 15:33:22 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:33:23 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:33:23 | WARNING |  * Debugger is active!
+2026-04-01 15:33:23 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:34:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:10] "GET / HTTP/1.1" 200 -
+2026-04-01 15:34:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:10] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 15:34:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:10] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 15:34:12 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 15:34:12 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 15:34:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:14] "GET /login HTTP/1.1" 200 -
+2026-04-01 15:34:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:34:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:34:16 | INFO    | User logged in: pradnyark377@gmail.com (role=Student)
+2026-04-01 15:34:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 15:34:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:16] "GET /student HTTP/1.1" 200 -
+2026-04-01 15:34:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:34:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:34:24 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-04-01 15:34:24 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:34:24] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-04-01 15:35:00 | INFO    | Student resume uploaded: 11c60901_341-resume-template-ats-basic.pdf (user=pradnyark377@gmail.com)
+2026-04-01 15:35:01 | INFO    | Student analysis complete: 11c60901_341-resume-template-ats-basic.pdf | score=69 | skills=6 | id=66c2bc29dc744d5d952e081e5607210d
+2026-04-01 15:35:01 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:35:01] "POST /upload HTTP/1.1" 200 -
+2026-04-01 15:35:51 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:35:51] "POST /simulate HTTP/1.1" 200 -
+2026-04-01 15:35:51 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:35:51] "POST /simulate HTTP/1.1" 200 -
+2026-04-01 15:37:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:37:43] "GET /download-report HTTP/1.1" 200 -
+2026-04-01 15:38:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:13] "GET / HTTP/1.1" 200 -
+2026-04-01 15:38:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:38:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:38:15 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 15:38:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 15:38:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:16] "GET /login HTTP/1.1" 200 -
+2026-04-01 15:38:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:38:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:38:40 | WARNING | Failed login attempt for: recruiter@careerforge.ai
+2026-04-01 15:38:40 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 15:38:40 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:40] "GET /login HTTP/1.1" 200 -
+2026-04-01 15:38:40 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:38:40 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:38:50 | WARNING | Failed login attempt for: recruiter@careerforge.ai
+2026-04-01 15:38:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 15:38:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:50] "GET /login HTTP/1.1" 200 -
+2026-04-01 15:38:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:38:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:38:58 | INFO    | User logged in: pradnyark377@gmail.com (role=Student)
+2026-04-01 15:38:58 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 15:38:58 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:58] "GET /student HTTP/1.1" 200 -
+2026-04-01 15:38:58 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:38:58 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:38:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:39:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:15] "[32mGET /recruiter HTTP/1.1[0m" 302 -
+2026-04-01 15:39:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:15] "GET /access-denied HTTP/1.1" 200 -
+2026-04-01 15:39:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:39:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:39:17 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:17] "GET /student HTTP/1.1" 200 -
+2026-04-01 15:39:17 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 15:39:17 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:39:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 15:40:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 15:40:52] "[31m[1mGET /download-report HTTP/1.1[0m" 400 -
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:44 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 15:55:45 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:55:45 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:55:48 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:55:48 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:55:48 | WARNING |  * Debugger is active!
+2026-04-01 15:55:48 | WARNING |  * Debugger is active!
+2026-04-01 15:55:48 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:55:48 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\dtypes\\inference.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\dtypes\\base.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\interchange\\dataframe.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\interchange\\dataframe.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\datetimes.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\datetimes.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\timedeltas.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\timedeltas.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\period.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\period.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\methods\\to_dict.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\methods\\to_dict.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\gbq.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\stata.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\feather_format.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\feather_format.py', reloading
+2026-04-01 15:55:48 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\parquet.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\orc.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\formats\\xml.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\compat\\_constants.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\indexers\\utils.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\internals\\base.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\internals\\base.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\computation\\eval.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\dtype.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\dtype.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\computation\\expressions.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\computation\\expressions.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\reshape\\pivot.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\reshape\\reshape.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\reshape\\concat.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\reshape\\merge.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\arrays\\sparse\\accessor.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\_libs\\tslibs\\__init__.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\dtypes\\astype.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\dtypes\\generic.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\sample.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\sample.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\array_algos\\replace.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\array_algos\\replace.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\base.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\methods\\describe.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\missing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\missing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\window\\__init__.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\formats\\printing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\formats\\printing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\indexers\\objects.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\pytables.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\pytables.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\computation\\parsing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\computation\\parsing.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\indexes\\range.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\formats\\excel.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\sql.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\pickle.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\clipboards.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\io\\clipboards.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\window\\rolling.py', reloading
+2026-04-01 15:55:49 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:55:49 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:55:51 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:55:51 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:55:51 | WARNING |  * Debugger is active!
+2026-04-01 15:55:51 | WARNING |  * Debugger is active!
+2026-04-01 15:55:51 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:55:51 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:57:04 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 15:57:04 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 15:57:05 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:57:05 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:57:06 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:57:06 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:57:06 | INFO    | SQLite database initialised.
+2026-04-01 15:57:06 | INFO    | SQLite database initialised.
+2026-04-01 15:57:06 | WARNING |  * Debugger is active!
+2026-04-01 15:57:06 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:57:06 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:57:40 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:57:40 | INFO    | SQLite database initialised.
+2026-04-01 15:57:53 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\resume_parser.py', reloading
+2026-04-01 15:57:53 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\resume_parser.py', reloading
+2026-04-01 15:57:55 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:57:55 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 15:57:56 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:57:56 | INFO    | CareerForge AI server starting up...
+2026-04-01 15:57:56 | INFO    | SQLite database initialised.
+2026-04-01 15:57:56 | INFO    | SQLite database initialised.
+2026-04-01 15:57:56 | WARNING |  * Debugger is active!
+2026-04-01 15:57:56 | WARNING |  * Debugger is active!
+2026-04-01 15:57:56 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 15:57:56 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 16:14:45 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\_name_mangler.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\_name_mangler.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\_version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\_version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\mixins.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\strenum\\mixins.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\datastructures.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\frames.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\headers.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\http11.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\imports.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\streams.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\typing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\uri.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\__main__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\async_timeout.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\compatibility.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\asyncio\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\extensions\\base.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\extensions\\permessage_deflate.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\extensions\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\framing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\handshake.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\legacy\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\~ebsockets\\sync\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\datastructures.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\frames.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\headers.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http11.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\imports.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\streams.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\typing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\uri.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__main__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\async_timeout.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\compatibility.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\asyncio\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\base.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\permessage_deflate.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\framing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\handshake.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\datastructures.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\frames.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\headers.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http11.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\imports.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\streams.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\typing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\uri.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__main__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__main__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\__main__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\datastructures.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\datastructures.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\exceptions.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\frames.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\frames.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\headers.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\headers.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http11.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\http11.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\imports.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\imports.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\streams.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\streams.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\typing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\typing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\uri.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\uri.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\version.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\base.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\permessage_deflate.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\base.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\base.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\permessage_deflate.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\extensions\\permessage_deflate.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\async_timeout.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\compatibility.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\framing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\handshake.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\async_timeout.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\async_timeout.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\auth.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\compatibility.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\compatibility.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\framing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\framing.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\handshake.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\handshake.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\http.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\protocol.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\legacy\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\__init__.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\client.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\connection.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\messages.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\server.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\utils.py', reloading
+2026-04-01 16:14:46 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\websockets\\sync\\utils.py', reloading
+2026-04-01 16:14:47 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 16:14:51 | INFO    | CareerForge AI server starting up...
+2026-04-01 16:14:51 | INFO    | SQLite database initialised.
+2026-04-01 16:14:51 | WARNING |  * Debugger is active!
+2026-04-01 16:14:51 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\lextab.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\markers.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\api\\indexers\\__init__.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_interpolate.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_color_data.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\api\\interchange\\__init__.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\mlab.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\PIL\\ImageWin.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\interchange\\column.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\c_ast.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\interchange\\buffer.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\__init__.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_fitpack_py.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pandas\\core\\interchange\\utils.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\patches.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\expression.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\c_parser.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\path.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\schema.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\ddl.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\c_lexer.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pyarrow\\dataset.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\ply\\__init__.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_meta.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_fitpack2.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\quiver.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_collections.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\stackplot.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_rbfinterp.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_compat.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\ply\\yacc.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\_dml_constructors.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\streamplot.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_functools.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_polyint.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\table.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\_selectable_constructors.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\plyparser.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_itertools.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_cubic.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\text.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\ast_transforms.py', reloading
+2026-04-01 16:14:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\compat\\py39.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_ndgriddata.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\schema.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\ticker.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\compat\\py311.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\pycparser\\ply\\lex.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\importlib_metadata\\_adapters.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_bsplines.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\types.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\transforms.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\zipp\\compat\\overlay.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_pade.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\tri\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\sqltypes.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\units.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_rgi.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_admin_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\axes\\_secondary_axes.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_admin_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_admin_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_admin_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\zipp\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\selectable.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_base_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_base_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\gotrue_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\storage.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_async\\storage.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_admin_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\_rbf.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_admin_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\zipp\\compat\\py310.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_admin_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_admin_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_base_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_base_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_client.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\fitpack.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\gotrue_mfa_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\storage.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\_sync\\storage.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\constants.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\constants.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\errors.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\errors.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\container.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\helpers.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\helpers.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\elements.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\http_clients.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\http_clients.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\timer.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\timer.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\types.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\types.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\version.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\gotrue\\version.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\fitpack2.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\zipp\\glob.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\cffi\\ffiplatform.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\interpolate.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\exc.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\tri\\_tricontour.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\ndgriddata.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\cffi\\vengine_gen.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\engine\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\tri\\_tripcolor.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\polyint.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\engine\\create.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\tri\\_triplot.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\interpolate\\rbf.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\cffi\\vengine_cpy.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\engine\\base.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_api\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\cffi\\_imp_emulation.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_version.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\special\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\type_api.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_docstring.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\setuptools\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\inspection.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\scipy\\special\\_basic.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\rcsetup.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\distutils\\msvc9compiler.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\util\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\certifi\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\pool\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\certifi\\core.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\sql\\__init__.py', reloading
+2026-04-01 16:14:52 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 16:14:54 | INFO    | CareerForge AI server starting up...
+2026-04-01 16:14:54 | INFO    | SQLite database initialised.
+2026-04-01 16:14:54 | WARNING |  * Debugger is active!
+2026-04-01 16:14:54 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 16:14:54 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\util\\_concurrency_py3k.py', reloading
+2026-04-01 16:14:54 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\engine\\processors.py', reloading
+2026-04-01 16:14:54 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\dialects\\__init__.py', reloading
+2026-04-01 16:14:54 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\pool\\events.py', reloading
+2026-04-01 16:14:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\numpy\\_version.py', reloading
+2026-04-01 16:14:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\sqlalchemy\\util\\queue.py', reloading
+2026-04-01 16:14:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\backend_tools.py', reloading
+2026-04-01 16:14:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_cm_listed.py', reloading
+2026-04-01 16:14:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\matplotlib\\_tight_bbox.py', reloading
+2026-04-01 16:14:56 | INFO    |  * Restarting with watchdog (windowsapi)

@@ -14,6 +14,12 @@ from analyzer import (extract_skills, calculate_score, risk_analysis,
                       career_prediction, skill_gap_analysis,
                       simulate_evolution, get_all_skills)
 from report_generator import generate_report
+from database import (
+    init_db, db_add_user, db_get_user, db_user_exists,
+    db_add_resume, db_get_resumes, db_count_resumes,
+    db_add_decision, db_get_decisions,
+    db_add_log, db_get_logs, db_get_admin_stats,
+)
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "careerforge-dev-secret-key-2026")
@@ -32,11 +38,15 @@ logging.basicConfig(
 logger = logging.getLogger("CareerForge")
 logger.info("CareerForge AI server starting up...")
 
+# ---------- Initialise SQLite Database ----------
+init_db()
+logger.info("SQLite database initialised.")
+
 # ---------- Configuration ----------
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 ALLOWED_EXTENSIONS = {"pdf"}
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-USERS_FILE = os.path.join(os.path.dirname(__file__), "data", "users.json")
+ANALYSES_FILE = os.path.join(os.path.dirname(__file__), "data", "analyses.json")
 
 # Create uploads/ folder if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -53,29 +63,30 @@ def validate_resume_content(text):
     matches = set(RESUME_KEYWORDS.findall(text.lower()))
     return len(matches) >= 2
 
-# ---------- In-memory stores ----------
-all_candidates = []          # admin analytics
-shortlisted_candidates = []  # recruiter decisions
-rejected_candidates = []     # recruiter decisions
 
+# ---------- JSON Helpers (kept for analyses only) ----------
 
-# ---------- User helpers ----------
-
-def load_users():
-    """Load users from the JSON file."""
-    if not os.path.exists(USERS_FILE):
-        return {}
-    with open(USERS_FILE, "r") as f:
+def _load_json(filepath):
+    if not os.path.exists(filepath):
+        return []
+    with open(filepath, "r", encoding="utf-8") as f:
         try:
             return json.load(f)
         except json.JSONDecodeError:
-            return {}
+            return []
 
 
-def save_users(users):
-    """Save users dictionary to the JSON file."""
-    with open(USERS_FILE, "w") as f:
-        json.dump(users, f, indent=2)
+def _save_json(filepath, data):
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def load_analyses():
+    return _load_json(ANALYSES_FILE)
+
+
+def save_analyses(data):
+    _save_json(ANALYSES_FILE, data)
 
 
 def login_required(f):
@@ -124,14 +135,12 @@ def register():
             flash("Email and password are required.", "error")
             return redirect(url_for("register"))
 
-        users = load_users()
-
-        if email in users:
+        if db_user_exists(email):
             flash("An account with this email already exists.", "error")
             return redirect(url_for("register"))
 
-        users[email] = {"password": password, "role": role}
-        save_users(users)
+        db_add_user(email, password, role)
+        db_add_log("register", email, f"New {role} account created")
         logger.info("New user registered: %s (role=%s)", email, role)
 
         flash("Registration successful! Please login.", "success")
@@ -151,25 +160,26 @@ def login():
             flash("Email and password are required.", "error")
             return redirect(url_for("login"))
 
-        users = load_users()
+        user = db_get_user(email)
 
-        if email not in users or users[email]["password"] != password:
+        if not user or user["password"] != password:
             logger.warning("Failed login attempt for: %s", email)
+            db_add_log("login_failed", email, "Invalid credentials")
             flash("Invalid email or password.", "error")
             return redirect(url_for("login"))
 
         # Set session
         session["user"] = email
-        session["role"] = users[email]["role"]
-        logger.info("User logged in: %s (role=%s)", email, users[email]["role"])
+        session["role"] = user["role"]
+        db_add_log("login", email, f"Logged in as {user['role']}")
+        logger.info("User logged in: %s (role=%s)", email, user["role"])
 
         flash(f"Welcome back, {email}!", "success")
 
         # Role-based redirect
-        user_role = users[email]["role"]
-        if user_role == "Recruiter":
+        if user["role"] == "Recruiter":
             return redirect(url_for("recruiter_page"))
-        elif user_role == "Admin":
+        elif user["role"] == "Admin":
             return redirect(url_for("admin_page"))
         return redirect(url_for("student_dashboard"))
 
@@ -248,6 +258,7 @@ def upload_resume():
     filename = f"{uuid4().hex[:8]}_{raw_name}"
     save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
     file.save(save_path)
+    db_add_log("upload", session.get("user", ""), f"Student uploaded {filename}")
     logger.info("Student resume uploaded: %s (user=%s)", filename, session.get("user"))
 
     try:
@@ -265,8 +276,24 @@ def upload_resume():
         career_results = career_prediction(skill_results["skills"])
         gap_results = skill_gap_analysis(skill_results["skills"])
 
+        # Unique analysis ID for safe PDF download
+        analysis_id = uuid4().hex
+
+        # Structured explainability object
+        explainability = {
+            "score_reason": score_results["reason"],
+            "risk_reason": risk_results["reason"],
+            "risk_suggestions": risk_results["suggestions"],
+            "career_reasons": [
+                {"role": p["role"], "match": p["match_percentage"], "reason": p["reason"]}
+                for p in career_results[:5]
+            ],
+            "skill_gap_reason": gap_results.get("summary", ""),
+        }
+
         result = {
             "success": True,
+            "analysis_id": analysis_id,
             "message": f"'{raw_name}' uploaded and analysed successfully!",
             "filename": filename,
             "size_kb": round(os.path.getsize(save_path) / 1024, 1),
@@ -284,14 +311,24 @@ def upload_resume():
             "risk_suggestions": risk_results["suggestions"],
             "career_predictions": career_results,
             "skill_gap": gap_results,
+            "explainability": explainability,
         }
 
-        session['last_analysis'] = result
-        logger.info("Student analysis complete: %s | score=%d | skills=%d",
-                    filename, score_results["score"], skill_results["total"])
+        # Persist analysis for safe PDF download
+        analyses = load_analyses()
+        analyses.append({"id": analysis_id, **result})
+        # Keep only last 200 analyses to prevent unbounded growth
+        if len(analyses) > 200:
+            analyses = analyses[-200:]
+        save_analyses(analyses)
+
+        session['last_analysis_id'] = analysis_id
+        logger.info("Student analysis complete: %s | score=%d | skills=%d | id=%s",
+                    filename, score_results["score"], skill_results["total"], analysis_id)
         return jsonify(result)
 
     except Exception as e:
+        db_add_log("error", session.get("user", ""), f"Analysis failed: {filename} — {str(e)}")
         logger.error("Error analysing resume %s: %s", filename, str(e))
         return jsonify({"success": False, "message": "Error processing resume. Please ensure it is a valid PDF."}), 500
 
@@ -345,8 +382,22 @@ def demo_data():
         career_results = career_prediction(skill_results["skills"])
         gap_results = skill_gap_analysis(skill_results["skills"])
 
+        analysis_id = uuid4().hex
+
+        explainability = {
+            "score_reason": score_results["reason"],
+            "risk_reason": risk_results["reason"],
+            "risk_suggestions": risk_results["suggestions"],
+            "career_reasons": [
+                {"role": p["role"], "match": p["match_percentage"], "reason": p["reason"]}
+                for p in career_results[:5]
+            ],
+            "skill_gap_reason": gap_results.get("summary", ""),
+        }
+
         result = {
             "success": True,
+            "analysis_id": analysis_id,
             "message": "Demo resume analysed successfully!",
             "filename": "demo_resume_priya_sharma.pdf",
             "size_kb": 142.5,
@@ -364,12 +415,18 @@ def demo_data():
             "risk_suggestions": risk_results["suggestions"],
             "career_predictions": career_results,
             "skill_gap": gap_results,
+            "explainability": explainability,
         }
 
-        # Store for PDF download in demo mode too — per-user session
-        session['last_analysis'] = result
+        # Persist for safe PDF download in demo mode
+        analyses = load_analyses()
+        analyses.append({"id": analysis_id, **result})
+        if len(analyses) > 200:
+            analyses = analyses[-200:]
+        save_analyses(analyses)
+        session['last_analysis_id'] = analysis_id
 
-        logger.info("Demo mode analysis served")
+        logger.info("Demo mode analysis served (id=%s)", analysis_id)
         return jsonify(result)
 
     except Exception as e:
@@ -403,12 +460,19 @@ def simulate():
 
 
 @app.route("/download-report")
-@login_required
-def download_report():
-    """Generate and download a PDF report of the latest analysis."""
-    analysis = session.get('last_analysis')
-    if not analysis:
+@app.route("/download-report/<analysis_id>")
+def download_report(analysis_id=None):
+    """Generate and download a PDF report by analysis ID."""
+    # Resolve the analysis ID
+    if not analysis_id:
+        analysis_id = session.get('last_analysis_id')
+    if not analysis_id:
         return jsonify({"success": False, "message": "No analysis available. Upload a resume first."}), 400
+
+    analyses = load_analyses()
+    analysis = next((a for a in analyses if a.get("id") == analysis_id), None)
+    if not analysis:
+        return jsonify({"success": False, "message": "Analysis not found."}), 404
 
     pdf_bytes = generate_report(analysis)
     buffer = BytesIO(pdf_bytes)
@@ -507,7 +571,9 @@ def recruiter_upload():
                 "risk_icon": risk_results["risk_icon"],
                 "career_predictions": career_results,
                 "insight": insight,
+                "owner": session.get("user", "unknown"),
             })
+            db_add_log("recruiter_upload", session.get("user", ""), f"Analysed {filename} (score={score_results['score']})")
             logger.info("Recruiter analysis: %s | score=%d", filename, score_results["score"])
         except Exception as e:
             logger.error("Error processing %s: %s", filename, str(e))
@@ -527,7 +593,10 @@ def recruiter_upload():
             msg += f" ({skipped} file{'s' if skipped != 1 else ''} skipped)"
         flash(msg, "success")
         logger.info("Recruiter batch complete: %d resumes (user=%s)", count, session.get("user"))
-        all_candidates.extend(candidates)
+
+        # Persist to SQLite
+        for c in candidates:
+            db_add_resume(c)
 
     return render_template("recruiter.html",
                            user=session.get("user"),
@@ -539,43 +608,39 @@ def recruiter_upload():
 @app.route("/recruiter-decision", methods=["POST"])
 @role_required("Recruiter", "Admin")
 def recruiter_decision():
-    """Track shortlist/reject decisions from the recruiter."""
+    """Track shortlist/reject decisions — persisted to SQLite."""
     data = request.get_json()
     if not data:
         return jsonify({"success": False}), 400
 
-    candidate = {
+    owner = session.get("user", "unknown")
+    decision = data.get("decision", "")
+    record = {
         "filename": data.get("filename", "unknown"),
         "score": data.get("score", 0),
         "risk_level": data.get("risk_level", "unknown"),
         "insight": data.get("insight", ""),
+        "owner": owner,
+        "decision": decision,
     }
-    decision = data.get("decision", "")
-
-    if decision == "shortlisted":
-        # Remove from rejected if previously there
-        rejected_candidates[:] = [c for c in rejected_candidates if c["filename"] != candidate["filename"]]
-        if not any(c["filename"] == candidate["filename"] for c in shortlisted_candidates):
-            shortlisted_candidates.append(candidate)
-        logger.info("Recruiter shortlisted: %s", candidate["filename"])
-    elif decision == "rejected":
-        shortlisted_candidates[:] = [c for c in shortlisted_candidates if c["filename"] != candidate["filename"]]
-        if not any(c["filename"] == candidate["filename"] for c in rejected_candidates):
-            rejected_candidates.append(candidate)
-        logger.info("Recruiter rejected: %s", candidate["filename"])
-
+    db_add_decision(record)
+    db_add_log("decision", owner, f"{decision}: {record['filename']}")
+    logger.info("Recruiter %s: %s (user=%s)", decision, record["filename"], owner)
     return jsonify({"success": True, "decision": decision})
 
 
 @app.route("/recruiter-results")
 @role_required("Recruiter", "Admin")
 def recruiter_results():
-    """Show shortlisted and rejected candidates."""
+    """Show shortlisted and rejected candidates — filtered by owner."""
+    owner = session.get("user", "unknown")
+    shortlisted = db_get_decisions(owner, "shortlisted")
+    rejected = db_get_decisions(owner, "rejected")
     return render_template("recruiter_results.html",
                            user=session.get("user"),
                            role=session.get("role"),
-                           shortlisted=shortlisted_candidates,
-                           rejected=rejected_candidates)
+                           shortlisted=shortlisted,
+                           rejected=rejected)
 
 
 # ---------- Admin Routes ----------
@@ -583,53 +648,21 @@ def recruiter_results():
 @app.route("/admin")
 @role_required("Admin")
 def admin_page():
-    """Render the admin dashboard with system-wide statistics."""
-    total = len(all_candidates)
-
-    # Average score
-    avg_score = round(sum(c["score"] for c in all_candidates) / total, 1) if total else 0
-
-    # Top 5 skills across all resumes
-    from collections import Counter
-    skill_counts = Counter()
-    for c in all_candidates:
-        skill_counts.update(c["skills"])
-    top_skills = skill_counts.most_common(5)
-
-    # Risk distribution
-    risk_dist = Counter(c["risk_level"] for c in all_candidates)
-
-    # Score distribution buckets
-    score_dist = {"0-39": 0, "40-69": 0, "70-100": 0}
-    for c in all_candidates:
-        if c["score"] < 40:
-            score_dist["0-39"] += 1
-        elif c["score"] < 70:
-            score_dist["40-69"] += 1
-        else:
-            score_dist["70-100"] += 1
-
-    # Highest / lowest scores
-    highest_score = max((c["score"] for c in all_candidates), default=0)
-    lowest_score = min((c["score"] for c in all_candidates), default=0)
-
-    # Total unique skills
-    unique_skills = len(skill_counts)
-
-    # Return top 10 skills (enhanced from 5)
-    top_skills = skill_counts.most_common(10)
-
+    """Render the admin dashboard with system-wide statistics from SQLite."""
+    stats = db_get_admin_stats()
     return render_template("admin.html",
                            user=session.get("user"),
                            role=session.get("role"),
-                           total=total,
-                           avg_score=avg_score,
-                           highest_score=highest_score,
-                           lowest_score=lowest_score,
-                           unique_skills=unique_skills,
-                           top_skills=top_skills,
-                           risk_dist=dict(risk_dist),
-                           score_dist=score_dist)
+                           total=stats["total"],
+                           avg_score=stats["avg_score"],
+                           highest_score=stats["highest_score"],
+                           lowest_score=stats["lowest_score"],
+                           unique_skills=stats["unique_skills"],
+                           top_skills=stats["top_skills"],
+                           risk_dist=stats["risk_dist"],
+                           score_dist=stats["score_dist"],
+                           total_users=stats["total_users"],
+                           total_logs=stats["total_logs"])
 
 # ---------- Logs Route (Admin only) ----------
 
