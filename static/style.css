@@ -2781,4 +2781,109 @@ a:hover {
     .learn-container {
         grid-template-columns: 1fr;
     }
-}
+
+    /* ===== New Admin & Recruiter Dashboard Components ===== */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .stat-card {
+        background: var(--bg-glass);
+        border: 1px solid var(--bg-glass-border);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        text-align: center;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(0, 245, 212, 0.3);
+    }
+
+    .stat-value {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Role Badges */
+    .role-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .role-admin {
+        background: rgba(255, 77, 109, 0.15);
+        color: #ff4d6d;
+        border: 1px solid rgba(255, 77, 109, 0.3);
+    }
+
+    .role-student {
+        background: rgba(0, 245, 212, 0.15);
+        color: #00f5d4;
+        border: 1px solid rgba(0, 245, 212, 0.3);
+    }
+
+    .role-recruiter {
+        background: rgba(108, 99, 255, 0.15);
+        color: #6c63ff;
+        border: 1px solid rgba(108, 99, 255, 0.3);
+    }
+
+    /* Log Actions */
+    .log-action {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-muted);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .log-login,
+    .log-register {
+        color: #00f5d4;
+        border-color: rgba(0, 245, 212, 0.3);
+        background: rgba(0, 245, 212, 0.1);
+    }
+
+    .log-decision {
+        color: #ffb627;
+        border-color: rgba(255, 182, 39, 0.3);
+        background: rgba(255, 182, 39, 0.1);
+    }
+
+    .log-recruiter-upload {
+        color: #6c63ff;
+        border-color: rgba(108, 99, 255, 0.3);
+        background: rgba(108, 99, 255, 0.1);
+    }
+
+    .log-login-failed {
+        color: #ff4d6d;
+        border-color: rgba(255, 77, 109, 0.3);
+        background: rgba(255, 77, 109, 0.1);
+    }

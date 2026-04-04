@@ -182,12 +182,19 @@
                 fetch("/upload", { method: "POST", body: fd })
                     .then((r) => r.json())
                     .then((data) => {
-                        if (data.error) {
-                            if (uploadStatus) { uploadStatus.textContent = data.error; uploadStatus.classList.add("error"); }
-                            uploadBtn.textContent = "Upload Resume"; uploadBtn.disabled = false;
+                        if (!data.success) {
+                            if (uploadStatus) {
+                                uploadStatus.textContent = data.message || "An error occurred.";
+                                uploadStatus.className = "upload-status error";
+                            }
+                            uploadBtn.textContent = "Upload Resume";
+                            uploadBtn.disabled = false;
                             return;
                         }
-                        if (uploadStatus) { uploadStatus.textContent = "Analysis complete!"; uploadStatus.classList.add("success"); }
+                        if (uploadStatus) {
+                            uploadStatus.textContent = "Analysis complete!";
+                            uploadStatus.className = "upload-status success";
+                        }
                         displayResults(data);
                     })
                     .catch(() => {

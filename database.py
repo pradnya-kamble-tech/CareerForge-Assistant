@@ -219,3 +219,79 @@ def db_get_admin_stats():
         "total_users": total_users,
         "total_logs": total_logs,
     }
+
+
+# ──────────────────── RECRUITER STATS ────────────────────
+
+def db_get_recruiter_stats(owner):
+    """Return recruiter-specific dashboard stats."""
+    sb = _get_client()
+
+    # All resumes by this recruiter
+    resumes = sb.table("resumes").select("score,risk_level,created_at").eq("owner", owner).execute().data
+    total = len(resumes)
+    scores = [r["score"] for r in resumes]
+    avg_score = round(sum(scores) / total, 1) if total else 0
+    top_matches = sum(1 for s in scores if s >= 80)
+
+    # Decisions by this recruiter
+    decisions = sb.table("decisions").select("decision").eq("owner", owner).execute().data
+    shortlisted = sum(1 for d in decisions if d["decision"] == "shortlisted")
+    rejected = sum(1 for d in decisions if d["decision"] == "rejected")
+    pending = total - shortlisted - rejected
+    if pending < 0:
+        pending = 0
+
+    # Hiring success rate
+    success_rate = round(shortlisted / total * 100, 1) if total else 0
+
+    # Risk distribution for attrition
+    risk_high = sum(1 for r in resumes if r.get("risk_level") == "High")
+    attrition_pct = round(risk_high / total * 100, 1) if total else 0
+
+    return {
+        "total": total,
+        "avg_score": avg_score,
+        "top_matches": top_matches,
+        "shortlisted": shortlisted,
+        "rejected": rejected,
+        "pending": pending,
+        "success_rate": success_rate,
+        "quality_of_hire": avg_score,
+        "attrition_risk": attrition_pct,
+    }
+
+
+def db_get_top_candidates(owner, limit=5):
+    """Return top N candidates by score for a recruiter."""
+    sb = _get_client()
+    result = sb.table("resumes").select("filename,score,risk_level,skills_total,created_at").eq(
+        "owner", owner
+    ).order("score", desc=True).limit(limit).execute()
+    return result.data
+
+
+def db_get_recent_activity(owner, limit=5):
+    """Return recent log entries for a recruiter."""
+    sb = _get_client()
+    result = sb.table("logs").select("*").eq("user", owner).order("id", desc=True).limit(limit).execute()
+    return result.data
+
+
+# ──────────────────── ADMIN EXTENDED ────────────────────
+
+def db_get_all_users():
+    """Return all users for admin user management."""
+    sb = _get_client()
+    result = sb.table("users").select("email,role,created_at").order("id", desc=True).execute()
+    return result.data
+
+
+def db_get_logs_filtered(action_filter=None, limit=50):
+    """Return logs optionally filtered by action type."""
+    sb = _get_client()
+    query = sb.table("logs").select("*").order("id", desc=True).limit(limit)
+    if action_filter and action_filter != "all":
+        query = query.eq("action", action_filter)
+    return query.execute().data
+

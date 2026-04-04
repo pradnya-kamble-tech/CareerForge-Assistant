@@ -1,0 +1,606 @@
+2026-04-01 17:12:23 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:12:25 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:12:25 | INFO    | SQLite database initialised.
+2026-04-01 17:12:25 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 17:12:25 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 17:12:25 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:12:27 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:12:28 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:12:28 | INFO    | SQLite database initialised.
+2026-04-01 17:12:28 | WARNING |  * Debugger is active!
+2026-04-01 17:12:28 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:13:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:06] "GET / HTTP/1.1" 200 -
+2026-04-01 17:13:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:06] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 17:13:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:06] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 17:13:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:23] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:13:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:13:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:13:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:26] "GET /register HTTP/1.1" 200 -
+2026-04-01 17:13:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:13:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:13:58 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sanjivani%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:13:59 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 17:13:59 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:13:59 | INFO    | New user registered: sanjivani@gmail.com (role=Student)
+2026-04-01 17:13:59 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:59] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 17:13:59 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:59] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:13:59 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:13:59 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:13:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:14:05 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sanjivani%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:14:05 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:14:05 | INFO    | User logged in: sanjivani@gmail.com (role=Student)
+2026-04-01 17:14:05 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:14:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:14:05 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:14:05] "GET /student HTTP/1.1" 200 -
+2026-04-01 17:14:05 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:14:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:14:05 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:14:05] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:14:15 | WARNING | File too large (4090838 bytes): PRADNYA KAMBLE.pdf
+2026-04-01 17:14:15 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:14:15] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-04-01 17:15:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:15:55 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:15:56 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:15:59 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:16:00 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:16:00 | INFO    | SQLite database initialised.
+2026-04-01 17:16:00 | WARNING |  * Debugger is active!
+2026-04-01 17:16:00 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:16:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:16:21] "GET /student HTTP/1.1" 200 -
+2026-04-01 17:16:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:16:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:16:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:16:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:16:30 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:16:30 | INFO    | Student resume uploaded: dfa10258_PRADNYA_KAMBLE.pdf (user=sanjivani@gmail.com)
+2026-04-01 17:16:31 | INFO    | Student analysis complete: dfa10258_PRADNYA_KAMBLE.pdf | score=100 | skills=11 | id=455fd5b464b24d07864dfebf8d1b7f29
+2026-04-01 17:16:31 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:16:31] "POST /upload HTTP/1.1" 200 -
+2026-04-01 17:16:56 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:16:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:16:56 | INFO    | SQLite database initialised.
+2026-04-01 17:16:57 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 17:16:57 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 17:16:57 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:17:00 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:17:01 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:17:01 | INFO    | SQLite database initialised.
+2026-04-01 17:17:01 | WARNING |  * Debugger is active!
+2026-04-01 17:17:01 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:17:01 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:17:01] "POST /simulate HTTP/1.1" 200 -
+2026-04-01 17:17:40 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:17:40] "GET /download-report HTTP/1.1" 200 -
+2026-04-01 17:23:04 | INFO    | User logged out
+2026-04-01 17:23:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-01 17:23:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:04] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:04] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 17:23:11 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:11] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-04-01 17:23:11 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:11] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:12 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:12] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:16] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:26] "GET / HTTP/1.1" 200 -
+2026-04-01 17:23:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:34 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:34] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:34 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:34 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:34] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:39 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sanjivani%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:23:39 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:23:39 | INFO    | User logged in: sanjivani@gmail.com (role=Student)
+2026-04-01 17:23:39 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:23:39 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:39] "GET /student HTTP/1.1" 200 -
+2026-04-01 17:23:39 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:39 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:47 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:47] "GET / HTTP/1.1" 200 -
+2026-04-01 17:23:47 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:47 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:50] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:23:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:23:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:52] "GET /register HTTP/1.1" 200 -
+2026-04-01 17:23:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:23:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:23:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:24:15 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.rakhi%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:24:15 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 17:24:16 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:16 | INFO    | New user registered: rakhi@gmail.com (role=Recruiter)
+2026-04-01 17:24:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:16] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 17:24:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:16] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:24:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:24:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:24:19 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.rakhi%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:24:20 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:20 | INFO    | User logged in: rakhi@gmail.com (role=Recruiter)
+2026-04-01 17:24:20 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:24:20 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:20] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:24:20 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:24:20 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:24:33 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:33 | INFO    | Recruiter analysis: 1684db95_221-simple-resume-template.pdf | score=55
+2026-04-01 17:24:34 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:34 | INFO    | Recruiter analysis: 9e1a3892_259-job-resume-template.pdf | score=25
+2026-04-01 17:24:34 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:34 | INFO    | Recruiter analysis: e0887334_341-resume-template-ats-basic.pdf | score=69
+2026-04-01 17:24:35 | WARNING | Recruiter: rejected non-resume: 71f4459e_202502040034_E4_EI_Assignment_1.pdf
+2026-04-01 17:24:35 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:35 | INFO    | Recruiter analysis: 5d6152a3_PRADNYA_KAMBLE.pdf | score=100
+2026-04-01 17:24:35 | INFO    | Recruiter batch complete: 4 resumes (user=rakhi@gmail.com)
+2026-04-01 17:24:36 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:24:36 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:24:36 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:24:36 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:24:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:36] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-04-01 17:24:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:24:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:24:47 | INFO    | HTTP Request: DELETE https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?filename=eq.5d6152a3_PRADNYA_KAMBLE.pdf&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:24:47 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions "HTTP/2 201 Created"
+2026-04-01 17:24:47 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:47 | INFO    | Recruiter shortlisted: 5d6152a3_PRADNYA_KAMBLE.pdf (user=rakhi@gmail.com)
+2026-04-01 17:24:47 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:47] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-04-01 17:24:50 | INFO    | HTTP Request: DELETE https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?filename=eq.e0887334_341-resume-template-ats-basic.pdf&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:24:50 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions "HTTP/2 201 Created"
+2026-04-01 17:24:50 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:50 | INFO    | Recruiter shortlisted: e0887334_341-resume-template-ats-basic.pdf (user=rakhi@gmail.com)
+2026-04-01 17:24:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:50] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-04-01 17:24:52 | INFO    | HTTP Request: DELETE https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?filename=eq.1684db95_221-simple-resume-template.pdf&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:24:52 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions "HTTP/2 201 Created"
+2026-04-01 17:24:53 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:53 | INFO    | Recruiter shortlisted: 1684db95_221-simple-resume-template.pdf (user=rakhi@gmail.com)
+2026-04-01 17:24:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:53] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-04-01 17:24:55 | INFO    | HTTP Request: DELETE https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?filename=eq.9e1a3892_259-job-resume-template.pdf&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:24:55 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions "HTTP/2 201 Created"
+2026-04-01 17:24:55 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:24:55 | INFO    | Recruiter shortlisted: 9e1a3892_259-job-resume-template.pdf (user=rakhi@gmail.com)
+2026-04-01 17:24:55 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:24:55] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-04-01 17:25:01 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.shortlisted "HTTP/2 200 OK"
+2026-04-01 17:25:02 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.rejected "HTTP/2 200 OK"
+2026-04-01 17:25:02 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:02] "GET /recruiter-results HTTP/1.1" 200 -
+2026-04-01 17:25:02 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:02 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:09 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:09] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:25:09 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:09 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:12 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:12] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-04-01 17:25:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:13] "GET /access-denied HTTP/1.1" 200 -
+2026-04-01 17:25:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:19 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:19] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:25:19 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:19 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:30 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.shortlisted "HTTP/2 200 OK"
+2026-04-01 17:25:31 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.rejected "HTTP/2 200 OK"
+2026-04-01 17:25:31 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:31] "GET /recruiter-results HTTP/1.1" 200 -
+2026-04-01 17:25:31 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:31 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:35] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:25:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:37 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:37] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-04-01 17:25:37 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:37] "GET /access-denied HTTP/1.1" 200 -
+2026-04-01 17:25:37 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:37 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:41 | INFO    | User logged out
+2026-04-01 17:25:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-01 17:25:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:41] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:25:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:41] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:45 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.rakhi%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:25:45 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:25:45 | INFO    | User logged in: rakhi@gmail.com (role=Recruiter)
+2026-04-01 17:25:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:25:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:45] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:25:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:25:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:25:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.shortlisted "HTTP/2 200 OK"
+2026-04-01 17:25:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.rejected "HTTP/2 200 OK"
+2026-04-01 17:25:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:53] "GET /recruiter-results HTTP/1.1" 200 -
+2026-04-01 17:25:54 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:54] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:25:55 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:25:55] "GET /access-denied HTTP/1.1" 200 -
+2026-04-01 17:26:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:03] "GET / HTTP/1.1" 200 -
+2026-04-01 17:26:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:26:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:06] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:26:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:06 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:26:13 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sonam%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:26:13 | WARNING | Failed login attempt for: sonam@gmail.com
+2026-04-01 17:26:13 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:26:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:26:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:13] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:26:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:13 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:13] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:26:33 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sonam377%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:26:33 | WARNING | Failed login attempt for: sonam377@gmail.com
+2026-04-01 17:26:33 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:26:33 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:26:33 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:33] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:26:33 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:33 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:33] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:26:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:35] "GET /register HTTP/1.1" 200 -
+2026-04-01 17:26:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:26:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.admin%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:26:56 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 17:26:56 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:26:56 | INFO    | New user registered: admin@gmail.com (role=Admin)
+2026-04-01 17:26:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:56] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 17:26:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:56] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:26:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:26:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:26:56] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:27:03 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.admin%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:27:03 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:27:03 | INFO    | User logged in: admin@gmail.com (role=Admin)
+2026-04-01 17:27:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:27:03 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Cskills "HTTP/2 200 OK"
+2026-04-01 17:27:04 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id "HTTP/2 200 OK"
+2026-04-01 17:27:04 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=id "HTTP/2 200 OK"
+2026-04-01 17:27:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:04] "GET /admin HTTP/1.1" 200 -
+2026-04-01 17:27:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:27:04 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:27:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:16] "GET /admin/logs HTTP/1.1" 200 -
+2026-04-01 17:27:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:27:16 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:27:25 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Cskills "HTTP/2 200 OK"
+2026-04-01 17:27:25 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id "HTTP/2 200 OK"
+2026-04-01 17:27:26 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=id "HTTP/2 200 OK"
+2026-04-01 17:27:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:26] "GET /admin HTTP/1.1" 200 -
+2026-04-01 17:27:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:27:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:27:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:35:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:35:10] "GET /admin/logs HTTP/1.1" 200 -
+2026-04-01 17:35:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:35:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:35:10 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:35:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:42:15 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 17:42:15 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 17:42:17 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:42:19 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:42:21 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:42:21 | INFO    | SQLite database initialised.
+2026-04-01 17:42:21 | WARNING |  * Debugger is active!
+2026-04-01 17:42:21 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:43:00 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:43:00 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:43:00 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:43:02 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:43:02 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:43:02 | INFO    | SQLite database initialised.
+2026-04-01 17:43:02 | WARNING |  * Debugger is active!
+2026-04-01 17:43:02 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:47:31 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:47:31 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 17:47:32 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:47:34 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:47:35 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:47:35 | INFO    | SQLite database initialised.
+2026-04-01 17:47:35 | WARNING |  * Debugger is active!
+2026-04-01 17:47:35 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:48:13 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:48:14 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:48:14 | INFO    | SQLite database initialised.
+2026-04-01 17:48:14 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 17:48:14 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 17:48:14 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 17:48:15 | INFO    | CareerForge AI server starting up...
+2026-04-01 17:48:16 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:48:16 | INFO    | SQLite database initialised.
+2026-04-01 17:48:16 | WARNING |  * Debugger is active!
+2026-04-01 17:48:16 | INFO    |  * Debugger PIN: 126-954-931
+2026-04-01 17:49:11 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:11] "GET / HTTP/1.1" 200 -
+2026-04-01 17:49:11 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:11] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 17:49:11 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:11] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:14] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:49:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:14 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:18 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:18] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:49:18 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:18 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:18] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:26 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sanjivani%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:49:26 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:49:26 | INFO    | User logged in: sanjivani@gmail.com (role=Student)
+2026-04-01 17:49:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:49:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:26] "GET /student HTTP/1.1" 200 -
+2026-04-01 17:49:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:26 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:34 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:34] "GET / HTTP/1.1" 200 -
+2026-04-01 17:49:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:36] "GET /login HTTP/1.1" 200 -
+2026-04-01 17:49:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:36 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:49:43 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.rakhi%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 17:49:43 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:49:43 | INFO    | User logged in: rakhi@gmail.com (role=Recruiter)
+2026-04-01 17:49:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 17:49:43 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Ccreated_at&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:49:43 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=decision&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:49:43 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=filename%2Cscore%2Crisk_level%2Cskills_total%2Ccreated_at&owner=eq.rakhi%40gmail.com&order=score.desc&limit=5 "HTTP/2 200 OK"
+2026-04-01 17:49:44 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&user=eq.rakhi%40gmail.com&order=id.desc&limit=5 "HTTP/2 200 OK"
+2026-04-01 17:49:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:44] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:49:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:49:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:49:44] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:50:03 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:50:03 | INFO    | Recruiter analysis: 38e25299_Unit_2_EI.pdf | score=95
+2026-04-01 17:50:03 | INFO    | Recruiter batch complete: 1 resumes (user=rakhi@gmail.com)
+2026-04-01 17:50:03 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:50:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:03] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-04-01 17:50:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:50:03 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:50:31 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.shortlisted "HTTP/2 200 OK"
+2026-04-01 17:50:32 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.rejected "HTTP/2 200 OK"
+2026-04-01 17:50:32 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:32] "GET /recruiter-results HTTP/1.1" 200 -
+2026-04-01 17:50:32 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:50:32 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:50:34 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Ccreated_at&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:50:35 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=decision&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-01 17:50:35 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=filename%2Cscore%2Crisk_level%2Cskills_total%2Ccreated_at&owner=eq.rakhi%40gmail.com&order=score.desc&limit=5 "HTTP/2 200 OK"
+2026-04-01 17:50:35 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&user=eq.rakhi%40gmail.com&order=id.desc&limit=5 "HTTP/2 200 OK"
+2026-04-01 17:50:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:35] "GET /recruiter HTTP/1.1" 200 -
+2026-04-01 17:50:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:50:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:50:50 | WARNING | Recruiter: rejected non-resume: c22598c1_202502040034_E4_EI_Assignment_1.pdf
+2026-04-01 17:50:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:50] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-04-01 17:50:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:50:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:50:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 17:51:01 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 17:51:01 | INFO    | Recruiter analysis: ac9676b7_Unit_1_EI.pdf | score=85
+2026-04-01 17:51:01 | INFO    | Recruiter batch complete: 1 resumes (user=rakhi@gmail.com)
+2026-04-01 17:51:01 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-01 17:51:01 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:51:01] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-04-01 17:51:01 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:51:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 17:51:01 | INFO    | 127.0.0.1 - - [01/Apr/2026 17:51:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:02:35 | INFO    | User logged out
+2026-04-01 18:02:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-01 18:02:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:35] "GET /login HTTP/1.1" 200 -
+2026-04-01 18:02:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:02:35 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:02:52 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.admin%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 18:02:53 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 18:02:53 | INFO    | User logged in: admin@gmail.com (role=Admin)
+2026-04-01 18:02:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 18:02:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Cskills "HTTP/2 200 OK"
+2026-04-01 18:02:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id "HTTP/2 200 OK"
+2026-04-01 18:02:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=id "HTTP/2 200 OK"
+2026-04-01 18:02:54 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=email%2Crole%2Ccreated_at&order=id.desc "HTTP/2 200 OK"
+2026-04-01 18:02:54 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&order=id.desc&limit=30 "HTTP/2 200 OK"
+2026-04-01 18:02:54 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:54] "GET /admin HTTP/1.1" 200 -
+2026-04-01 18:02:54 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:02:54 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:02:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:07:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:43] "GET /admin/logs HTTP/1.1" 200 -
+2026-04-01 18:07:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:07:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:07:45 | INFO    | User logged out
+2026-04-01 18:07:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:45] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-01 18:07:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:45] "GET /login HTTP/1.1" 200 -
+2026-04-01 18:07:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:07:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:07:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:53] "GET / HTTP/1.1" 200 -
+2026-04-01 18:07:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:07:53 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:07:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:56] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-04-01 18:07:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 18:07:56 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:56] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 18:07:57 | INFO    | Demo mode analysis served (id=24c7f940456e4cf98e5b24d548123341)
+2026-04-01 18:07:57 | INFO    | 127.0.0.1 - - [01/Apr/2026 18:07:57] "GET /api/demo-data HTTP/1.1" 200 -
+2026-04-01 20:01:51 | INFO    | CareerForge AI server starting up...
+2026-04-01 20:01:53 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:01:53 | INFO    | SQLite database initialised.
+2026-04-01 20:01:53 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-01 20:01:53 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-01 20:01:54 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 20:01:56 | INFO    | CareerForge AI server starting up...
+2026-04-01 20:01:57 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:01:57 | INFO    | SQLite database initialised.
+2026-04-01 20:01:57 | WARNING |  * Debugger is active!
+2026-04-01 20:01:57 | INFO    |  * Debugger PIN: 395-240-265
+2026-04-01 20:02:15 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\asyncio\\events.py', reloading
+2026-04-01 20:02:15 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\asyncio\\base_events.py', reloading
+2026-04-01 20:02:15 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\asyncio\\windows_events.py', reloading
+2026-04-01 20:02:15 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 20:02:18 | INFO    | CareerForge AI server starting up...
+2026-04-01 20:02:19 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:02:19 | INFO    | SQLite database initialised.
+2026-04-01 20:02:19 | WARNING |  * Debugger is active!
+2026-04-01 20:02:19 | INFO    |  * Debugger PIN: 395-240-265
+2026-04-01 20:05:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:41] "GET / HTTP/1.1" 200 -
+2026-04-01 20:05:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:41] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 20:05:41 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:41] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 20:05:43 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 20:05:43 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 20:05:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:44] "GET /register HTTP/1.1" 200 -
+2026-04-01 20:05:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:05:44 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:44] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:05:48 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_fa94cd%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:05:48 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 20:05:49 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:05:49 | INFO    | New user registered: test_fa94cd@demo.com (role=Student)
+2026-04-01 20:05:49 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:49] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 20:05:49 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:49] "GET /login HTTP/1.1" 200 -
+2026-04-01 20:05:49 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:05:49 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:05:51 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_fa94cd%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:05:51 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:05:51 | INFO    | User logged in: test_fa94cd@demo.com (role=Student)
+2026-04-01 20:05:51 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 20:05:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:52] "GET /student HTTP/1.1" 200 -
+2026-04-01 20:05:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:05:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:05:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:24:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:21] "GET / HTTP/1.1" 200 -
+2026-04-01 20:24:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:21] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 20:24:21 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:21] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 20:24:22 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 20:24:22 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 20:24:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:23] "GET /register HTTP/1.1" 200 -
+2026-04-01 20:24:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:24:23 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:24:27 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_869cfc%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:24:27 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 20:24:27 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:24:27 | INFO    | New user registered: test_869cfc@demo.com (role=Student)
+2026-04-01 20:24:27 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:27] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 20:24:27 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:27] "GET /login HTTP/1.1" 200 -
+2026-04-01 20:24:27 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:24:27 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:27] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:24:29 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_869cfc%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:24:29 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:24:29 | INFO    | User logged in: test_869cfc@demo.com (role=Student)
+2026-04-01 20:24:29 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 20:24:29 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:29] "GET /student HTTP/1.1" 200 -
+2026-04-01 20:24:29 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:24:29 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:24:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:26:21 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\test_ui_demo.py', reloading
+2026-04-01 20:26:21 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\test_ui_demo.py', reloading
+2026-04-01 20:26:22 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 20:26:24 | INFO    | CareerForge AI server starting up...
+2026-04-01 20:26:26 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:26:26 | INFO    | SQLite database initialised.
+2026-04-01 20:26:26 | WARNING |  * Debugger is active!
+2026-04-01 20:26:26 | INFO    |  * Debugger PIN: 395-240-265
+2026-04-01 20:27:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:45] "GET / HTTP/1.1" 200 -
+2026-04-01 20:27:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:45] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-01 20:27:45 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:45] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-01 20:27:46 | WARNING | 404 Not Found: /favicon.ico
+2026-04-01 20:27:46 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-01 20:27:46 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:46] "GET /register HTTP/1.1" 200 -
+2026-04-01 20:27:46 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:27:46 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:27:49 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_3e1856%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:27:50 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users "HTTP/2 201 Created"
+2026-04-01 20:27:50 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:27:50 | INFO    | New user registered: test_3e1856@demo.com (role=Student)
+2026-04-01 20:27:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:50] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-04-01 20:27:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:50] "GET /login HTTP/1.1" 200 -
+2026-04-01 20:27:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:27:50 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:27:52 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.test_3e1856%40demo.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:27:52 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 20:27:52 | INFO    | User logged in: test_3e1856@demo.com (role=Student)
+2026-04-01 20:27:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-01 20:27:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:52] "GET /student HTTP/1.1" 200 -
+2026-04-01 20:27:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-01 20:27:52 | INFO    | 127.0.0.1 - - [01/Apr/2026 20:27:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\analyzer.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\report_generator.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\resume_parser.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 20:50:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 20:50:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 20:50:52 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-01 20:50:52 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-04-01 20:50:54 | INFO    | CareerForge AI server starting up...
+2026-04-01 20:50:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 20:50:56 | INFO    | SQLite database initialised.
+2026-04-01 20:50:56 | WARNING |  * Debugger is active!
+2026-04-01 20:50:56 | INFO    |  * Debugger PIN: 395-240-265
+2026-04-03 14:59:40 | INFO    | CareerForge AI server starting up...
+2026-04-03 14:59:41 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-03 14:59:41 | INFO    | SQLite database initialised.
+2026-04-03 14:59:41 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-04-03 14:59:41 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-03 14:59:41 | INFO    |  * Restarting with stat
+2026-04-03 14:59:45 | INFO    | CareerForge AI server starting up...
+2026-04-03 14:59:46 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-03 14:59:46 | INFO    | SQLite database initialised.
+2026-04-03 14:59:46 | WARNING |  * Debugger is active!
+2026-04-03 14:59:46 | INFO    |  * Debugger PIN: 108-683-728
+2026-04-03 15:00:41 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:00:41] "GET / HTTP/1.1" 200 -
+2026-04-03 15:00:41 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:00:41] "GET /static/style.css HTTP/1.1" 200 -
+2026-04-03 15:00:41 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:00:41] "GET /static/script.js HTTP/1.1" 200 -
+2026-04-03 15:22:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:43] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:22:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:22:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:22:57 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.sanjivani%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-03 15:22:58 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:22:58 | INFO    | User logged in: sanjivani@gmail.com (role=Student)
+2026-04-03 15:22:58 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-03 15:22:58 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:58] "GET /student HTTP/1.1" 200 -
+2026-04-03 15:22:58 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:22:58 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:22:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:23:20 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:23:20 | INFO    | Student resume uploaded: 097a0de1_259-job-resume-template.pdf (user=sanjivani@gmail.com)
+2026-04-03 15:23:21 | INFO    | Student analysis complete: 097a0de1_259-job-resume-template.pdf | score=25 | skills=1 | id=f6cd86e5abb74cdab805c95ab6210b28
+2026-04-03 15:23:21 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:23:21] "POST /upload HTTP/1.1" 200 -
+2026-04-03 15:24:11 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:11] "POST /simulate HTTP/1.1" 200 -
+2026-04-03 15:24:47 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:47] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:24:47 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:24:47 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:24:55 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.rakhi%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-03 15:24:55 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:24:55 | INFO    | User logged in: rakhi@gmail.com (role=Recruiter)
+2026-04-03 15:24:55 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-03 15:24:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Ccreated_at&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-03 15:24:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=decision&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-03 15:24:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=filename%2Cscore%2Crisk_level%2Cskills_total%2Ccreated_at&owner=eq.rakhi%40gmail.com&order=score.desc&limit=5 "HTTP/2 200 OK"
+2026-04-03 15:24:56 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&user=eq.rakhi%40gmail.com&order=id.desc&limit=5 "HTTP/2 200 OK"
+2026-04-03 15:24:57 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:57] "GET /recruiter HTTP/1.1" 200 -
+2026-04-03 15:24:57 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:24:57 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:24:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:25:17 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:25:17 | INFO    | Recruiter analysis: a7cf23a2_221-simple-resume-template.pdf | score=55
+2026-04-03 15:25:18 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:25:18 | INFO    | Recruiter analysis: 4fd62789_259-job-resume-template.pdf | score=25
+2026-04-03 15:25:19 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:25:19 | INFO    | Recruiter analysis: 61df3e6e_341-resume-template-ats-basic.pdf | score=69
+2026-04-03 15:25:19 | INFO    | Recruiter batch complete: 3 resumes (user=rakhi@gmail.com)
+2026-04-03 15:25:19 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-03 15:25:19 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-03 15:25:20 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes "HTTP/2 201 Created"
+2026-04-03 15:25:20 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:20] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-04-03 15:25:20 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:25:20 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:25:36 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.shortlisted "HTTP/2 200 OK"
+2026-04-03 15:25:36 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=%2A&owner=eq.rakhi%40gmail.com&order=id.desc&decision=eq.rejected "HTTP/2 200 OK"
+2026-04-03 15:25:36 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:36] "GET /recruiter-results HTTP/1.1" 200 -
+2026-04-03 15:25:36 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:25:36 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:25:49 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Ccreated_at&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-03 15:25:50 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/decisions?select=decision&owner=eq.rakhi%40gmail.com "HTTP/2 200 OK"
+2026-04-03 15:25:50 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=filename%2Cscore%2Crisk_level%2Cskills_total%2Ccreated_at&owner=eq.rakhi%40gmail.com&order=score.desc&limit=5 "HTTP/2 200 OK"
+2026-04-03 15:25:50 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&user=eq.rakhi%40gmail.com&order=id.desc&limit=5 "HTTP/2 200 OK"
+2026-04-03 15:25:50 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:50] "GET /recruiter HTTP/1.1" 200 -
+2026-04-03 15:25:50 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:25:50 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:25:59 | INFO    | User logged out
+2026-04-03 15:25:59 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-03 15:25:59 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:59] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:25:59 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:25:59 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:25:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:26:07 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:07] "[32mGET /recruiter HTTP/1.1[0m" 302 -
+2026-04-03 15:26:07 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:07] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:26:14 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:14] "GET / HTTP/1.1" 200 -
+2026-04-03 15:26:14 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:26:14 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:26:17 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:17] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:26:17 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:26:17 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:26:23 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.admin%40gmail.com&limit=1 "HTTP/2 200 OK"
+2026-04-03 15:26:23 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-03 15:26:23 | INFO    | User logged in: admin@gmail.com (role=Admin)
+2026-04-03 15:26:23 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-04-03 15:26:23 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/resumes?select=score%2Crisk_level%2Cskills "HTTP/2 200 OK"
+2026-04-03 15:26:24 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id "HTTP/2 200 OK"
+2026-04-03 15:26:24 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=id "HTTP/2 200 OK"
+2026-04-03 15:26:24 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=email%2Crole%2Ccreated_at&order=id.desc "HTTP/2 200 OK"
+2026-04-03 15:26:24 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs?select=%2A&order=id.desc&limit=30 "HTTP/2 200 OK"
+2026-04-03 15:26:24 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:24] "GET /admin HTTP/1.1" 200 -
+2026-04-03 15:26:24 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:26:24 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:26:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:43] "GET /admin/logs HTTP/1.1" 200 -
+2026-04-03 15:26:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:26:43 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:26:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-03 15:28:36 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:36] "GET /login HTTP/1.1" 200 -
+2026-04-03 15:28:36 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "GET / HTTP/1.1" 200 -
+2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -

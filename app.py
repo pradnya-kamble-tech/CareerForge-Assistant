@@ -8,6 +8,7 @@ from io import BytesIO
 from functools import wraps
 from flask import (Flask, render_template, request, jsonify,
                    send_file, session, redirect, url_for, flash)
+from datetime import timedelta
 from werkzeug.utils import secure_filename
 from resume_parser import extract_text_from_pdf
 from analyzer import (extract_skills, calculate_score, risk_analysis,
@@ -19,10 +20,19 @@ from database import (
     db_add_resume, db_get_resumes, db_count_resumes,
     db_add_decision, db_get_decisions,
     db_add_log, db_get_logs, db_get_admin_stats,
+    db_get_recruiter_stats, db_get_top_candidates,
+    db_get_recent_activity, db_get_all_users, db_get_logs_filtered,
 )
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "careerforge-dev-secret-key-2026")
+
+# ---------- Security Config ----------
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=60)
+app.config["SESSION_COOKIE_SECURE"] = False  # Set to True in production with HTTPS
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = 'Lax'
+app.config["MAX_CONTENT_LENGTH"] = 15 * 1024 * 1024  # Flask-level safety limit
 
 # ---------- Logging Configuration ----------
 LOG_FILE = os.path.join(os.path.dirname(__file__), "system.log")
@@ -52,7 +62,7 @@ ANALYSES_FILE = os.path.join(os.path.dirname(__file__), "data", "analyses.json")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # ---------- Validation Config ----------
-MAX_FILE_SIZE = 2 * 1024 * 1024  # 2 MB
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 RESUME_KEYWORDS = re.compile(
     r"\b(education|experience|skills|summary|objective|projects|certifications|achievements|work\s*history)\b",
     re.IGNORECASE,
@@ -169,6 +179,7 @@ def login():
             return redirect(url_for("login"))
 
         # Set session
+        session.permanent = True
         session["user"] = email
         session["role"] = user["role"]
         db_add_log("login", email, f"Logged in as {user['role']}")
@@ -240,18 +251,19 @@ def upload_resume():
     if file.filename == "":
         return jsonify({"success": False, "message": "No file selected."}), 400
 
-    # --- Validation 1: Extension ---
-    if not allowed_file(file.filename):
-        logger.warning("Invalid file type rejected: %s (user=%s)", file.filename, session.get("user"))
-        return jsonify({"success": False, "message": "Only PDF files are allowed."}), 400
+    # --- Validation 1: Extension & MIME Type ---
+    if not allowed_file(file.filename) or file.mimetype != "application/pdf":
+        logger.warning("Invalid file type rejected: %s (mime=%s)", file.filename, file.mimetype)
+        return jsonify({"success": False, "message": "Only valid PDF files are allowed."}), 400
 
     # --- Validation 2: File size (2 MB) ---
+    # --- Validation 2: File size (10 MB) ---
     file.seek(0, os.SEEK_END)
     size = file.tell()
     file.seek(0)
     if size > MAX_FILE_SIZE:
         logger.warning("File too large (%d bytes): %s", size, file.filename)
-        return jsonify({"success": False, "message": "File exceeds 2 MB limit."}), 400
+        return jsonify({"success": False, "message": "File exceeds 10MB limit."}), 400
 
     # --- Save with UUID prefix for uniqueness ---
     raw_name = secure_filename(file.filename)
@@ -492,10 +504,19 @@ def download_report(analysis_id=None):
 @app.route("/recruiter")
 @role_required("Recruiter", "Admin")
 def recruiter_page():
-    """Render the recruiter dashboard."""
+    """Render the recruiter dashboard with live stats."""
+    owner = session.get("user", "")
+    stats = db_get_recruiter_stats(owner)
+    top_candidates = db_get_top_candidates(owner, 5)
+    recent_activity = db_get_recent_activity(owner, 5)
     return render_template("recruiter.html",
-                           user=session.get("user"),
-                           role=session.get("role"))
+                           user=owner,
+                           role=session.get("role"),
+                           uploaded_count=0,
+                           candidates=[],
+                           stats=stats,
+                           top_candidates=top_candidates,
+                           recent_activity=recent_activity)
 
 
 @app.route("/recruiter-upload", methods=["POST"])
@@ -648,8 +669,10 @@ def recruiter_results():
 @app.route("/admin")
 @role_required("Admin")
 def admin_page():
-    """Render the admin dashboard with system-wide statistics from SQLite."""
+    """Render the admin dashboard with system-wide statistics from Supabase."""
     stats = db_get_admin_stats()
+    all_users = db_get_all_users()
+    db_logs = db_get_logs_filtered(limit=30)
     return render_template("admin.html",
                            user=session.get("user"),
                            role=session.get("role"),
@@ -662,7 +685,9 @@ def admin_page():
                            risk_dist=stats["risk_dist"],
                            score_dist=stats["score_dist"],
                            total_users=stats["total_users"],
-                           total_logs=stats["total_logs"])
+                           total_logs=stats["total_logs"],
+                           all_users=all_users,
+                           db_logs=db_logs)
 
 # ---------- Logs Route (Admin only) ----------
 
