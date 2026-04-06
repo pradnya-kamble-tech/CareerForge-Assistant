@@ -16,7 +16,7 @@ def load_skills():
     return data["categories"]
 
 
-def extract_skills(resume_text):
+def extract_skills(resume_text: str) -> dict:
     """
     Match skills from resume text against the skills database.
 
@@ -59,7 +59,7 @@ def extract_skills(resume_text):
     }
 
 
-def calculate_score(skill_results):
+def calculate_score(skill_results: dict) -> dict:
     """
     Calculate a resume score (0-100) based on detected skills.
 
@@ -141,7 +141,7 @@ def calculate_score(skill_results):
     }
 
 
-def risk_analysis(score, skills):
+def risk_analysis(score: int, skills: list) -> dict:
     """
     Determine the risk level of a resume based on score and detected skills.
 
