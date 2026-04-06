@@ -30,7 +30,7 @@ def init_db():
 
 # ──────────────────── USERS ────────────────────
 
-def db_add_user(email, password, role="Student"):
+def db_add_user(email: str, password: str, role: str = "Student"):
     sb = _get_client()
     sb.table("users").insert({
         "email": email.lower(),
@@ -39,7 +39,7 @@ def db_add_user(email, password, role="Student"):
     }).execute()
 
 
-def db_get_user(email):
+def db_get_user(email: str):
     """Return user dict or None."""
     sb = _get_client()
     result = sb.table("users").select("*").eq("email", email.lower()).limit(1).execute()
@@ -49,7 +49,7 @@ def db_get_user(email):
     return None
 
 
-def db_user_exists(email):
+def db_user_exists(email: str) -> bool:
     return db_get_user(email) is not None
 
 
