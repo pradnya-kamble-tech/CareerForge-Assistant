@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "app.py", line 14, in <module>
+    from analyzer import (extract_skills, calculate_score, risk_analysis,
+ImportError: cannot import name 'career_prediction' from 'analyzer' (C:\Users\Shuddhodhan\.gemini\antigravity\scratch\careerforge 2- Copy\analyzer.py)

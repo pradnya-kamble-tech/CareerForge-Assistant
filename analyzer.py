@@ -1,517 +1,206 @@
-# analyzer.py — Keyword-based skill extraction from resume text
-
-import json
-import os
+import math
 import re
 
+# Backward compatibility imports for app.py
+from resume_parser import extract_text_from_pdf
 
-# Path to the skills database
-SKILLS_FILE = os.path.join(os.path.dirname(__file__), "data", "skills.json")
-
-
-def load_skills():
-    """Load the skills database from skills.json."""
-    with open(SKILLS_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["categories"]
-
-
-def extract_skills(resume_text):
+def validate_resume_content(text):
     """
-    Match skills from resume text against the skills database.
-
-    Args:
-        resume_text (str): Full text extracted from the resume.
-
-    Returns:
-        dict: {
-            "skills": [list of matched skill names],
-            "categorized": {category: [matched skills], ...},
-            "total": int
-        }
+    Fallback validation.
+    Returns True if the text looks like a resume.
     """
-    categories = load_skills()
-    text_lower = resume_text.lower()
+    return text and len(text.strip()) >= 50
 
-    matched_skills = []          # flat list (no duplicates)
-    categorized = {}             # grouped by category
+from ai_engine.modules.m5_skill_extractor import extract_skills as extract_skills_ai
+from ai_engine.modules.m5_skill_extractor import get_all_skills as get_all_skills_ai
+from ai_engine.modules.m6_scoring import calculate_score as calculate_score_ai
+from ai_engine.modules.m4_role_classifier import predict_role
+from ai_engine.modules.m7_risk import predict_risk as predict_risk_ai
+from ai_engine.modules.m9_trajectory import predict_trajectory
+from ai_engine.modules.m10_simulator import simulate as simulate_ai
+from ai_engine.modules.m11_explainer import explain
+from ai_engine.modules.m12_storage import build_output
+from ai_engine.role_knowledge import get_role_knowledge, get_skill_gap, preload as _preload_knowledge
 
-    for category, skills_list in categories.items():
-        found_in_category = []
-        for skill in skills_list:
-            # Use word-boundary matching so "C" doesn't match inside "Communication"
-            # For short skills (<=2 chars), require exact standalone match
-            pattern = r"\b" + re.escape(skill.lower()) + r"\b"
-            if re.search(pattern, text_lower):
-                if skill not in matched_skills:
-                    matched_skills.append(skill)
-                found_in_category.append(skill)
+# Pre-warm the role knowledge cache at import time (fast after first build)
+try:
+    _preload_knowledge()
+except Exception:
+    pass  # Don't crash on import if CSV is unavailable
 
-        if found_in_category:
-            # Pretty-print category name: "data_science_and_ai" -> "Data Science And Ai"
-            nice_name = category.replace("_", " ").title()
-            categorized[nice_name] = found_in_category
-
-    return {
-        "skills": matched_skills,
-        "categorized": categorized,
-        "total": len(matched_skills),
-    }
-
-
-def calculate_score(skill_results):
+# ==========================================
+# MASTER ENTRY POINT FOR AI PIPELINE
+# ==========================================
+def analyze_resume_ai(resume_text, jd_text=None):
     """
-    Calculate a resume score (0-100) based on detected skills.
-
-    Scoring breakdown:
-        - Base score from skill count (0-70 pts)
-        - Category diversity bonus  (0-30 pts)
-
-    Args:
-        skill_results (dict): Output from extract_skills().
-
-    Returns:
-        dict: {
-            "score": int,
-            "level": str,
-            "reason": str,
-            "breakdown": dict
-        }
+    Run the full AI pipeline on a resume text.
+    Uses dataset-driven role knowledge for skill gap and role profile.
     """
-    total = skill_results["total"]
-    num_categories = len(skill_results["categorized"])
+    if not resume_text or len(resume_text.strip()) < 50:
+        return {"error": "Resume text too short or empty for AI analysis."}
 
-    # --- Base score from skill count (max 70) ---
-    if total == 0:
-        base = 0
-    elif total <= 2:
-        base = 15 + (total * 5)       # 20-25
-    elif total <= 5:
-        base = 25 + (total * 5)       # 40-50
-    elif total <= 9:
-        base = 35 + (total * 4)       # 59-71  →  cap at 70
-    else:
-        base = min(50 + (total * 2), 70)
-    base = min(base, 70)
+    # 1. AI Extract Skills
+    skills_result = extract_skills_ai(resume_text)
 
-    # --- Category diversity bonus (max 30) ---
-    diversity = min(num_categories * 5, 30)
+    # 2. AI Predict Role
+    role_result = predict_role(resume_text)
 
-    score = min(base + diversity, 100)
+    # 3. AI Calculate Score
+    score_result = calculate_score_ai(resume_text, skills_result, role_result)
 
-    # --- Level ---
-    if score <= 35:
-        level = "Low"
-    elif score <= 60:
-        level = "Medium"
-    elif score <= 80:
-        level = "High"
-    else:
-        level = "Excellent"
+    # 4. AI Predict Risk
+    risk_result = predict_risk_ai(score_result, skills_result, resume_text)
 
-    # --- Explainable reason ---
-    reasons = []
-    reasons.append(f"Your resume mentions {total} recognised skill(s).")
-    reasons.append(f"Skills span {num_categories} categor{'y' if num_categories == 1 else 'ies'}.")
+    # 5. AI Predict Career Trajectory
+    trajectory_result = predict_trajectory(role_result.get("predicted_role"), skills_result)
 
-    if total <= 2:
-        reasons.append("Consider adding more technical and soft skills to strengthen your profile.")
-    elif total <= 5:
-        reasons.append("Decent skill set — adding more domain-specific skills could boost your score.")
-    elif total <= 9:
-        reasons.append("Strong skill coverage. Try diversifying across more categories for an even higher score.")
-    else:
-        reasons.append("Excellent breadth of skills across multiple domains!")
+    # 6. AI Explainability
+    explainer_result = explain(resume_text, role_result, score_result, risk_result)
 
-    if num_categories <= 2:
-        reasons.append("Tip: Broaden your skill categories (e.g., add cloud, databases, or soft skills).")
-    elif num_categories >= 5:
-        reasons.append("Great diversity — your profile covers multiple technology areas.")
+    # 7. (Optional) JD Matching if provided
+    jd_match_result = None
+    if jd_text:
+        from ai_engine.modules.m8_matching import match_resume_to_jd
+        jd_match_result = match_resume_to_jd(resume_text, jd_text)
 
-    return {
-        "score": score,
-        "level": level,
-        "reason": " ".join(reasons),
-        "breakdown": {
-            "skill_score": base,
-            "diversity_bonus": diversity,
-            "skills_detected": total,
-            "categories_covered": num_categories,
-        },
-    }
+    # 8. Dataset-driven role knowledge and skill gap
+    raw_role = role_result.get("raw_role", role_result.get("predicted_role", ""))
+    role_knowledge_data = get_role_knowledge(raw_role)
+    skill_gap_data = get_skill_gap(skills_result.get("skills", []), raw_role)
 
+    # 9. Standardize Output (pass role knowledge for role_profile)
+    output = build_output(
+        role_result, skills_result, score_result, risk_result,
+        trajectory_result, explainer_result, jd_match_result,
+        role_knowledge_data=role_knowledge_data,
+        resume_text=resume_text,
+    )
 
-def risk_analysis(score, skills):
-    """
-    Determine the risk level of a resume based on score and detected skills.
+    # 10. Attach data-driven skill gap (replaces trajectory-based gap)
+    output["skill_gap"] = skill_gap_data
 
-    Args:
-        score  (int):  Resume score out of 100.
-        skills (list): List of matched skill names.
+    return output
 
-    Returns:
-        dict: {
-            "risk_level": str,
-            "risk_icon": str,
-            "reason": str,
-            "suggestions": list[str]
-        }
-    """
-    total = len(skills)
+# ==========================================
+# LEGACY WRAPPERS FOR APP.PY COMPATIBILITY
+# ==========================================
+def extract_skills(text):
+    """Legacy wrapper for backward compatibility."""
+    return extract_skills_ai(text)
 
-    # --- Risk level ---
-    if score < 40:
-        risk_level = "High"
-        risk_icon = "high"
-    elif score <= 70:
-        risk_level = "Medium"
-        risk_icon = "medium"
-    else:
-        risk_level = "Low"
-        risk_icon = "low"
-
-    # --- Explanation ---
-    reasons = []
-    reasons.append(f"Resume score is {score}/100 with {total} skill(s) detected.")
-
-    if risk_level == "High":
-        reasons.append("This indicates a significant gap between your profile and industry expectations.")
-    elif risk_level == "Medium":
-        reasons.append("Your profile meets basic requirements but has room for improvement.")
-    else:
-        reasons.append("Your profile demonstrates strong alignment with industry skill demands.")
-
-    # --- Actionable suggestions ---
-    suggestions = []
-    if total <= 3:
-        suggestions.append("Add more technical skills (e.g., Python, SQL, cloud platforms).")
-    if total <= 6:
-        suggestions.append("Include relevant certifications or project experience.")
-    if score < 60:
-        suggestions.append("Diversify skills across multiple categories for a stronger profile.")
-    if score >= 70:
-        suggestions.append("Consider tailoring skills to specific job descriptions for even better results.")
-    if not suggestions:
-        suggestions.append("Your resume looks well-rounded - keep it updated with new skills!")
-
-    return {
-        "risk_level": risk_level,
-        "risk_icon": risk_icon,
-        "reason": " ".join(reasons),
-        "suggestions": suggestions,
-    }
-
-
-# ---------- Career role mappings ----------
-ROLE_MAP = [
-    {
-        "role": "Data Scientist",
-        "icon": "DS",
-        "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow",
-                   "PyTorch", "Pandas", "NumPy", "Scikit-learn", "Data Analysis",
-                   "Data Visualization", "R", "MATLAB"],
-    },
-    {
-        "role": "Frontend Developer",
-        "icon": "FE",
-        "skills": ["HTML", "CSS", "JavaScript", "React", "Angular", "Vue.js",
-                   "TypeScript", "Bootstrap", "Tailwind CSS", "SASS", "Next.js"],
-    },
-    {
-        "role": "Backend Developer",
-        "icon": "BE",
-        "skills": ["Python", "Java", "Node.js", "Flask", "Django", "Spring Boot",
-                   "Express.js", "SQL", "REST API", "GraphQL", "Go", "PHP"],
-    },
-    {
-        "role": "Full-Stack Developer",
-        "icon": "FS",
-        "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python",
-                   "Flask", "Django", "SQL", "MongoDB", "REST API", "Git"],
-    },
-    {
-        "role": "Data Analyst",
-        "icon": "DA",
-        "skills": ["Python", "SQL", "Pandas", "Data Analysis", "Data Visualization",
-                   "Matplotlib", "Seaborn", "Excel", "R", "MySQL", "PostgreSQL"],
-    },
-    {
-        "role": "DevOps Engineer",
-        "icon": "DO",
-        "skills": ["Docker", "Kubernetes", "AWS", "Azure", "Google Cloud",
-                   "CI/CD", "Jenkins", "Linux", "Git", "Terraform", "Nginx"],
-    },
-    {
-        "role": "Mobile App Developer",
-        "icon": "MA",
-        "skills": ["Android", "iOS", "React Native", "Flutter", "Kotlin",
-                   "Swift", "Dart", "Java", "Firebase"],
-    },
-    {
-        "role": "AI / ML Engineer",
-        "icon": "ML",
-        "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow",
-                   "PyTorch", "Keras", "Natural Language Processing",
-                   "Computer Vision", "Neural Networks", "OpenCV"],
-    },
-    {
-        "role": "Database Administrator",
-        "icon": "DB",
-        "skills": ["SQL", "MySQL", "PostgreSQL", "MongoDB", "Oracle", "Redis",
-                   "SQLite", "Firebase", "Cassandra", "DynamoDB"],
-    },
-    {
-        "role": "Cloud Engineer",
-        "icon": "CE",
-        "skills": ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes",
-                   "Terraform", "Linux", "CI/CD", "Heroku", "Netlify"],
-    },
-]
-
-
-def career_prediction(skills):
-    """
-    Predict suitable career roles based on detected skills.
-
-    Args:
-        skills (list): List of matched skill names from the resume.
-
-    Returns:
-        list[dict]: Sorted list of role predictions, each with:
-            role, icon, match_percentage, matched_skills, reason
-    """
-    skills_set = {s.lower() for s in skills}
-    predictions = []
-
-    for role_def in ROLE_MAP:
-        role_skills = {s.lower() for s in role_def["skills"]}
-        matched = skills_set & role_skills
-        if not matched:
-            continue
-
-        pct = round((len(matched) / len(role_skills)) * 100)
-
-        # Get original-case names for display
-        matched_display = [s for s in role_def["skills"] if s.lower() in matched]
-
-        reason = (
-            f"Based on your skills: {', '.join(matched_display)}. "
-            f"You match {len(matched)} of {len(role_skills)} key skills for this role."
-        )
-
-        predictions.append({
-            "role": role_def["role"],
-            "icon": role_def["icon"],
-            "match_percentage": pct,
-            "matched_skills": matched_display,
-            "reason": reason,
-        })
-
-    # Sort by match percentage descending
-    predictions.sort(key=lambda x: x["match_percentage"], reverse=True)
-    return predictions
-
-
-def skill_gap_analysis(current_skills):
-    """
-    Identify important skills missing from the user's resume by comparing
-    detected skills against the ideal skill sets defined in ROLE_MAP.
-
-    Args:
-        current_skills (list): List of matched skill names from the resume.
-
-    Returns:
-        dict: {
-            "target_role": str,
-            "target_icon": str,
-            "missing_skills": list[dict],
-            "recommended_skills": list[dict],
-            "summary": str,
-            "gap_percentage": int
-        }
-    """
-    skills_lower = {s.lower() for s in current_skills}
-
-    # --- Find the best-matched role (highest overlap) ---
-    best_role = None
-    best_matched = 0
-    for role_def in ROLE_MAP:
-        role_skills = {s.lower() for s in role_def["skills"]}
-        overlap = len(skills_lower & role_skills)
-        if overlap > best_matched:
-            best_matched = overlap
-            best_role = role_def
-
-    # Fallback to Full-Stack Developer if no role matches at all
-    if best_role is None:
-        best_role = ROLE_MAP[3]  # Full-Stack Developer
-
-    # --- Missing skills for the target role ---
-    role_skills_lower = {s.lower() for s in best_role["skills"]}
-    missing_lower = role_skills_lower - skills_lower
-    missing_skills = [s for s in best_role["skills"] if s.lower() in missing_lower]
-
-    # Gap percentage = how far the user is from completing the ideal set
-    total_role_skills = len(best_role["skills"])
-    matched_count = total_role_skills - len(missing_skills)
-    gap_pct = round((len(missing_skills) / total_role_skills) * 100) if total_role_skills else 0
-
-    # --- Recommended skills from *other* top roles ---
-    # Gather missing skills from the top-3 matched roles for broader suggestions
-    recommendations = {}
-    for role_def in ROLE_MAP:
-        if role_def["role"] == best_role["role"]:
-            continue
-        role_skills = {s.lower() for s in role_def["skills"]}
-        overlap = len(skills_lower & role_skills)
-        if overlap == 0:
-            continue
-        for skill in role_def["skills"]:
-            if skill.lower() not in skills_lower and skill not in missing_skills:
-                if skill not in recommendations:
-                    recommendations[skill] = {
-                        "skill": skill,
-                        "reason": f"Important for {role_def['role']} role",
-                        "from_role": role_def["role"],
-                        "icon": role_def["icon"],
-                    }
-
-    # Sort by role relevance, take top 6
-    recommended_list = list(recommendations.values())[:6]
-
-    # --- Build missing_skills with explanations ---
-    missing_with_reasons = []
-    for skill in missing_skills:
-        priority = "High" if skill.lower() in {"python", "javascript", "sql", "git",
-                                                 "html", "css", "react", "node.js",
-                                                 "docker", "aws", "machine learning"} else "Medium"
-        missing_with_reasons.append({
-            "skill": skill,
-            "priority": priority,
-            "reason": f"Core requirement for {best_role['role']}",
-        })
-
-    # Sort: High priority first
-    missing_with_reasons.sort(key=lambda x: 0 if x["priority"] == "High" else 1)
-
-    # --- Summary explanation ---
-    parts = []
-    parts.append(f"Your resume best aligns with the **{best_role['role']}** role "
-                 f"({matched_count}/{total_role_skills} skills matched).")
-    if missing_skills:
-        parts.append(f"You are missing {len(missing_skills)} key skill(s): "
-                     f"{', '.join(missing_skills[:5])}"
-                     f"{'...' if len(missing_skills) > 5 else ''}.")
-    else:
-        parts.append("You have all the core skills for this role!")
-    if recommended_list:
-        parts.append(f"We also recommend learning {', '.join(r['skill'] for r in recommended_list[:3])} "
-                     f"to broaden your career options.")
-
-    return {
-        "target_role": best_role["role"],
-        "target_icon": best_role["icon"],
-        "missing_skills": missing_with_reasons,
-        "recommended_skills": recommended_list,
-        "summary": " ".join(parts),
-        "gap_percentage": gap_pct,
-        "matched_count": matched_count,
-        "total_role_skills": total_role_skills,
-    }
-
+def extract_skills_categorized(text):
+    return extract_skills_ai(text)
 
 def get_all_skills():
-    """Return a flat sorted list of every skill in the database."""
-    categories = load_skills()
-    all_skills = []
-    for skill_list in categories.values():
-        all_skills.extend(skill_list)
-    return sorted(set(all_skills))
+    return get_all_skills_ai()
 
-
-def simulate_evolution(current_skills, added_skill):
+def calculate_score(skill_results, text=""):
     """
-    Simulate what happens when a new skill is added to the resume.
-
-    Args:
-        current_skills (list): Current detected skills.
-        added_skill    (str):  The new skill to add.
-
-    Returns:
-        dict with before/after comparison and improvement explanation.
+    Legacy wrapper. In V1, it just took a dict.  
+    We mock a full run if only a dict is provided, but ideally 
+    app.py should now call analyze_resume_ai directly.
     """
-    # --- BEFORE ---
-    before_skill_results = {
-        "skills": list(current_skills),
-        "categorized": {},
-        "total": len(current_skills),
-    }
-    # rebuild categorized for before
-    categories = load_skills()
-    for cat, slist in categories.items():
-        found = [s for s in current_skills if s.lower() in {sk.lower() for sk in slist}]
-        if found:
-            before_skill_results["categorized"][cat.replace("_", " ").title()] = found
+    if isinstance(skill_results, list):
+        skill_results = {"skills": skill_results, "total": len(skill_results)}
+    
+    role = predict_role(text) if text else {"predicted_role": "Unknown", "confidence": 0}
+    return calculate_score_ai(text, skill_results, role)
 
-    before_score = calculate_score(before_skill_results)
-    before_risk  = risk_analysis(before_score["score"], current_skills)
-    before_career = career_prediction(current_skills)
+def risk_analysis(score, skills):
+    """Legacy wrapper."""
+    skill_dict = {"skills": skills, "total": len(skills)} if isinstance(skills, list) else skills
+    score_dict = {"total_score": score, "score": score, "dimensions": {}} if isinstance(score, (int, float)) else score
+    return predict_risk_ai(score_dict, skill_dict, "")
 
-    # --- ADD SKILL ---
-    updated_skills = list(current_skills)
-    already_present = added_skill.lower() in {s.lower() for s in updated_skills}
-    if not already_present:
-        updated_skills.append(added_skill)
-
-    # --- AFTER ---
-    after_skill_results = {
-        "skills": updated_skills,
-        "categorized": {},
-        "total": len(updated_skills),
-    }
-    for cat, slist in categories.items():
-        found = [s for s in updated_skills if s.lower() in {sk.lower() for sk in slist}]
-        if found:
-            after_skill_results["categorized"][cat.replace("_", " ").title()] = found
-
-    after_score  = calculate_score(after_skill_results)
-    after_risk   = risk_analysis(after_score["score"], updated_skills)
-    after_career = career_prediction(updated_skills)
-
-    # --- Improvement explanation ---
-    score_diff = after_score["score"] - before_score["score"]
-    reasons = []
-    if already_present:
-        reasons.append(f"'{added_skill}' is already in your profile — no change.")
+def career_prediction(skills):
+    """Legacy wrapper — derives career predictions from skills list."""
+    if not skills:
+        return []
+    # Build a pseudo-resume text from skills so we can run full AI pipeline
+    if isinstance(skills, list):
+        skill_text = " ".join(skills)
+    elif isinstance(skills, dict):
+        all_s = []
+        for arr in skills.values():
+            if isinstance(arr, list):
+                all_s.extend(arr)
+        skill_text = " ".join(all_s)
     else:
-        reasons.append(f"Adding '{added_skill}' increased your skill count to {len(updated_skills)}.")
-        if score_diff > 0:
-            reasons.append(f"Score improved by +{score_diff} points ({before_score['score']} -> {after_score['score']}).")
-        if before_risk["risk_level"] != after_risk["risk_level"]:
-            reasons.append(f"Risk level changed from {before_risk['risk_level']} to {after_risk['risk_level']}.")
-        # new career roles
-        before_roles = {p["role"] for p in before_career}
-        new_roles = [p for p in after_career if p["role"] not in before_roles]
-        if new_roles:
-            reasons.append(f"New career path unlocked: {', '.join(r['role'] for r in new_roles)}.")
+        skill_text = str(skills)
 
-    return {
-        "added_skill": added_skill,
-        "already_present": already_present,
-        "before": {
-            "score": before_score["score"],
-            "level": before_score["level"],
-            "risk": before_risk["risk_level"],
-            "risk_icon": before_risk["risk_icon"],
-            "careers": len(before_career),
-        },
-        "after": {
-            "score": after_score["score"],
-            "level": after_score["level"],
-            "risk": after_risk["risk_level"],
-            "risk_icon": after_risk["risk_icon"],
-            "careers": len(after_career),
-            "career_predictions": after_career[:5],
-        },
-        "improvement": " ".join(reasons),
-    }
+    pseudo_text = (
+        "SKILLS\n" + skill_text + "\n"
+        "EXPERIENCE\nSoftware Development\nProjects\nEducation"
+    )
+    try:
+        from ai_engine.modules.m4_role_classifier import predict_role
+        from ai_engine.role_knowledge import get_role_knowledge
+        role_result = predict_role(pseudo_text)
+        # Build career predictions from top_3 roles
+        predictions = []
+        for entry in role_result.get("top_3", []):
+            role_name = entry["role"]
+            prob = entry["probability"]
+            rk = get_role_knowledge(role_name)
+            top_skills = rk.get("top_skills", [])[:5]
+            if isinstance(skills, list):
+                flat_skills = [s.lower() for s in skills]
+            else:
+                flat_skills = [s.lower() for arr in (skills.values() if isinstance(skills, dict) else []) for s in (arr if isinstance(arr, list) else [])]
+            matched = [s for s in top_skills if s.lower() in flat_skills or any(s.lower() in sk for sk in flat_skills)]
+            match_pct = int(prob * 100)
+            predictions.append({
+                "role": role_name,
+                "match_percentage": match_pct,
+                "matched_skills": matched,
+                "reason": f"{len(matched)} of {len(top_skills)} key skills matched for this role.",
+            })
+        return predictions
+    except Exception:
+        return []
+
+
+def skill_gap_analysis(skills):
+    """Legacy wrapper — derives skill gap from skills list."""
+    if not skills:
+        return {}
+    if isinstance(skills, list):
+        flat_skills = skills
+    elif isinstance(skills, dict):
+        flat_skills = [s for arr in skills.values() for s in (arr if isinstance(arr, list) else [])]
+    else:
+        flat_skills = []
+    try:
+        from ai_engine.role_knowledge import get_skill_gap
+        # Use best-guess role from career prediction
+        preds = career_prediction(skills)
+        top_role = preds[0]["role"] if preds else ""
+        return get_skill_gap(flat_skills, top_role)
+    except Exception:
+        return {}
+
+
+def simulate_evolution(current_skills, added_skill=""):
+    """Wrapper for digital twin. Accepts (current_skills_list, added_skill_str)."""
+    # Build pseudo resume text from the skills list
+    if isinstance(current_skills, list):
+        skill_text = " ".join(str(s) for s in current_skills)
+    elif isinstance(current_skills, str):
+        skill_text = current_skills
+    else:
+        skill_text = ""
+    pseudo_resume = (
+        "SKILLS\n" + skill_text + "\n"
+        "EXPERIENCE\nSoftware Developer\nProjects\nEducation\nCertifications"
+    )
+    return simulate_ai(pseudo_resume, str(added_skill))
+
+def fetch_skill_data():
+    """Legacy wrapper to fetch raw db."""
+    import os
+    db_path = os.path.join(os.path.dirname(__file__), "ai_engine", "models", "skill_db.json")
+    if os.path.exists(db_path):
+        import json
+        with open(db_path, "r") as f:
+            return json.load(f)
+    return {}

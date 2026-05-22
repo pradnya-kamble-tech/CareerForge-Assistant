@@ -1,0 +1,50 @@
+2026-04-01 22:41:05 | INFO    | CareerForge AI server starting up...
+2026-04-01 22:41:06 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:06 | INFO    | SQLite database initialised.
+2026-04-01 22:41:07 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:07 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:07 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.recruiterqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+test_01_empty_pdf (__main__.TestCareerForgeAI_QA)
+Edge Case 1: Empty PDF should be caught by content validator. ... 2026-04-01 22:41:07 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:08 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:08 | INFO    | User logged in: testqa@careerforge.com (role=Student)
+2026-04-01 22:41:08 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:08 | INFO    | Student resume uploaded: 4e2ac9a8_empty.pdf (user=testqa@careerforge.com)
+2026-04-01 22:41:08 | WARNING | Rejected non-resume PDF: 4e2ac9a8_empty.pdf
+ok
+test_02_non_pdf_file (__main__.TestCareerForgeAI_QA)
+Edge Case 2: Extension validation. ... 2026-04-01 22:41:08 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:08 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:08 | INFO    | User logged in: testqa@careerforge.com (role=Student)
+2026-04-01 22:41:08 | WARNING | Invalid file type rejected: text.txt (mime=text/plain)
+ok
+test_03_no_file (__main__.TestCareerForgeAI_QA)
+Edge Case 3: No file part. ... 2026-04-01 22:41:08 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:09 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:09 | INFO    | User logged in: testqa@careerforge.com (role=Student)
+ok
+test_04_ai_demo_flow (__main__.TestCareerForgeAI_QA)
+Validate AI logic end-to-end using the demo-data endpoint (simulates perfect resume). ... 2026-04-01 22:41:09 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:09 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:09 | INFO    | User logged in: testqa@careerforge.com (role=Student)
+2026-04-01 22:41:15 | INFO    | Demo mode analysis served (id=4c7f66fc595e4674b57d109716c70bc0)
+ok
+test_05_digital_twin (__main__.TestCareerForgeAI_QA)
+Digital Twin edge case simulation. ... 2026-04-01 22:41:15 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=%2A&email=eq.testqa%40careerforge.com&limit=1 "HTTP/2 200 OK"
+2026-04-01 22:41:15 | INFO    | HTTP Request: POST https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/logs "HTTP/2 201 Created"
+2026-04-01 22:41:15 | INFO    | User logged in: testqa@careerforge.com (role=Student)
+FAIL
+
+======================================================================
+FAIL: test_05_digital_twin (__main__.TestCareerForgeAI_QA)
+Digital Twin edge case simulation.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "qa_test_harness.py", line 71, in test_05_digital_twin
+    assert "score_delta" in rj["deltas"]
+AssertionError
+
+----------------------------------------------------------------------
+Ran 5 tests in 9.124s
+
+FAILED (failures=1)

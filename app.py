@@ -662,7 +662,9 @@ def admin_page():
                            risk_dist=stats["risk_dist"],
                            score_dist=stats["score_dist"],
                            total_users=stats["total_users"],
-                           total_logs=stats["total_logs"])
+                           total_logs=stats["total_logs"],
+                           trend_labels=stats["trend_labels"],
+                           trend_data=stats["trend_data"])
 
 # ---------- Logs Route (Admin only) ----------
 

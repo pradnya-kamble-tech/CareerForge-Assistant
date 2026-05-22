@@ -1,0 +1,24 @@
+{
+  "name": "careerforge",
+  "version": "1.0.0",
+  "description": "⚡ CareerForge AI — AI-Powered Resume Intelligence System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pradnya-kamble-tech/CareerForge-Assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pradnya-kamble-tech/CareerForge-Assistant/issues"
+  },
+  "homepage": "https://github.com/pradnya-kamble-tech/CareerForge-Assistant#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.0"
+  }
+}
