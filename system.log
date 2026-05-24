@@ -604,3 +604,602 @@
 2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "GET / HTTP/1.1" 200 -
 2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-04-03 15:28:54 | INFO    | 127.0.0.1 - - [03/Apr/2026 15:28:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-08 08:50:12 | INFO    | CareerForge AI server starting up...
+2026-04-08 08:50:16 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-08 08:50:16 | INFO    | SQLite database initialised.
+2026-04-08 08:50:17 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://50.0.3.55:5000
+2026-04-08 08:50:17 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-08 08:50:17 | INFO    |  * Restarting with stat
+2026-04-08 08:50:19 | INFO    | CareerForge AI server starting up...
+2026-04-08 08:50:20 | INFO    | HTTP Request: GET https://vlwougjxmsjmmurbfjdl.supabase.co/rest/v1/users?select=id&limit=1 "HTTP/2 200 OK"
+2026-04-08 08:50:20 | INFO    | SQLite database initialised.
+2026-04-08 08:50:20 | WARNING |  * Debugger is active!
+2026-04-08 08:50:20 | INFO    |  * Debugger PIN: 108-683-728
+2026-04-08 08:51:02 | INFO    | 127.0.0.1 - - [08/Apr/2026 08:51:02] "GET / HTTP/1.1" 200 -
+2026-04-08 08:51:02 | INFO    | 127.0.0.1 - - [08/Apr/2026 08:51:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-08 08:51:02 | INFO    | 127.0.0.1 - - [08/Apr/2026 08:51:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-08 08:51:04 | WARNING | 404 Not Found: /favicon.ico
+2026-04-08 08:51:04 | INFO    | 127.0.0.1 - - [08/Apr/2026 08:51:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 14:45:39 | INFO    | CareerForge AI server starting up...
+2026-04-17 14:45:40 | INFO    | SQLite database initialised.
+2026-04-17 14:45:40 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.226.243.106:5000
+2026-04-17 14:45:40 | INFO    | [33mPress CTRL+C to quit[0m
+2026-04-17 14:45:40 | INFO    |  * Restarting with stat
+2026-04-17 14:45:42 | INFO    | CareerForge AI server starting up...
+2026-04-17 14:45:42 | INFO    | SQLite database initialised.
+2026-04-17 14:45:42 | WARNING |  * Debugger is active!
+2026-04-17 14:45:42 | INFO    |  * Debugger PIN: 141-228-921
+2026-04-17 14:46:38 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:46:38] "GET / HTTP/1.1" 200 -
+2026-04-17 14:46:39 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:46:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-17 14:46:39 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:46:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-17 14:46:44 | WARNING | 404 Not Found: /favicon.ico
+2026-04-17 14:46:44 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:46:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 14:47:07 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:07] "GET /login HTTP/1.1" 200 -
+2026-04-17 14:47:07 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-17 14:47:07 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-17 14:47:16 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:16] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2026-04-17 14:47:16 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:16] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-17 14:47:16 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:16] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-17 14:47:17 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:17] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=J3xosV6guNmEmeinTamU HTTP/1.1" 200 -
+2026-04-17 14:47:17 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:17] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-17 14:47:26 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:26] "GET /register HTTP/1.1" 200 -
+2026-04-17 14:47:26 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-17 14:47:26 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-17 14:47:55 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:55] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2026-04-17 14:47:55 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:55] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-17 14:47:55 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:55] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-17 14:47:55 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:55] "GET /register?__debugger__=yes&cmd=resource&f=console.png&s=J3xosV6guNmEmeinTamU HTTP/1.1" 200 -
+2026-04-17 14:47:55 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:47:55] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-17 14:54:10 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-04-17 14:54:11 | INFO    |  * Restarting with stat
+2026-04-17 14:54:12 | INFO    | CareerForge AI server starting up...
+2026-04-17 14:54:12 | INFO    | SQLite database initialised.
+2026-04-17 14:54:12 | WARNING |  * Debugger is active!
+2026-04-17 14:54:12 | INFO    |  * Debugger PIN: 141-228-921
+2026-04-17 14:55:58 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:55:58] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-04-17 14:55:58 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:55:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-17 14:55:58 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:55:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-04-17 14:55:58 | INFO    | Demo mode analysis served (id=bf04b1ad6d184602a0de056fceab5d6a)
+2026-04-17 14:55:58 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:55:58] "GET /api/demo-data HTTP/1.1" 200 -
+2026-04-17 14:56:23 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:23] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2026-04-17 14:56:23 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:23] "GET /login HTTP/1.1" 200 -
+2026-04-17 14:56:31 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:31] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2026-04-17 14:56:31 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:31] "GET /login HTTP/1.1" 200 -
+2026-04-17 14:56:32 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:32] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2026-04-17 14:56:32 | INFO    | 127.0.0.1 - - [17/Apr/2026 14:56:32] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:47:23 | INFO    | CareerForge AI server starting up...
+2026-05-24 14:47:23 | INFO    | SQLite database initialised.
+2026-05-24 14:47:23 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 14:47:23 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 14:47:23 | INFO    |  * Restarting with stat
+2026-05-24 14:47:24 | INFO    | CareerForge AI server starting up...
+2026-05-24 14:47:24 | INFO    | SQLite database initialised.
+2026-05-24 14:47:24 | WARNING |  * Debugger is active!
+2026-05-24 14:47:24 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 14:47:34 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:34] "HEAD /api/status HTTP/1.1" 200 -
+2026-05-24 14:47:34 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:34] "GET /api/status HTTP/1.1" 200 -
+2026-05-24 14:47:51 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:51] "GET / HTTP/1.1" 200 -
+2026-05-24 14:47:51 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:51] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-24 14:47:51 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:51] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-24 14:47:53 | WARNING | 404 Not Found: /favicon.ico
+2026-05-24 14:47:53 | INFO    | 127.0.0.1 - - [24/May/2026 14:47:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 14:48:26 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:26] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:48:27 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:48:27 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:27] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:48:28 | WARNING | Failed login attempt for: test@student.com
+2026-05-24 14:48:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:48:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:28] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:48:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:48:29 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:48:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:43] "GET /register HTTP/1.1" 200 -
+2026-05-24 14:48:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:48:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:48:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:49:02 | INFO    | New user registered: smita@gmail.com (role=Student)
+2026-05-24 14:49:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:02] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-24 14:49:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:02] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:49:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:49:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:49:07 | INFO    | User logged in: smita@gmail.com (role=Student)
+2026-05-24 14:49:07 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:49:07 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:07] "GET /student HTTP/1.1" 200 -
+2026-05-24 14:49:07 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:49:07 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:49:17 | INFO    | Student resume uploaded: 55a42489_221-simple-resume-template.pdf (user=smita@gmail.com)
+2026-05-24 14:49:17 | INFO    | Student analysis complete: 55a42489_221-simple-resume-template.pdf | score=55 | skills=4 | id=3038c0fca3504b40b702d96e660eb61f
+2026-05-24 14:49:17 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:17] "POST /upload HTTP/1.1" 200 -
+2026-05-24 14:49:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:28] "POST /simulate HTTP/1.1" 200 -
+2026-05-24 14:49:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:49:57] "GET /download-report HTTP/1.1" 200 -
+2026-05-24 14:50:03 | INFO    | User logged out
+2026-05-24 14:50:03 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 14:50:03 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:03] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:50:03 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:50:03 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:50:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:06] "GET /register HTTP/1.1" 200 -
+2026-05-24 14:50:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:50:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:50:26 | INFO    | New user registered: shruti@gmail.com (role=Recruiter)
+2026-05-24 14:50:26 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:26] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-24 14:50:26 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:26] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:50:26 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:50:26 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:50:31 | INFO    | User logged in: shruti@gmail.com (role=Recruiter)
+2026-05-24 14:50:31 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:50:31 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:31] "GET /recruiter HTTP/1.1" 200 -
+2026-05-24 14:50:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:50:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:50:50 | INFO    | Recruiter analysis: 8907b69c_36434348.pdf | score=83
+2026-05-24 14:50:51 | INFO    | Recruiter analysis: 4d547e69_36856210.pdf | score=35
+2026-05-24 14:50:52 | INFO    | Recruiter analysis: 965a68d2_37242217.pdf | score=100
+2026-05-24 14:50:53 | INFO    | Recruiter analysis: 960522b3_37764298.pdf | score=35
+2026-05-24 14:50:54 | INFO    | Recruiter analysis: 11c4b7d9_38753827.pdf | score=30
+2026-05-24 14:50:55 | INFO    | Recruiter analysis: 0d86fdd2_39413067.pdf | score=95
+2026-05-24 14:50:55 | INFO    | Recruiter analysis: 9004566d_39718499.pdf | score=45
+2026-05-24 14:50:56 | INFO    | Recruiter analysis: 6858d9a0_40018190.pdf | score=25
+2026-05-24 14:50:57 | INFO    | Recruiter analysis: 9e350392_41344156.pdf | score=60
+2026-05-24 14:50:58 | INFO    | Recruiter analysis: 4c41ab18_46260230.pdf | score=82
+2026-05-24 14:50:59 | INFO    | Recruiter analysis: d5f7fea6_48037995.pdf | score=25
+2026-05-24 14:50:59 | INFO    | Recruiter batch complete: 11 resumes (user=shruti@gmail.com)
+2026-05-24 14:50:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:59] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-24 14:50:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:50:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:50:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:08 | INFO    | Recruiter shortlisted: 965a68d2_37242217.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:08 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:08] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:10 | INFO    | Recruiter rejected: 0d86fdd2_39413067.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:10 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:10] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:11 | INFO    | Recruiter shortlisted: 8907b69c_36434348.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:11 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:11] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:13 | INFO    | Recruiter rejected: 4c41ab18_46260230.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:13 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:13] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:14 | INFO    | Recruiter shortlisted: 9e350392_41344156.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:14 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:14] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:15 | INFO    | Recruiter rejected: 9004566d_39718499.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:15 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:15] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:17 | INFO    | Recruiter shortlisted: 4d547e69_36856210.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:17 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:17] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:18 | INFO    | Recruiter rejected: 960522b3_37764298.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:18 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:18] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:19 | INFO    | Recruiter shortlisted: 11c4b7d9_38753827.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:19 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:19] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:21 | INFO    | Recruiter rejected: d5f7fea6_48037995.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:21 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:21] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:22 | INFO    | Recruiter shortlisted: 6858d9a0_40018190.pdf (user=shruti@gmail.com)
+2026-05-24 14:51:22 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:22] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-24 14:51:24 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:24] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-24 14:51:24 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:24 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:28] "GET /recruiter HTTP/1.1" 200 -
+2026-05-24 14:51:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:28 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:35 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:35] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-05-24 14:51:35 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:35] "GET /access-denied HTTP/1.1" 200 -
+2026-05-24 14:51:35 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:35 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:43] "GET /recruiter HTTP/1.1" 200 -
+2026-05-24 14:51:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:43 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:45 | INFO    | User logged out
+2026-05-24 14:51:45 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:45] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 14:51:45 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:45] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:51:45 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:45 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:51:47 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:47] "GET /register HTTP/1.1" 200 -
+2026-05-24 14:51:47 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:51:47 | INFO    | 127.0.0.1 - - [24/May/2026 14:51:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:52:31 | INFO    | New user registered: amruta@gmail.com (role=Admin)
+2026-05-24 14:52:31 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:31] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-24 14:52:31 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:31] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:52:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:52:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:52:38 | INFO    | User logged in: amruta@gmail.com (role=Admin)
+2026-05-24 14:52:38 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:52:39 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:39] "GET /admin HTTP/1.1" 200 -
+2026-05-24 14:52:39 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:52:39 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:52:55 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:55] "GET /admin/logs HTTP/1.1" 200 -
+2026-05-24 14:52:55 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:52:55 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:55] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:52:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:57] "GET /admin HTTP/1.1" 200 -
+2026-05-24 14:52:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:52:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:52:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:59] "GET /recruiter HTTP/1.1" 200 -
+2026-05-24 14:52:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:52:59 | INFO    | 127.0.0.1 - - [24/May/2026 14:52:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:53:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:02] "GET /student HTTP/1.1" 200 -
+2026-05-24 14:53:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:53:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:53:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:06] "GET /admin HTTP/1.1" 200 -
+2026-05-24 14:53:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:53:06 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:53:15 | INFO    | User logged out
+2026-05-24 14:53:15 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 14:53:15 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:15] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:53:15 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:53:15 | INFO    | 127.0.0.1 - - [24/May/2026 14:53:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:54:00 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:00] "GET / HTTP/1.1" 200 -
+2026-05-24 14:54:00 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:54:00 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:54:19 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:19] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 14:54:20 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:54:20 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:54:20 | INFO    | Demo mode analysis served (id=7fe28e56703741f8b3b879bd676f5c23)
+2026-05-24 14:54:20 | INFO    | 127.0.0.1 - - [24/May/2026 14:54:20] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 14:55:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:55:33] "GET /register HTTP/1.1" 200 -
+2026-05-24 14:55:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:55:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:55:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:55:33] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:56:32 | INFO    | New user registered: testuser@example.com (role=Student)
+2026-05-24 14:56:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:56:32] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-24 14:56:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:56:33] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:56:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:56:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:56:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:56:33] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:57:32 | WARNING | Failed login attempt for: testuser@example.com
+2026-05-24 14:57:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:57:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:32] "GET /login HTTP/1.1" 200 -
+2026-05-24 14:57:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:57:32 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:57:51 | INFO    | User logged in: testuser@example.com (role=Student)
+2026-05-24 14:57:51 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 14:57:51 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:51] "GET /student HTTP/1.1" 200 -
+2026-05-24 14:57:52 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:57:52 | INFO    | 127.0.0.1 - - [24/May/2026 14:57:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:58:22 | WARNING | 404 Not Found: /test_resume.pdf
+2026-05-24 14:58:22 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:22] "[33mHEAD /test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:58:22 | WARNING | 404 Not Found: /static/test_resume.pdf
+2026-05-24 14:58:22 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:22] "[33mHEAD /static/test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:58:22 | WARNING | 404 Not Found: /static/resumes/test_resume.pdf
+2026-05-24 14:58:22 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:22] "[33mHEAD /static/resumes/test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:58:22 | WARNING | 404 Not Found: /uploads/test_resume.pdf
+2026-05-24 14:58:22 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:22] "[33mHEAD /uploads/test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:58:36 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:36] "GET /api/status HTTP/1.1" 200 -
+2026-05-24 14:58:45 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:45] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 14:58:46 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 14:58:46 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:58:46 | INFO    | Demo mode analysis served (id=8fd2df6304b441548793ada335dac75f)
+2026-05-24 14:58:46 | INFO    | 127.0.0.1 - - [24/May/2026 14:58:46] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 14:59:02 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 14:59:11 | WARNING | 404 Not Found: /app.py
+2026-05-24 14:59:11 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:11] "[33mGET /app.py HTTP/1.1[0m" 404 -
+2026-05-24 14:59:33 | WARNING | 404 Not Found: /test_resume.pdf
+2026-05-24 14:59:33 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:33] "[33mGET /test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:59:57 | WARNING | 404 Not Found: /careerforge/test_resume.pdf
+2026-05-24 14:59:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:57] "[33mHEAD /careerforge/test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:59:57 | WARNING | 404 Not Found: /antigravity/scratch/careerforge/test_resume.pdf
+2026-05-24 14:59:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:57] "[33mHEAD /antigravity/scratch/careerforge/test_resume.pdf HTTP/1.1[0m" 404 -
+2026-05-24 14:59:57 | WARNING | 404 Not Found: /test_resume
+2026-05-24 14:59:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:57] "[33mHEAD /test_resume HTTP/1.1[0m" 404 -
+2026-05-24 14:59:57 | WARNING | 404 Not Found: /static/test_resume
+2026-05-24 14:59:57 | INFO    | 127.0.0.1 - - [24/May/2026 14:59:57] "[33mHEAD /static/test_resume HTTP/1.1[0m" 404 -
+2026-05-24 15:00:05 | INFO    | Student resume uploaded: 8b5ee3da_test_resume.pdf (user=testuser@example.com)
+2026-05-24 15:00:05 | WARNING | Rejected non-resume PDF: 8b5ee3da_test_resume.pdf
+2026-05-24 15:00:05 | INFO    | 127.0.0.1 - - [24/May/2026 15:00:05] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2026-05-24 15:00:15 | INFO    | Student resume uploaded: 654420ec_test_resume.pdf (user=testuser@example.com)
+2026-05-24 15:00:16 | INFO    | Student analysis complete: 654420ec_test_resume.pdf | score=83 | skills=7 | id=0d299f3764864662a5f09318b9af1945
+2026-05-24 15:00:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:00:16] "POST /upload HTTP/1.1" 200 -
+2026-05-24 15:00:23 | WARNING | 404 Not Found: /static/
+2026-05-24 15:00:23 | INFO    | 127.0.0.1 - - [24/May/2026 15:00:23] "[33mGET /static/ HTTP/1.1[0m" 404 -
+2026-05-24 15:00:31 | WARNING | 404 Not Found: /api/test-data
+2026-05-24 15:00:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:00:31] "[33mGET /api/test-data HTTP/1.1[0m" 404 -
+2026-05-24 15:02:15 | INFO    | Student resume uploaded: eb18fa6f_test_resume.pdf (user=testuser@example.com)
+2026-05-24 15:02:16 | INFO    | Student analysis complete: eb18fa6f_test_resume.pdf | score=100 | skills=17 | id=77a6ddec4e4544358c1cad22448031e3
+2026-05-24 15:02:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:02:16] "POST /upload HTTP/1.1" 200 -
+2026-05-24 15:03:15 | INFO    | 127.0.0.1 - - [24/May/2026 15:03:15] "GET /download-report/77a6ddec4e4544358c1cad22448031e3 HTTP/1.1" 200 -
+2026-05-24 15:03:23 | INFO    | 127.0.0.1 - - [24/May/2026 15:03:23] "HEAD /download-report/77a6ddec4e4544358c1cad22448031e3 HTTP/1.1" 200 -
+2026-05-24 15:06:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:06:31] "GET /download-report/77a6ddec4e4544358c1cad22448031e3 HTTP/1.1" 200 -
+2026-05-24 15:15:21 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:15:21 | INFO    | SQLite database initialised.
+2026-05-24 15:15:22 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 15:15:22 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 15:15:22 | INFO    |  * Restarting with stat
+2026-05-24 15:15:23 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:15:23 | INFO    | SQLite database initialised.
+2026-05-24 15:15:23 | WARNING |  * Debugger is active!
+2026-05-24 15:15:23 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:15:40 | INFO    | 127.0.0.1 - - [24/May/2026 15:15:40] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:15:40 | INFO    | 127.0.0.1 - - [24/May/2026 15:15:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:15:40 | INFO    | 127.0.0.1 - - [24/May/2026 15:15:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:15:40 | INFO    | Demo mode analysis served (id=8e94169812a7494eae61b7a47c8752ee)
+2026-05-24 15:15:40 | INFO    | 127.0.0.1 - - [24/May/2026 15:15:40] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:16:51 | INFO    | 127.0.0.1 - - [24/May/2026 15:16:51] "POST /simulate HTTP/1.1" 200 -
+2026-05-24 15:17:14 | INFO    | 127.0.0.1 - - [24/May/2026 15:17:14] "GET /static/test_resume.pdf HTTP/1.1" 200 -
+2026-05-24 15:18:34 | INFO    | 127.0.0.1 - - [24/May/2026 15:18:34] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:18:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:18:35] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-24 15:18:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:18:35] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-24 15:18:36 | INFO    | Demo mode analysis served (id=04f3c169223041bfb1aebc31cf1bde53)
+2026-05-24 15:18:36 | INFO    | 127.0.0.1 - - [24/May/2026 15:18:36] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:18:37 | WARNING | 404 Not Found: /favicon.ico
+2026-05-24 15:18:37 | INFO    | 127.0.0.1 - - [24/May/2026 15:18:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 15:31:21 | INFO    | 127.0.0.1 - - [24/May/2026 15:31:21] "GET /download-report/8e94169812a7494eae61b7a47c8752ee HTTP/1.1" 200 -
+2026-05-24 15:32:41 | INFO    | 127.0.0.1 - - [24/May/2026 15:32:41] "HEAD /download-report/1226f153c28a4ee3b89e5501ebb326ce HTTP/1.1" 200 -
+2026-05-24 15:33:10 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-05-24 15:33:10 | INFO    |  * Restarting with stat
+2026-05-24 15:33:11 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:33:11 | INFO    | SQLite database initialised.
+2026-05-24 15:33:11 | WARNING |  * Debugger is active!
+2026-05-24 15:33:11 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:33:17 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-05-24 15:33:18 | INFO    |  * Restarting with stat
+2026-05-24 15:33:18 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:33:18 | INFO    | SQLite database initialised.
+2026-05-24 15:33:18 | WARNING |  * Debugger is active!
+2026-05-24 15:33:18 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:33:25 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:33:25 | INFO    | SQLite database initialised.
+2026-05-24 15:33:25 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 15:33:25 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 15:33:25 | INFO    |  * Restarting with stat
+2026-05-24 15:33:26 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:33:26 | INFO    | SQLite database initialised.
+2026-05-24 15:33:26 | WARNING |  * Debugger is active!
+2026-05-24 15:33:26 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:33:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:33:42] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:33:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:33:42] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-24 15:33:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:33:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:33:42 | INFO    | Demo mode analysis served (id=77aed8b206974986bc198cbc6eef3192)
+2026-05-24 15:33:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:33:42] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:33:58 | INFO    | 127.0.0.1 - - [24/May/2026 15:33:58] "GET /download-report/77aed8b206974986bc198cbc6eef3192 HTTP/1.1" 200 -
+2026-05-24 15:34:25 | INFO    | 127.0.0.1 - - [24/May/2026 15:34:25] "GET /download-report HTTP/1.1" 200 -
+2026-05-24 15:34:46 | INFO    | 127.0.0.1 - - [24/May/2026 15:34:46] "GET /download-report HTTP/1.1" 200 -
+2026-05-24 15:35:00 | INFO    | User logged out
+2026-05-24 15:35:00 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 15:35:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:01] "GET /login HTTP/1.1" 200 -
+2026-05-24 15:35:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:35:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:35:09 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:09] "[32mGET /download-report HTTP/1.1[0m" 302 -
+2026-05-24 15:35:09 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:09] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-05-24 15:35:10 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:10] "GET /login HTTP/1.1" 200 -
+2026-05-24 15:35:10 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:35:10 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:35:31 | INFO    | User logged in: amruta@gmail.com (role=Admin)
+2026-05-24 15:35:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 15:35:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:31] "GET /admin HTTP/1.1" 200 -
+2026-05-24 15:35:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:35:31 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:35:41 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:41] "GET /student HTTP/1.1" 200 -
+2026-05-24 15:35:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:35:42 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:42] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:35:52 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:52] "[32mGET /download-report HTTP/1.1[0m" 302 -
+2026-05-24 15:35:52 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:52] "GET /student HTTP/1.1" 200 -
+2026-05-24 15:35:52 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:35:52 | INFO    | 127.0.0.1 - - [24/May/2026 15:35:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:36:12 | INFO    | User logged out
+2026-05-24 15:36:12 | INFO    | 127.0.0.1 - - [24/May/2026 15:36:12] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 15:36:12 | INFO    | 127.0.0.1 - - [24/May/2026 15:36:12] "GET /login HTTP/1.1" 200 -
+2026-05-24 15:36:12 | INFO    | 127.0.0.1 - - [24/May/2026 15:36:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:36:12 | INFO    | 127.0.0.1 - - [24/May/2026 15:36:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:36:54 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:36:54 | INFO    | SQLite database initialised.
+2026-05-24 15:36:54 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 15:36:54 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 15:36:54 | INFO    |  * Restarting with stat
+2026-05-24 15:37:12 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:12] "GET /download-report/8e94169812a7494eae61b7a47c8752ee HTTP/1.1" 200 -
+2026-05-24 15:37:16 | INFO    | User logged in: amruta@gmail.com (role=Admin)
+2026-05-24 15:37:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 15:37:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:16] "GET /admin HTTP/1.1" 200 -
+2026-05-24 15:37:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:37:16 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:37:22 | INFO    | User logged out
+2026-05-24 15:37:22 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 15:37:22 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:22] "GET /login HTTP/1.1" 200 -
+2026-05-24 15:37:22 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:37:22 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:22] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:37:25 | INFO    | User logged in: smita@gmail.com (role=Student)
+2026-05-24 15:37:25 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 15:37:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:26] "GET /student HTTP/1.1" 200 -
+2026-05-24 15:37:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:37:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:37:33 | INFO    | Student resume uploaded: fbcd2054_40018190.pdf (user=smita@gmail.com)
+2026-05-24 15:37:34 | INFO    | Student analysis complete: fbcd2054_40018190.pdf | score=25 | skills=1 | id=b457fb50cbf04ca182bd7daa890fb548
+2026-05-24 15:37:34 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:34] "POST /upload HTTP/1.1" 200 -
+2026-05-24 15:37:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:37:35] "GET /download-report/b457fb50cbf04ca182bd7daa890fb548 HTTP/1.1" 200 -
+2026-05-24 15:38:00 | INFO    | 127.0.0.1 - - [24/May/2026 15:38:00] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:38:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:38:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:38:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:38:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:38:01 | INFO    | Demo mode analysis served (id=05bd455d3a064e5d9c57d5eff06d1453)
+2026-05-24 15:38:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:38:01] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:38:23 | INFO    | 127.0.0.1 - - [24/May/2026 15:38:23] "GET /download-report/05bd455d3a064e5d9c57d5eff06d1453 HTTP/1.1" 200 -
+2026-05-24 15:39:11 | INFO    | 127.0.0.1 - - [24/May/2026 15:39:11] "GET /download-report/05bd455d3a064e5d9c57d5eff06d1453 HTTP/1.1" 200 -
+2026-05-24 15:40:57 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-05-24 15:40:57 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-05-24 15:40:57 | INFO    |  * Restarting with stat
+2026-05-24 15:40:57 | INFO    |  * Restarting with stat
+2026-05-24 15:40:59 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:40:59 | INFO    | SQLite database initialised.
+2026-05-24 15:40:59 | INFO    | SQLite database initialised.
+2026-05-24 15:40:59 | WARNING |  * Debugger is active!
+2026-05-24 15:40:59 | WARNING |  * Debugger is active!
+2026-05-24 15:40:59 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:41:13 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:41:13 | INFO    | SQLite database initialised.
+2026-05-24 15:41:13 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 15:41:13 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 15:41:13 | INFO    |  * Restarting with stat
+2026-05-24 15:41:14 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:41:14 | INFO    | SQLite database initialised.
+2026-05-24 15:41:14 | WARNING |  * Debugger is active!
+2026-05-24 15:41:14 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:44:51 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\app.py', reloading
+2026-05-24 15:44:52 | INFO    |  * Restarting with stat
+2026-05-24 15:44:53 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:44:53 | INFO    | SQLite database initialised.
+2026-05-24 15:44:53 | WARNING |  * Debugger is active!
+2026-05-24 15:44:53 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:45:03 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\report_generator.py', reloading
+2026-05-24 15:45:03 | INFO    |  * Restarting with stat
+2026-05-24 15:45:04 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:45:04 | INFO    | SQLite database initialised.
+2026-05-24 15:45:04 | WARNING |  * Debugger is active!
+2026-05-24 15:45:04 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:45:20 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:45:20 | INFO    | SQLite database initialised.
+2026-05-24 15:45:20 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 15:45:20 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 15:45:20 | INFO    |  * Restarting with stat
+2026-05-24 15:45:21 | INFO    | CareerForge AI server starting up...
+2026-05-24 15:45:21 | INFO    | SQLite database initialised.
+2026-05-24 15:45:21 | WARNING |  * Debugger is active!
+2026-05-24 15:45:21 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 15:45:46 | INFO    | 127.0.0.1 - - [24/May/2026 15:45:46] "GET /download-report/05bd455d3a064e5d9c57d5eff06d1453 HTTP/1.1" 200 -
+2026-05-24 15:46:27 | INFO    | 127.0.0.1 - - [24/May/2026 15:46:27] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:46:27 | INFO    | 127.0.0.1 - - [24/May/2026 15:46:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:46:27 | INFO    | 127.0.0.1 - - [24/May/2026 15:46:27] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:46:27 | INFO    | Demo mode analysis served (id=f0726be76d2d4f7db0fcdc4e0954771d)
+2026-05-24 15:46:27 | INFO    | 127.0.0.1 - - [24/May/2026 15:46:27] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:46:30 | INFO    | 127.0.0.1 - - [24/May/2026 15:46:30] "GET /download-report/f0726be76d2d4f7db0fcdc4e0954771d HTTP/1.1" 200 -
+2026-05-24 15:47:40 | INFO    | 127.0.0.1 - - [24/May/2026 15:47:40] "GET /download-report/05bd455d3a064e5d9c57d5eff06d1453 HTTP/1.1" 200 -
+2026-05-24 15:48:23 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:23] "GET /download-report/f0726be76d2d4f7db0fcdc4e0954771d HTTP/1.1" 200 -
+2026-05-24 15:48:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:26] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:48:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:48:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:48:26 | INFO    | Demo mode analysis served (id=f7da09c0753a4211b3a9cc22f5a34198)
+2026-05-24 15:48:26 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:26] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:48:28 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:28] "GET /download-report/f7da09c0753a4211b3a9cc22f5a34198 HTTP/1.1" 200 -
+2026-05-24 15:48:34 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:34] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:48:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:48:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 15:48:35 | INFO    | Demo mode analysis served (id=b29b0c24a5d744b7a3a1fc6a1d0086f9)
+2026-05-24 15:48:35 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:35] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:48:43 | INFO    | Student resume uploaded: 65469567_40018190.pdf (user=smita@gmail.com)
+2026-05-24 15:48:44 | INFO    | Student analysis complete: 65469567_40018190.pdf | score=25 | skills=1 | id=6f45d669525f48dba8fa94de36a9ce0c
+2026-05-24 15:48:44 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:44] "POST /upload HTTP/1.1" 200 -
+2026-05-24 15:48:45 | INFO    | 127.0.0.1 - - [24/May/2026 15:48:45] "GET /download-report/6f45d669525f48dba8fa94de36a9ce0c HTTP/1.1" 200 -
+2026-05-24 15:52:33 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:33] "GET /download-report/05bd455d3a064e5d9c57d5eff06d1453 HTTP/1.1" 200 -
+2026-05-24 15:52:56 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:56] "GET /download-report/6f45d669525f48dba8fa94de36a9ce0c HTTP/1.1" 200 -
+2026-05-24 15:52:58 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:58] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 15:52:58 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:58] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-24 15:52:58 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 15:52:58 | INFO    | Demo mode analysis served (id=16e3c0802ccd48f68830df42394dba08)
+2026-05-24 15:52:58 | INFO    | 127.0.0.1 - - [24/May/2026 15:52:58] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 15:53:01 | INFO    | 127.0.0.1 - - [24/May/2026 15:53:01] "GET /download-report/16e3c0802ccd48f68830df42394dba08 HTTP/1.1" 200 -
+2026-05-24 16:51:44 | INFO    | 127.0.0.1 - - [24/May/2026 16:51:44] "GET /download-report/16e3c0802ccd48f68830df42394dba08 HTTP/1.1" 200 -
+2026-05-24 17:19:12 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:19:12 | INFO    | SQLite database initialised.
+2026-05-24 17:19:12 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 17:19:12 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 17:19:12 | INFO    |  * Restarting with stat
+2026-05-24 17:19:13 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:19:13 | INFO    | SQLite database initialised.
+2026-05-24 17:19:13 | WARNING |  * Debugger is active!
+2026-05-24 17:19:13 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 17:19:45 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:45] "GET / HTTP/1.1" 200 -
+2026-05-24 17:19:45 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:19:45 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:19:45 | WARNING | 404 Not Found: /favicon.ico
+2026-05-24 17:19:45 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 17:19:56 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:56] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 17:19:57 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:19:57 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:19:57 | INFO    | Demo mode analysis served (id=15c94cb04e594fb2be5e6c59f9d0bc32)
+2026-05-24 17:19:57 | INFO    | 127.0.0.1 - - [24/May/2026 17:19:57] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 17:20:18 | INFO    | 127.0.0.1 - - [24/May/2026 17:20:18] "GET /download-report/15c94cb04e594fb2be5e6c59f9d0bc32 HTTP/1.1" 200 -
+2026-05-24 17:20:50 | INFO    | 127.0.0.1 - - [24/May/2026 17:20:50] "GET /download-report/15c94cb04e594fb2be5e6c59f9d0bc32 HTTP/1.1" 200 -
+2026-05-24 17:21:54 | INFO    | 127.0.0.1 - - [24/May/2026 17:21:54] "GET /download-report/15c94cb04e594fb2be5e6c59f9d0bc32 HTTP/1.1" 200 -
+2026-05-24 17:32:38 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:32:38 | INFO    | SQLite database initialised.
+2026-05-24 17:32:38 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-24 17:32:38 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-24 17:32:38 | INFO    |  * Restarting with stat
+2026-05-24 17:32:39 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:32:39 | INFO    | SQLite database initialised.
+2026-05-24 17:32:39 | WARNING |  * Debugger is active!
+2026-05-24 17:32:39 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 17:33:07 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:07] "GET / HTTP/1.1" 200 -
+2026-05-24 17:33:07 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:07] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-24 17:33:07 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:25 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:25] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 17:33:25 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:25 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:25] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:33:25 | INFO    | Demo mode analysis served (id=cff983626e8c47238776c2103f844972)
+2026-05-24 17:33:25 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:25] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 17:33:48 | INFO    | 127.0.0.1 - - [24/May/2026 17:33:48] "GET /download-report/cff983626e8c47238776c2103f844972 HTTP/1.1" 200 -
+2026-05-24 17:35:23 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:23] "GET /download-report/cff983626e8c47238776c2103f844972 HTTP/1.1" 200 -
+2026-05-24 17:35:26 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:26] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 17:35:26 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:35:26 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:35:26 | INFO    | Demo mode analysis served (id=18cbf6a0162f483f9bdd50cc5d98cbb7)
+2026-05-24 17:35:26 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:26] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 17:35:28 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:28] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 17:35:28 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:35:28 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:35:28 | INFO    | Demo mode analysis served (id=55555ecda6cb49fbb87fc7048c5f4c8c)
+2026-05-24 17:35:28 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:28] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 17:35:28 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:28] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-24 17:35:29 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:35:29 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:29] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-24 17:35:29 | INFO    | Demo mode analysis served (id=1669706ba2dc4870863803fa7409414f)
+2026-05-24 17:35:29 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:29] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-24 17:35:31 | INFO    | 127.0.0.1 - - [24/May/2026 17:35:31] "GET /download-report/1669706ba2dc4870863803fa7409414f HTTP/1.1" 200 -
+2026-05-24 17:38:50 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:38:50 | INFO    | SQLite database initialised.
+2026-05-24 17:38:56 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:38:56 | INFO    | SQLite database initialised.
+2026-05-24 17:39:08 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\smoke_test.py', reloading
+2026-05-24 17:39:09 | INFO    |  * Restarting with stat
+2026-05-24 17:39:09 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:39:09 | INFO    | SQLite database initialised.
+2026-05-24 17:39:09 | WARNING |  * Debugger is active!
+2026-05-24 17:39:09 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 17:39:13 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:39:13 | INFO    | SQLite database initialised.
+2026-05-24 17:39:13 | INFO    | Demo mode analysis served (id=2d23b1db4f2f444e96e6f4d8c9b3019b)
+2026-05-24 17:39:23 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:39:23 | INFO    | SQLite database initialised.
+2026-05-24 17:39:23 | INFO    | Demo mode analysis served (id=a379c489365a4aa79459879c9716b7e8)
+2026-05-24 17:40:39 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:40:39 | INFO    | SQLite database initialised.
+2026-05-24 17:40:39 | INFO    | Demo mode analysis served (id=a9c14c225c6d486d8d790e9c21463bbe)
+2026-05-24 17:41:37 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:41:37 | INFO    | SQLite database initialised.
+2026-05-24 17:41:37 | INFO    | Demo mode analysis served (id=2a2602efddd74dd6ac9c986614e9ee99)
+2026-05-24 17:41:49 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\smoke_test.py', reloading
+2026-05-24 17:41:49 | INFO    |  * Restarting with stat
+2026-05-24 17:41:50 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:41:50 | INFO    | SQLite database initialised.
+2026-05-24 17:41:50 | WARNING |  * Debugger is active!
+2026-05-24 17:41:50 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 17:41:54 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:41:54 | INFO    | SQLite database initialised.
+2026-05-24 17:41:54 | INFO    | Demo mode analysis served (id=0fa45ba4d4804506b69c5901ec402201)
+2026-05-24 17:49:07 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-05-24 17:49:07 | INFO    |  * Restarting with stat
+2026-05-24 17:49:08 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:49:08 | INFO    | SQLite database initialised.
+2026-05-24 17:49:08 | WARNING |  * Debugger is active!
+2026-05-24 17:49:08 | INFO    |  * Debugger PIN: 137-515-081
+2026-05-24 17:49:25 | INFO    |  * Detected change in 'C:\\Users\\Shuddhodhan\\.gemini\\antigravity\\scratch\\careerforge\\database.py', reloading
+2026-05-24 17:49:25 | INFO    |  * Restarting with stat
+2026-05-24 17:51:49 | INFO    | CareerForge AI server starting up...
+2026-05-24 17:51:49 | INFO    | SQLite database initialised.
+2026-05-24 17:51:50 | INFO    | Demo mode analysis served (id=90dae9eada6e490f8df77dbcaa42dc73)
+2026-05-24 23:49:29 | INFO    | CareerForge AI server starting up...
+2026-05-24 23:50:26 | INFO    | CareerForge AI server starting up...
+2026-05-24 23:50:33 | INFO    | SQLite database initialised.
+2026-05-24 23:51:11 | INFO    | Demo mode analysis served (id=780c1f1305e64cbcb68e234ba5704a54)

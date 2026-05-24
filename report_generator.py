@@ -175,4 +175,4 @@ def generate_report(data):
             for item in recommended:
                 _label(pdf, f"  {item['skill']}  -  {item.get('reason', '')}")
 
-    return pdf.output()
+    return bytes(pdf.output())

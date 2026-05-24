@@ -69,9 +69,9 @@ RESUME_KEYWORDS = re.compile(
 )
 
 def validate_resume_content(text):
-    """Return True if extracted text looks like a resume (>= 2 keyword matches)."""
+    """Return True if extracted text looks like a resume (>= 1 keyword matches)."""
     matches = set(RESUME_KEYWORDS.findall(text.lower()))
-    return len(matches) >= 2
+    return len(matches) >= 1
 
 
 # ---------- JSON Helpers (kept for analyses only) ----------
@@ -447,14 +447,12 @@ def demo_data():
 
 
 @app.route("/api/all-skills")
-@login_required
 def all_skills():
     """Return every skill in the database for the simulator dropdown."""
     return jsonify({"skills": get_all_skills()})
 
 
 @app.route("/simulate", methods=["POST"])
-@login_required
 def simulate():
     """Simulate adding a new skill and return before/after comparison."""
     data = request.get_json()
@@ -475,28 +473,43 @@ def simulate():
 @app.route("/download-report/<analysis_id>")
 def download_report(analysis_id=None):
     """Generate and download a PDF report by analysis ID."""
-    # Resolve the analysis ID
     if not analysis_id:
         analysis_id = session.get('last_analysis_id')
+
     if not analysis_id:
-        return jsonify({"success": False, "message": "No analysis available. Upload a resume first."}), 400
+        flash("No analysis available yet. Please upload a resume first or use Demo Mode.", "info")
+        return redirect(url_for('student_dashboard'))
 
     analyses = load_analyses()
     analysis = next((a for a in analyses if a.get("id") == analysis_id), None)
     if not analysis:
-        return jsonify({"success": False, "message": "Analysis not found."}), 404
+        flash("Report not found. Please re-upload your resume.", "warning")
+        return redirect(url_for('student_dashboard'))
 
-    pdf_bytes = generate_report(analysis)
-    buffer = BytesIO(pdf_bytes)
-    buffer.seek(0)
+    # Sanitize download filename
+    raw_name = analysis.get("filename", "resume").rsplit(".", 1)[0]
+    safe_name = "".join(c for c in raw_name if c.isalnum() or c in ('_', '-')).strip() or "CareerForge_Report"
+    download_filename = f"{safe_name}_Report.pdf"
 
-    filename = analysis.get("filename", "resume").rsplit(".", 1)[0]
-    return send_file(
-        buffer,
-        mimetype="application/pdf",
-        as_attachment=True,
-        download_name=f"{filename}_CareerForge_Report.pdf",
-    )
+    # Write PDF to a real temp file (most reliable approach)
+    import tempfile
+    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
+    try:
+        pdf_data = generate_report(analysis)
+        tmp.write(bytes(pdf_data))
+        tmp.flush()
+        tmp.close()
+        return send_file(
+            tmp.name,
+            mimetype="application/pdf",
+            as_attachment=True,
+            download_name=download_filename,
+        )
+    except Exception as e:
+        app.logger.error(f"PDF generation failed: {e}")
+        import os; os.unlink(tmp.name)
+        flash("Failed to generate report. Please try again.", "danger")
+        return redirect(url_for('student_dashboard'))
 
 
 # ---------- Recruiter Routes ----------

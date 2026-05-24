@@ -254,10 +254,9 @@
         displayImprovements(data);
         displayLearningPath(data);
 
-        /* Update download report link with analysis_id (Fix 3) */
+        /* Update download report links with analysis_id (Fix 3) */
         if (data.analysis_id) {
-            const dlLink = document.getElementById("download-report-btn");
-            if (dlLink) dlLink.href = "/download-report/" + data.analysis_id;
+            window._currentAnalysisId = data.analysis_id;  // Store globally for doDownload()
         }
 
         if (dashboard) dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -867,8 +866,38 @@
     }
 
     /* ───── DOWNLOAD REPORT ───── */
-    // Download button is now an <a> link to /download-report server route
-    // No JS handler needed — the server generates a proper PDF
+    // Store the current analysis ID globally so doDownload() can use it
+    window.doDownload = function (event) {
+        event.preventDefault();
+        if (!window._currentAnalysisId) {
+            alert('No analysis available yet. Please upload a resume or use Demo Mode first.');
+            return;
+        }
+        const url = '/download-report/' + window._currentAnalysisId;
+        // Use fetch + blob to force a real file download in every browser
+        fetch(url)
+            .then(function (res) {
+                if (!res.ok) throw new Error('Download failed: ' + res.status);
+                // Extract filename from Content-Disposition header if available
+                const cd = res.headers.get('Content-Disposition') || '';
+                let fname = 'CareerForge_Report.pdf';
+                const match = cd.match(/filename=([^;]+)/);
+                if (match) fname = match[1].replace(/"/g, '').trim();
+                return res.blob().then(function (blob) { return { blob: blob, fname: fname }; });
+            })
+            .then(function (result) {
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(result.blob);
+                a.download = result.fname;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 200);
+            })
+            .catch(function (err) {
+                console.error('PDF download error:', err);
+                alert('Failed to download report. Please try again.');
+            });
+    };
 
     /* ───── DEMO MODE AUTO-LOAD ───── */
     if (window.location.search.includes("demo=1")) {
