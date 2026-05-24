@@ -186,21 +186,6 @@
                 fetch("/upload", { method: "POST", body: fd })
                     .then((r) => r.json())
                     .then((data) => {
-<<<<<<< HEAD
-                        if (!data.success) {
-                            if (uploadStatus) {
-                                uploadStatus.textContent = data.message || "An error occurred.";
-                                uploadStatus.className = "upload-status error";
-                            }
-                            uploadBtn.textContent = "Upload Resume";
-                            uploadBtn.disabled = false;
-                            return;
-                        }
-                        if (uploadStatus) {
-                            uploadStatus.textContent = "Analysis complete!";
-                            uploadStatus.className = "upload-status success";
-                        }
-=======
                         /* Hide EVA loader */
                         if (loaderOverlay) loaderOverlay.style.display = "none";
                         if (!data.success) {
@@ -209,7 +194,6 @@
                             return;
                         }
                         if (uploadStatus) { uploadStatus.textContent = "Analysis complete!"; uploadStatus.className = "upload-status success"; }
->>>>>>> f762ae921504b26acced84762f0240253af6bb27
                         displayResults(data);
                     })
                     .catch(() => {

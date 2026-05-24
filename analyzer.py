@@ -4,22 +4,7 @@ import re
 # Backward compatibility imports for app.py
 from resume_parser import extract_text_from_pdf
 
-<<<<<<< HEAD
-# Path to the skills database
-SKILLS_FILE = os.path.join(os.path.dirname(__file__), "data", "skills.json")
-
-
-def load_skills():
-    """Load the skills database from skills.json."""
-    with open(SKILLS_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["categories"]
-
-
-def extract_skills(resume_text: str) -> dict:
-=======
 def validate_resume_content(text):
->>>>>>> f762ae921504b26acced84762f0240253af6bb27
     """
     Fallback validation.
     Returns True if the text looks like a resume.
@@ -43,26 +28,10 @@ try:
 except Exception:
     pass  # Don't crash on import if CSV is unavailable
 
-<<<<<<< HEAD
-        if found_in_category:
-            # Pretty-print category name: "data_science_and_ai" -> "Data Science And Ai"
-            nice_name = category.replace("_", " ").title()
-            categorized[nice_name] = found_in_category
-
-    return {
-        "skills": matched_skills,
-        "categorized": categorized,
-        "total": len(matched_skills),
-    }
-
-
-def calculate_score(skill_results: dict) -> dict:
-=======
 # ==========================================
 # MASTER ENTRY POINT FOR AI PIPELINE
 # ==========================================
 def analyze_resume_ai(resume_text, jd_text=None):
->>>>>>> f762ae921504b26acced84762f0240253af6bb27
     """
     Run the full AI pipeline on a resume text.
     Uses dataset-driven role knowledge for skill gap and role profile.
@@ -107,14 +76,8 @@ def analyze_resume_ai(resume_text, jd_text=None):
         resume_text=resume_text,
     )
 
-<<<<<<< HEAD
-def risk_analysis(score: int, skills: list) -> dict:
-    """
-    Determine the risk level of a resume based on score and detected skills.
-=======
     # 10. Attach data-driven skill gap (replaces trajectory-based gap)
     output["skill_gap"] = skill_gap_data
->>>>>>> f762ae921504b26acced84762f0240253af6bb27
 
     return output
 
