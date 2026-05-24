@@ -1,6 +1,11 @@
 Flask>=3.0.0
 pdfplumber>=0.11.0
+<<<<<<< HEAD
 fpdf2>=2.8.0
 gunicorn>=23.0.0
 psycopg2-binary>=2.9.9
 anthropic>=0.25.0
+=======
+fpdf2>=2.7.0
+gunicorn>=21.0.0
+>>>>>>> f762ae921504b26acced84762f0240253af6bb27

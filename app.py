@@ -699,8 +699,13 @@ def admin_page():
                            score_dist=stats["score_dist"],
                            total_users=stats["total_users"],
                            total_logs=stats["total_logs"],
+<<<<<<< HEAD
                            all_users=all_users,
                            db_logs=db_logs)
+=======
+                           trend_labels=stats["trend_labels"],
+                           trend_data=stats["trend_data"])
+>>>>>>> f762ae921504b26acced84762f0240253af6bb27
 
 # ---------- Logs Route (Admin only) ----------
 

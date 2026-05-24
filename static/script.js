@@ -176,12 +176,17 @@
                 uploadBtn.textContent = "Analyzing…";
                 if (uploadStatus) { uploadStatus.classList.remove("hidden"); uploadStatus.textContent = "Processing your resume…"; uploadStatus.className = "upload-status"; }
 
+                /* Show EVA loader overlay */
+                const loaderOverlay = document.getElementById("cf-eva-loader-overlay");
+                if (loaderOverlay) loaderOverlay.style.display = "flex";
+
                 const fd = new FormData();
                 fd.append("resume", resumeInput.files[0]);
 
                 fetch("/upload", { method: "POST", body: fd })
                     .then((r) => r.json())
                     .then((data) => {
+<<<<<<< HEAD
                         if (!data.success) {
                             if (uploadStatus) {
                                 uploadStatus.textContent = data.message || "An error occurred.";
@@ -195,10 +200,21 @@
                             uploadStatus.textContent = "Analysis complete!";
                             uploadStatus.className = "upload-status success";
                         }
+=======
+                        /* Hide EVA loader */
+                        if (loaderOverlay) loaderOverlay.style.display = "none";
+                        if (!data.success) {
+                            if (uploadStatus) { uploadStatus.textContent = data.message || "Upload failed."; uploadStatus.className = "upload-status error"; }
+                            uploadBtn.textContent = "Upload Resume"; uploadBtn.disabled = false;
+                            return;
+                        }
+                        if (uploadStatus) { uploadStatus.textContent = "Analysis complete!"; uploadStatus.className = "upload-status success"; }
+>>>>>>> f762ae921504b26acced84762f0240253af6bb27
                         displayResults(data);
                     })
                     .catch(() => {
-                        if (uploadStatus) { uploadStatus.textContent = "Upload failed. Please try again."; uploadStatus.classList.add("error"); }
+                        if (loaderOverlay) loaderOverlay.style.display = "none";
+                        if (uploadStatus) { uploadStatus.textContent = "Upload failed. Please try again."; uploadStatus.className = "upload-status error"; }
                         uploadBtn.textContent = "Upload Resume"; uploadBtn.disabled = false;
                     });
             });
@@ -786,7 +802,24 @@
         currentData = data;
         const select = document.getElementById("sim-skill-select");
         const simBtn = document.getElementById("sim-btn");
+        const simContainer = document.querySelector(".sim-controls-grid");
+
         if (!select) return;
+
+        // NEW: Check if we actually have a baseline score
+        const hasBaseline = data && (data.score > 0 || (data.skills && data.skills.length > 0));
+
+        if (!hasBaseline) {
+            select.innerHTML = '<option value="">— Upload a resume first —</option>';
+            select.disabled = true;
+            if (simBtn) {
+                simBtn.disabled = true;
+                simBtn.title = "Please upload a resume to enable simulation";
+            }
+            return;
+        }
+
+        select.disabled = false;
         select.innerHTML = '<option value="">— Select a skill to add —</option>';
         const allSkills = ["Python", "Java", "JavaScript", "React", "Angular", "Vue.js", "Node.js", "Django", "Flask", "Spring Boot", "Docker", "Kubernetes", "AWS", "Azure", "Go", "Rust", "TypeScript", "Swift", "Kotlin", "Ruby", "PHP", "C++", "C#", ".NET", "Terraform", "Jenkins", "GraphQL", "Redis", "PostgreSQL", "MongoDB", "TensorFlow", "PyTorch", "Hadoop", "Spark", "Tableau"];
         const userSkills = new Set();

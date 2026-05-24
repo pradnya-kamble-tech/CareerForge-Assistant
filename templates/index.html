@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% from 'components/_eva_loader.html' import cf_eva_loader %}
+{% from 'components/_polygon_loader.html' import cf_polygon_loader %}
 
 <head>
     <meta charset="UTF-8" />
@@ -7,12 +9,16 @@
     <meta name="description" content="CareerForge AI – Student Dashboard" />
     <title>Dashboard – CareerForge AI</title>
     <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/uiverse-components.css" />
 </head>
 
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
     <div class="grain-overlay"></div>
+
+    {{ cf_eva_loader() }}
+    {{ cf_polygon_loader() }}
 
     <div class="app-layout">
         <!-- ===== SIDEBAR ===== -->

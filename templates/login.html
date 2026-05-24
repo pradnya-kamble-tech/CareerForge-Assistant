@@ -15,15 +15,18 @@
 
     <div class="auth-split">
         <div class="auth-brand">
-            <div class="auth-brand-logo"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"
-                    width="24" height="24">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg> CareerForge <span class="accent">AI</span></div>
+            <div class="auth-brand-logo">
+                <span class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"
+                        width="24" height="24">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg></span>
+                <span class="gradient-text">CareerForge</span> AI
+            </div>
             <p class="auth-brand-tagline">AI-Powered Resume Intelligence System — Analyze, Predict, Evolve.</p>
         </div>
         <div class="auth-form-side">
-            <div class="auth-card">
-                <h1>Welcome <span class="accent">Back</span></h1>
+            <div class="auth-card glass-card">
+                <h1>Welcome <span class="gradient-text">Back</span></h1>
                 <p class="subtitle">Login to your account to continue</p>
                 {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}

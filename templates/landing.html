@@ -7,6 +7,10 @@
     <meta name="description" content="CareerForge AI – AI-Powered Resume Intelligence System" />
     <title>CareerForge AI – Resume Intelligence</title>
     <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/uiverse-components.css" />
+    {% from "components/_cta_button.html" import cf_cta_button %}
+    {% from "components/_pill_button.html" import cf_pill_button %}
+    {% from "components/_secondary_button.html" import cf_secondary_button %}
 </head>
 
 <body>
@@ -21,16 +25,16 @@
         <span class="hero-label">AI · RESUME · INTELLIGENCE</span>
 
         <h1 class="hero-title">
-            CareerForge <span class="accent">AI</span>
+            <span class="gradient-text">CareerForge</span> AI
         </h1>
 
         <p class="hero-subtitle">
-            We help you
+            The intelligent engine to
             <span class="word-swap">
-                <span class="word active">Analyze.</span>
-                <span class="word">Predict.</span>
-                <span class="word">Evolve.</span>
-                <span class="word">Succeed.</span>
+                <span class="word active" style="color:var(--accent)">Analyze.</span>
+                <span class="word" style="color:var(--accent-secondary)">Predict.</span>
+                <span class="word" style="color:var(--accent-vibrant)">Evolve.</span>
+                <span class="word" style="color:var(--accent-warn)">Succeed.</span>
             </span>
         </p>
 
@@ -39,39 +43,13 @@
         </p>
 
         <div class="hero-buttons">
-            <a href="/login" class="btn btn-primary">
-                <span class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg></span>
-                Enter as Student
-            </a>
-            <a href="/login" class="btn btn-primary"
-                style="background:var(--accent-secondary);box-shadow:0 4px 20px rgba(108,99,255,.25)">
-                <span class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg></span>
-                Enter as Recruiter
-            </a>
-            <a href="/login" class="btn btn-primary"
-                style="background:var(--accent-warn);box-shadow:0 4px 20px rgba(255,182,39,.25);color:var(--bg-deep)">
-                <span class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z" />
-                    </svg></span>
-                Enter as Admin
-            </a>
+            {{ cf_cta_button(url='/login', text='Student Console', mobile_full=True) }}
+            {{ cf_cta_button(url='/recruiter', text='Recruiter Portal', mobile_full=True) }}
+            {{ cf_cta_button(url='/admin', text='Admin Dashboard', mobile_full=True) }}
         </div>
 
         <div style="margin-top:24px;position:relative;z-index:1">
-            <a href="/student?demo=1" class="btn btn-outline">
-                <span class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 12A10 10 0 1 1 12 2" />
-                        <path d="M22 2L12 12" />
-                        <path d="M16 2h6v6" />
-                    </svg></span>
-                Try Demo — No Login
-            </a>
-
+            {{ cf_secondary_button(url='/student?demo=1', text='Launch Demo — No Account', mobile_full=True) }}
         </div>
     </section>
 
