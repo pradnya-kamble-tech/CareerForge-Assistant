@@ -13,6 +13,7 @@ An intelligent resume analysis platform that parses PDF resumes, extracts skills
 - **Resume Evolution Simulator** — Digital twin to simulate skill additions
 - **PDF Report Download** — Generate professional analysis reports
 - **Authentication** — Login/Register with Student, Recruiter, Admin roles
+- **Cloud Persistence** — Powered by Supabase PostgreSQL for permanent data storage
 
 ---
 
@@ -21,21 +22,14 @@ An intelligent resume analysis platform that parses PDF resumes, extracts skills
 ```
 careerforge/
 ├── app.py                 # Flask application (routes, auth, API)
-├── resume_parser.py       # PDF text extraction (pdfplumber)
-├── analyzer.py            # Skill extraction, scoring, risk, career prediction
-├── report_generator.py    # PDF report generation (fpdf2)
-├── requirements.txt       # Python dependencies
-├── Procfile               # Production server command (gunicorn)
-├── templates/
-│   ├── index.html         # Main dashboard
-│   ├── login.html         # Login page
-│   └── register.html      # Registration page
-├── static/
-│   ├── style.css          # Styling
-│   └── script.js          # Frontend logic
-└── data/
-    ├── skills.json        # Skills database
-    └── users.json         # Registered users (file-based storage)
+├── database.py            # Dual-mode DB logic (SQLite/PostgreSQL)
+├── analyzer.py            # AI logic (Skill extraction, scoring, risk)
+├── resume_parser.py       # PDF text extraction
+├── report_generator.py    # PDF report generation
+├── render.yaml            # Render Blueprint deployment config
+├── migrate_to_supabase.py # One-time cloud migration script
+├── static/                # Styling & Javascript
+└── templates/             # HTML Templates
 ```
 
 ---
@@ -46,96 +40,47 @@ careerforge/
 # 1. Clone / navigate to the project
 cd careerforge
 
-# 2. Create a virtual environment (recommended)
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # macOS/Linux
+# 2. Create virtual environment
+python -m venv .venv
+.\.venv\Scripts\activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run in development mode
+# 4. Run (Defaults to SQLite if no DATABASE_URL set)
 python app.py
-# Open http://127.0.0.1:5000/
-```
-
-### Test with Production Settings (locally)
-
-```bash
-# Windows PowerShell
-$env:FLASK_ENV="production"; $env:PORT="8000"; python app.py
-
-# macOS / Linux
-FLASK_ENV=production PORT=8000 python app.py
 ```
 
 ---
 
-## ☁️ Deploy on Render (Free Tier)
+## ☁️ Deployment (Supabase & Render)
 
-### Step-by-step:
+### 1. Database Setup
+1. Create a project on [Supabase](https://supabase.com).
+2. Get your **Connection String (URI)** from Settings -> Database.
 
-1. **Push your code to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "CareerForge AI - ready for deployment"
-   git remote add origin https://github.com/YOUR_USERNAME/careerforge.git
-   git push -u origin main
-   ```
-
-2. **Go to [render.com](https://render.com)** and sign in with GitHub
-
-3. **Create a New Web Service**
-   - Click **"New +"** → **"Web Service"**
-   - Connect your **careerforge** repository
-
-4. **Configure the service**
-
-   | Setting | Value |
-   |---------|-------|
-   | **Name** | `careerforge-ai` |
-   | **Runtime** | `Python 3` |
-   | **Build Command** | `pip install -r requirements.txt` |
-   | **Start Command** | `gunicorn app:app` |
-   | **Plan** | `Free` |
-
-5. **Add Environment Variable**
-   - Key: `FLASK_ENV` → Value: `production`
-
-6. **Click "Create Web Service"** — Render will build and deploy automatically
-
-7. **Your app is live** at `https://careerforge-ai.onrender.com` 🎉
+### 2. Deploy on Render
+1. Push your code to GitHub.
+2. Go to **Render Dashboard** -> **New** -> **Blueprint**.
+3. Select this repository.
+4. Set your Environment Variables:
+   - `DATABASE_URL`: Your Supabase URI.
+   - `ANTHROPIC_API_KEY`: Your Anthropic API key.
+5. Click **Apply**.
 
 ---
 
-## ☁️ Deploy on Railway (Alternative)
+## 📋 Technology Stack
 
-1. Go to [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub**
-2. Select the `careerforge` repository
-3. Railway auto-detects `Procfile` and `requirements.txt`
-4. Add environment variable: `FLASK_ENV=production`
-5. Click **Deploy** — your app is live!
-
----
-
-## 📋 Key Files Explained
-
-| File | Purpose |
-|------|---------|
-| `requirements.txt` | Lists all pip packages needed |
-| `Procfile` | Tells the cloud platform how to start the app |
-| `app.py` | Reads `PORT` from environment so cloud platforms can assign a port |
-| `data/users.json` | File-based user storage (no database needed) |
+| Component | Technology |
+|-----------|------------|
+| **Backend** | Flask (Python) |
+| **Database** | PostgreSQL (Supabase) / SQLite |
+| **Parsing** | pdfplumber |
+| **Reports** | fpdf2 |
+| **AI Support** | Anthropic Claude API |
+| **Deployment**| Render / Gunicorn |
 
 ---
 
-## ⚠️ Notes
-
-- **gunicorn** is Linux-only. On Windows, local dev uses `python app.py` (Flask dev server). Gunicorn runs on Render/Railway (Linux).
-- User data is stored in `data/users.json`. On free-tier platforms, this resets on redeploy (file system is ephemeral).
-- For persistent storage, consider upgrading to a database in a future step.
-
----
-
-Built with ❤️ as a Final Year Project — **CareerForge AI**
+Built with ❤️ — **CareerForge AI**
