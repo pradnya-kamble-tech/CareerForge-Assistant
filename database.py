@@ -288,7 +288,6 @@ def db_get_admin_stats():
         "total_logs": db_count_logs(),
         "trend_labels": list(trend_counts.keys()),
         "trend_data": list(trend_counts.values())
->>>>>>> f762ae921504b26acced84762f0240253af6bb27
     }
 
 # ──────────────────── RECRUITER STATS ────────────────────
