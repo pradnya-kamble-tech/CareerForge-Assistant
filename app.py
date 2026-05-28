@@ -36,20 +36,30 @@ app.config["MAX_CONTENT_LENGTH"] = 15 * 1024 * 1024  # Flask-level safety limit
 
 # ---------- Logging Configuration ----------
 LOG_FILE = os.path.join(os.path.dirname(__file__), "system.log")
+handlers = [logging.StreamHandler()]
+try:
+    handlers.append(logging.FileHandler(LOG_FILE, encoding="utf-8"))
+except Exception:
+    # Read-only filesystem or permission error in production
+    pass
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)-7s | %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    handlers=[
-        logging.FileHandler(LOG_FILE, encoding="utf-8"),
-        logging.StreamHandler(),
-    ],
+    handlers=handlers,
 )
 logger = logging.getLogger("CareerForge")
 logger.info("CareerForge AI server starting up...")
 
 # ---------- Initialise SQLite Database ----------
-init_db()
+try:
+    init_db()
+    logger.info("Database initialized successfully.")
+except Exception as e:
+    logger.error("Database initialization failed: %s", str(e))
+    # This shouldn't be fatal, let the app attempt to start
+    pass
 logger.info("SQLite database initialised.")
 
 # ---------- Configuration ----------
