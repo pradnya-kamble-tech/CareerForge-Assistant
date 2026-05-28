@@ -1,6 +1,10 @@
 import sqlite3
-import psycopg2
-from psycopg2.extras import RealDictCursor
+try:
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+    HAS_POSTGRES = True
+except ImportError:
+    HAS_POSTGRES = False
 import json
 import os
 from collections import Counter
@@ -12,7 +16,7 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "data", "careerforge.db")
 
 def _get_conn():
     """Returns a new database connection (PostgreSQL or SQLite)."""
-    if DATABASE_URL:
+    if DATABASE_URL and HAS_POSTGRES:
         # Connect to PostgreSQL (Supabase)
         conn = psycopg2.connect(DATABASE_URL)
         return conn
@@ -24,14 +28,14 @@ def _get_conn():
 
 def _get_cursor(conn):
     """Returns a dictionary-like cursor for the current connection."""
-    if DATABASE_URL:
+    if DATABASE_URL and HAS_POSTGRES:
         return conn.cursor(cursor_factory=RealDictCursor)
     else:
         return conn.cursor()
 
 def db_execute(query, params=(), commit=True):
     """Execute a query, handling placeholder differences between SQLite (?) and PostgreSQL (%s)."""
-    if DATABASE_URL:
+    if DATABASE_URL and HAS_POSTGRES:
         query = query.replace("?", "%s")
     
     with _get_conn() as conn:
@@ -43,7 +47,7 @@ def db_execute(query, params=(), commit=True):
 
 def db_query(query, params=(), one=False):
     """Execute a SELECT query and return results as dicts."""
-    if DATABASE_URL:
+    if DATABASE_URL and HAS_POSTGRES:
         query = query.replace("?", "%s")
         
     with _get_conn() as conn:

@@ -4285,3 +4285,595 @@ httpx.ConnectError: [Errno 11001] getaddrinfo failed
 2026-05-23 00:19:48 | WARNING |  * Debugger is active!
 2026-05-23 00:19:48 | INFO    |  * Debugger PIN: 106-958-589
 >>>>>>> f762ae921504b26acced84762f0240253af6bb27
+2026-05-25 06:05:34 | INFO    | CareerForge AI server starting up...
+2026-05-25 06:05:34 | INFO    | SQLite database initialised.
+2026-05-25 06:05:34 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-25 06:05:34 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-25 06:05:34 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-05-25 06:05:37 | INFO    | CareerForge AI server starting up...
+2026-05-25 06:05:37 | INFO    | SQLite database initialised.
+2026-05-25 06:05:37 | WARNING |  * Debugger is active!
+2026-05-25 06:05:37 | INFO    |  * Debugger PIN: 688-451-029
+2026-05-25 06:06:05 | INFO    | 127.0.0.1 - - [25/May/2026 06:06:05] "GET / HTTP/1.1" 200 -
+2026-05-25 06:06:05 | INFO    | 127.0.0.1 - - [25/May/2026 06:06:05] "GET /static/uiverse-components.css HTTP/1.1" 200 -
+2026-05-25 06:06:05 | INFO    | 127.0.0.1 - - [25/May/2026 06:06:05] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-25 06:06:05 | INFO    | 127.0.0.1 - - [25/May/2026 06:06:05] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-25 06:06:06 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 06:06:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:06:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 06:16:17 | INFO    | CareerForge AI server starting up...
+2026-05-25 06:16:17 | INFO    | SQLite database initialised.
+2026-05-25 06:16:17 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-25 06:16:17 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-25 06:16:17 | INFO    |  * Restarting with stat
+2026-05-25 06:16:20 | INFO    | CareerForge AI server starting up...
+2026-05-25 06:16:20 | INFO    | SQLite database initialised.
+2026-05-25 06:16:20 | WARNING |  * Debugger is active!
+2026-05-25 06:16:20 | INFO    |  * Debugger PIN: 580-854-512
+2026-05-25 06:16:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:27] "HEAD /api/status HTTP/1.1" 200 -
+2026-05-25 06:16:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:27] "GET /api/status HTTP/1.1" 200 -
+2026-05-25 06:16:41 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:41] "GET / HTTP/1.1" 200 -
+2026-05-25 06:16:41 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:41] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-25 06:16:41 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:41] "GET /static/uiverse-components.css HTTP/1.1" 200 -
+2026-05-25 06:16:41 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:41] "GET /static/script.js HTTP/1.1" 200 -
+2026-05-25 06:16:42 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 06:16:42 | INFO    | 127.0.0.1 - - [25/May/2026 06:16:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 06:18:58 | INFO    | 127.0.0.1 - - [25/May/2026 06:18:58] "[32mGET /recruiter HTTP/1.1[0m" 302 -
+2026-05-25 06:18:58 | INFO    | 127.0.0.1 - - [25/May/2026 06:18:58] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:18:58 | INFO    | 127.0.0.1 - - [25/May/2026 06:18:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:18:58 | INFO    | 127.0.0.1 - - [25/May/2026 06:18:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:19:04 | WARNING | Failed login attempt for: smita@gmail.com
+2026-05-25 06:19:04 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:19:04 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:04] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:19:04 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:19:04 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:19:16 | WARNING | Failed login attempt for: shruti@gmail.com
+2026-05-25 06:19:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:19:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:16] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:19:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:19:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:19:24 | WARNING | Failed login attempt for: amruta@gmail.com
+2026-05-25 06:19:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:19:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:24] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:19:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:19:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:19:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:20:15 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:15] "GET /register HTTP/1.1" 200 -
+2026-05-25 06:20:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:20:16 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:20:32 | INFO    | New user registered: recruiter@careerforge.com (role=Recruiter)
+2026-05-25 06:20:32 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:32] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 06:20:33 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:33] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:20:33 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:20:33 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:33] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:20:36 | WARNING | Failed login attempt for: smita@gmail.com
+2026-05-25 06:20:36 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:20:36 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:36] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:20:36 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:20:36 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:20:54 | WARNING | Failed login attempt for: recruiter@careerforge.com
+2026-05-25 06:20:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:20:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:54] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:20:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:20:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:20:56 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:56] "GET /register HTTP/1.1" 200 -
+2026-05-25 06:20:56 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:20:56 | INFO    | 127.0.0.1 - - [25/May/2026 06:20:56] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:21:23 | INFO    | New user registered: sanika@gmail.com (role=Recruiter)
+2026-05-25 06:21:23 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:23] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 06:21:23 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:23] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:21:23 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:21:23 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:21:27 | INFO    | User logged in: sanika@gmail.com (role=Recruiter)
+2026-05-25 06:21:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:21:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:27] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:21:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:21:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:28] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:21:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:21:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:21:46 | INFO    | Recruiter analysis: 4a063ef0_36434348.pdf | score=42
+2026-05-25 06:21:47 | INFO    | Recruiter analysis: 7d9df9c7_36856210.pdf | score=29
+2026-05-25 06:21:48 | INFO    | Recruiter analysis: 23940cbe_37242217.pdf | score=50
+2026-05-25 06:21:50 | INFO    | Recruiter analysis: f0458d9e_37764298.pdf | score=30
+2026-05-25 06:21:51 | INFO    | Recruiter analysis: 836c09a7_38753827.pdf | score=48
+2026-05-25 06:21:52 | INFO    | Recruiter analysis: ff4f7f8f_39413067.pdf | score=38
+2026-05-25 06:21:53 | INFO    | Recruiter analysis: 51d93059_39718499.pdf | score=14
+2026-05-25 06:21:54 | INFO    | Recruiter analysis: a21c7dd6_40018190.pdf | score=14
+2026-05-25 06:21:55 | INFO    | Recruiter analysis: eb7053e5_41344156.pdf | score=42
+2026-05-25 06:21:56 | INFO    | Recruiter analysis: 34545ef4_46260230.pdf | score=47
+2026-05-25 06:21:57 | INFO    | Recruiter analysis: 54ac82ba_48037995.pdf | score=30
+2026-05-25 06:21:59 | INFO    | Recruiter analysis: d57ce7e4_51363762.pdf | score=47
+2026-05-25 06:22:00 | INFO    | Recruiter analysis: 9b3ac66d_51639418.pdf | score=35
+2026-05-25 06:22:01 | INFO    | Recruiter analysis: 29b692ff_52246737.pdf | score=47
+2026-05-25 06:22:02 | INFO    | Recruiter analysis: ee4080e2_52618188.pdf | score=50
+2026-05-25 06:22:04 | INFO    | Recruiter analysis: fef6d204_57002858.pdf | score=22
+2026-05-25 06:22:04 | INFO    | Recruiter analysis: 59a9cb36_64017585.pdf | score=14
+2026-05-25 06:22:05 | INFO    | Recruiter analysis: 51bea0b6_66832845.pdf | score=28
+2026-05-25 06:22:06 | INFO    | Recruiter analysis: 8553e1b8_68460556.pdf | score=20
+2026-05-25 06:22:07 | INFO    | Recruiter analysis: 81119f88_70089206.pdf | score=42
+2026-05-25 06:22:07 | INFO    | Recruiter batch complete: 20 resumes (user=sanika@gmail.com)
+2026-05-25 06:22:07 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:07] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-25 06:22:07 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:22:07 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:07] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:22:07 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:22:11 | INFO    | Recruiter shortlisted: 23940cbe_37242217.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:11 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:11] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:13 | INFO    | Recruiter rejected: ee4080e2_52618188.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:13 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:13] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:15 | INFO    | Recruiter shortlisted: 836c09a7_38753827.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:15 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:15] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:20 | INFO    | Recruiter shortlisted: 836c09a7_38753827.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:20 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:20] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:22 | INFO    | Recruiter rejected: 34545ef4_46260230.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:22 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:22] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:25 | INFO    | Recruiter shortlisted: d57ce7e4_51363762.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:25 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:25] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:27 | INFO    | Recruiter rejected: 29b692ff_52246737.pdf (user=sanika@gmail.com)
+2026-05-25 06:22:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:27] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:22:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:28] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:22:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:22:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:28] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:22:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:22:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:23:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:17] "[32mGET /student HTTP/1.1[0m" 302 -
+2026-05-25 06:23:18 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:18] "GET /access-denied HTTP/1.1" 200 -
+2026-05-25 06:23:18 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:18 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:18] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:23:21 | INFO    | User logged out
+2026-05-25 06:23:21 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-25 06:23:21 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:21] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:23:21 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:21 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:23:23 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:23] "GET /register HTTP/1.1" 200 -
+2026-05-25 06:23:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:24 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:23:43 | INFO    | New user registered: radha@gmail.com (role=Admin)
+2026-05-25 06:23:43 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:43] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 06:23:43 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:43] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:23:43 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:43 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:43] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:23:46 | INFO    | User logged in: radha@gmail.com (role=Admin)
+2026-05-25 06:23:46 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:23:46 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:46] "GET /admin HTTP/1.1" 200 -
+2026-05-25 06:23:46 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:46 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:46] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:23:46 | INFO    | 127.0.0.1 - - [25/May/2026 06:23:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:24:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:06] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:24:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:06] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-25 06:24:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:06] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:24:08 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:08] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:24:08 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:08 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:08] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:08 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:08] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:24:31 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:31] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:24:31 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:31 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:31] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:31 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:31] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:24:50 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:50] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:24:51 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:24:51 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:24:51 | INFO    | 127.0.0.1 - - [25/May/2026 06:24:51] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:00 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:00] "GET /admin HTTP/1.1" 200 -
+2026-05-25 06:25:00 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:00 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:00 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:00] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:09 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:09] "GET /student HTTP/1.1" 200 -
+2026-05-25 06:25:09 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:09 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:09] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:09 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:14 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:14] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:25:15 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:15] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:15 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:15 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:28] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:25:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:28 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:28] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:39 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:39] "GET /admin HTTP/1.1" 200 -
+2026-05-25 06:25:39 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:39 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:39] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:39 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:39] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:48 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:48] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:25:48 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:48 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:48] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:48 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:25:55 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:55] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:25:55 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:55 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:55] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:25:55 | INFO    | 127.0.0.1 - - [25/May/2026 06:25:55] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:27:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:17] "[32mGET /recruiter-results HTTP/1.1[0m" 302 -
+2026-05-25 06:27:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:17] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:27:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:17] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-25 06:27:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:27:17 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 06:27:17 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 06:27:26 | INFO    | User logged out
+2026-05-25 06:27:26 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-25 06:27:26 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:26] "GET /login HTTP/1.1" 200 -
+2026-05-25 06:27:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:27:27 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:27] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:27:34 | INFO    | User logged in: sanika@gmail.com (role=Recruiter)
+2026-05-25 06:27:34 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 06:27:34 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:34] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:27:35 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:27:35 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:27:35 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:35] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:27:49 | INFO    | Recruiter analysis: 59d6ff31_36434348.pdf | score=42
+2026-05-25 06:27:52 | INFO    | Recruiter analysis: 1b1a3469_36856210.pdf | score=29
+2026-05-25 06:27:54 | INFO    | Recruiter analysis: 7a4293e6_37242217.pdf | score=50
+2026-05-25 06:27:54 | INFO    | Recruiter batch complete: 3 resumes (user=sanika@gmail.com)
+2026-05-25 06:27:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:54] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-25 06:27:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:27:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:54] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:27:54 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:54] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:27:58 | INFO    | Recruiter shortlisted: 7a4293e6_37242217.pdf (user=sanika@gmail.com)
+2026-05-25 06:27:58 | INFO    | 127.0.0.1 - - [25/May/2026 06:27:58] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:28:00 | INFO    | Recruiter rejected: 59d6ff31_36434348.pdf (user=sanika@gmail.com)
+2026-05-25 06:28:00 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:00] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:28:02 | INFO    | Recruiter shortlisted: 1b1a3469_36856210.pdf (user=sanika@gmail.com)
+2026-05-25 06:28:02 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:02] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 06:28:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:06] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 06:28:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:06] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:28:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:28:06 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 06:28:20 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:20] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 06:28:20 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 06:28:20 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:20] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 06:28:20 | INFO    | 127.0.0.1 - - [25/May/2026 06:28:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:33:37 | INFO    | CareerForge AI server starting up...
+2026-05-25 11:33:37 | INFO    | SQLite database initialised.
+2026-05-25 11:33:37 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.85.220.106:5000
+2026-05-25 11:33:37 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-25 11:33:37 | INFO    |  * Restarting with stat
+2026-05-25 11:33:40 | INFO    | CareerForge AI server starting up...
+2026-05-25 11:33:40 | INFO    | SQLite database initialised.
+2026-05-25 11:33:40 | WARNING |  * Debugger is active!
+2026-05-25 11:33:40 | INFO    |  * Debugger PIN: 674-253-957
+2026-05-25 11:34:36 | INFO    | 127.0.0.1 - - [25/May/2026 11:34:36] "GET /api/status HTTP/1.1" 200 -
+2026-05-25 11:34:59 | INFO    | 127.0.0.1 - - [25/May/2026 11:34:59] "GET /api/status HTTP/1.1" 200 -
+2026-05-25 11:35:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:35:38] "GET / HTTP/1.1" 200 -
+2026-05-25 11:35:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:35:38] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:35:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:35:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:35:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:35:38] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:35:39 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 11:35:39 | INFO    | 127.0.0.1 - - [25/May/2026 11:35:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 11:39:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:39:50] "GET / HTTP/1.1" 200 -
+2026-05-25 11:39:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:39:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:39:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:39:50] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:39:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:39:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:39:51 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 11:39:51 | INFO    | 127.0.0.1 - - [25/May/2026 11:39:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 11:40:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:17] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:40:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:40:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:40:22 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:22] "GET /register HTTP/1.1" 200 -
+2026-05-25 11:40:22 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:40:22 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:22] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:40:36 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:36] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:40:36 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:40:36 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:36] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:40:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:38] "GET /register HTTP/1.1" 200 -
+2026-05-25 11:40:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:40:38 | INFO    | 127.0.0.1 - - [25/May/2026 11:40:38] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:41:03 | INFO    | New user registered: ramesh@gmail.com (role=Student)
+2026-05-25 11:41:03 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:03] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 11:41:03 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:03] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:41:03 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:41:03 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:41:07 | INFO    | User logged in: ramesh@gmail.com (role=Student)
+2026-05-25 11:41:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 11:41:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:07] "GET /student HTTP/1.1" 200 -
+2026-05-25 11:41:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:07] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:41:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:41:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:41:28 | INFO    | Student resume uploaded: 82883ae1_36434348.pdf (user=ramesh@gmail.com)
+2026-05-25 11:41:52 | INFO    | Student analysis complete: 82883ae1_36434348.pdf | score=42 | skills=15 | id=9c6d71e74dde485d8ccf0aeb31600aa0
+2026-05-25 11:41:52 | INFO    | 127.0.0.1 - - [25/May/2026 11:41:52] "POST /upload HTTP/1.1" 200 -
+2026-05-25 11:44:01 | INFO    | 127.0.0.1 - - [25/May/2026 11:44:01] "POST /simulate HTTP/1.1" 200 -
+2026-05-25 11:44:20 | INFO    | 127.0.0.1 - - [25/May/2026 11:44:20] "POST /simulate HTTP/1.1" 200 -
+2026-05-25 11:44:28 | INFO    | 127.0.0.1 - - [25/May/2026 11:44:28] "POST /simulate HTTP/1.1" 200 -
+2026-05-25 11:44:29 | INFO    | 127.0.0.1 - - [25/May/2026 11:44:29] "POST /simulate HTTP/1.1" 200 -
+2026-05-25 11:45:02 | INFO    | User logged out
+2026-05-25 11:45:02 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:02] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-25 11:45:02 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:02] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:45:02 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:45:02 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:45:04 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:04] "GET /register HTTP/1.1" 200 -
+2026-05-25 11:45:04 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:45:04 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:45:17 | INFO    | New user registered: suresh@gmail.com (role=Recruiter)
+2026-05-25 11:45:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:17] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 11:45:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:17] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:45:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:45:17 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:45:21 | INFO    | User logged in: suresh@gmail.com (role=Recruiter)
+2026-05-25 11:45:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 11:45:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:21] "GET /recruiter HTTP/1.1" 200 -
+2026-05-25 11:45:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:45:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:21] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:45:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:45:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:45:43 | INFO    | Recruiter analysis: 845b1b2c_36434348.pdf | score=42
+2026-05-25 11:45:47 | INFO    | Recruiter analysis: 1fe78d68_36856210.pdf | score=29
+2026-05-25 11:45:52 | INFO    | Recruiter analysis: 3502ceea_37242217.pdf | score=50
+2026-05-25 11:46:00 | INFO    | Recruiter analysis: d7d8b22d_36434348.pdf | score=42
+2026-05-25 11:46:03 | INFO    | Recruiter analysis: 07dedcaf_37764298.pdf | score=30
+2026-05-25 11:46:03 | INFO    | Recruiter batch complete: 4 resumes (user=suresh@gmail.com)
+2026-05-25 11:46:03 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:03] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-25 11:46:03 | INFO    | Recruiter analysis: ddd060ac_36856210.pdf | score=29
+2026-05-25 11:46:07 | INFO    | Recruiter analysis: 53cbadd5_37242217.pdf | score=50
+2026-05-25 11:46:11 | INFO    | Recruiter analysis: 96dba98c_37764298.pdf | score=30
+2026-05-25 11:46:11 | INFO    | Recruiter batch complete: 4 resumes (user=suresh@gmail.com)
+2026-05-25 11:46:11 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:11] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-25 11:46:12 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:12 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:12] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:12 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:12] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:46:27 | INFO    | Recruiter shortlisted: 53cbadd5_37242217.pdf (user=suresh@gmail.com)
+2026-05-25 11:46:27 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:27] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 11:46:30 | INFO    | Recruiter rejected: d7d8b22d_36434348.pdf (user=suresh@gmail.com)
+2026-05-25 11:46:30 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:30] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 11:46:35 | INFO    | Recruiter shortlisted: 96dba98c_37764298.pdf (user=suresh@gmail.com)
+2026-05-25 11:46:35 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:35] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 11:46:37 | INFO    | Recruiter rejected: ddd060ac_36856210.pdf (user=suresh@gmail.com)
+2026-05-25 11:46:37 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:37] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-25 11:46:40 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:40] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-25 11:46:40 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:40 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:40] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:40 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:46:48 | INFO    | User logged out
+2026-05-25 11:46:48 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:48] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-25 11:46:48 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:48] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:46:48 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:48 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:48] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:46:51 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:51] "GET /register HTTP/1.1" 200 -
+2026-05-25 11:46:51 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:46:51 | INFO    | 127.0.0.1 - - [25/May/2026 11:46:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:47:07 | INFO    | New user registered: ganesh@gmail.com (role=Admin)
+2026-05-25 11:47:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:07] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-05-25 11:47:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:07] "GET /login HTTP/1.1" 200 -
+2026-05-25 11:47:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:47:07 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:47:15 | INFO    | User logged in: ganesh@gmail.com (role=Admin)
+2026-05-25 11:47:15 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 11:47:16 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:16] "GET /admin HTTP/1.1" 200 -
+2026-05-25 11:47:16 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:16] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:47:16 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:47:16 | INFO    | 127.0.0.1 - - [25/May/2026 11:47:16] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:48:45 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:45] "GET /admin HTTP/1.1" 200 -
+2026-05-25 11:48:45 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:48:45 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:45] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:48:45 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:48:47 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:47] "GET /admin HTTP/1.1" 200 -
+2026-05-25 11:48:47 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:48:47 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:47] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:48:47 | INFO    | 127.0.0.1 - - [25/May/2026 11:48:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:49:01 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:01] "GET /student HTTP/1.1" 200 -
+2026-05-25 11:49:01 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:49:01 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:01] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:49:01 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 11:49:14 | INFO    | Student resume uploaded: 19fee923_37242217.pdf (user=ganesh@gmail.com)
+2026-05-25 11:49:19 | INFO    | Student analysis complete: 19fee923_37242217.pdf | score=50 | skills=23 | id=4569d517b7ef4d90a40a21d667630415
+2026-05-25 11:49:19 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:19] "POST /upload HTTP/1.1" 200 -
+2026-05-25 11:49:21 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:21] "GET /download-report/4569d517b7ef4d90a40a21d667630415 HTTP/1.1" 200 -
+2026-05-25 11:49:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:50] "GET / HTTP/1.1" 200 -
+2026-05-25 11:49:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 11:49:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:50] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 11:49:50 | INFO    | 127.0.0.1 - - [25/May/2026 11:49:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 13:56:35 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:35] "HEAD /api/status HTTP/1.1" 200 -
+2026-05-25 13:56:35 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:35] "GET /api/status HTTP/1.1" 200 -
+2026-05-25 13:56:57 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:57] "GET / HTTP/1.1" 200 -
+2026-05-25 13:56:57 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 13:56:57 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 13:56:57 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:57] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 13:56:57 | WARNING | 404 Not Found: /favicon.ico
+2026-05-25 13:56:57 | INFO    | 127.0.0.1 - - [25/May/2026 13:56:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-25 14:18:38 | INFO    | CareerForge AI server starting up...
+2026-05-25 14:18:38 | INFO    | SQLite database initialised.
+2026-05-25 14:18:38 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.218.179.106:5000
+2026-05-25 14:18:38 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-25 14:18:38 | INFO    |  * Restarting with stat
+2026-05-25 14:18:43 | INFO    | CareerForge AI server starting up...
+2026-05-25 14:18:43 | INFO    | SQLite database initialised.
+2026-05-25 14:18:43 | WARNING |  * Debugger is active!
+2026-05-25 14:18:43 | INFO    |  * Debugger PIN: 674-253-957
+2026-05-25 14:18:57 | INFO    | 127.0.0.1 - - [25/May/2026 14:18:57] "GET / HTTP/1.1" 200 -
+2026-05-25 14:18:57 | INFO    | 127.0.0.1 - - [25/May/2026 14:18:57] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:18:57 | INFO    | 127.0.0.1 - - [25/May/2026 14:18:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:18:57 | INFO    | 127.0.0.1 - - [25/May/2026 14:18:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:19:26 | INFO    | 127.0.0.1 - - [25/May/2026 14:19:26] "GET / HTTP/1.1" 200 -
+2026-05-25 14:19:26 | INFO    | 127.0.0.1 - - [25/May/2026 14:19:26] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:19:26 | INFO    | 127.0.0.1 - - [25/May/2026 14:19:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:19:26 | INFO    | 127.0.0.1 - - [25/May/2026 14:19:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:20:07 | INFO    | 127.0.0.1 - - [25/May/2026 14:20:07] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-25 14:20:07 | INFO    | 127.0.0.1 - - [25/May/2026 14:20:07] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:20:07 | INFO    | 127.0.0.1 - - [25/May/2026 14:20:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:20:08 | INFO    | 127.0.0.1 - - [25/May/2026 14:20:08] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:20:22 | INFO    | Demo mode analysis served (id=9c2c2b455a534bbb895b37d432f5ec7b)
+2026-05-25 14:20:22 | INFO    | 127.0.0.1 - - [25/May/2026 14:20:22] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-25 14:21:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:21:46] "GET / HTTP/1.1" 200 -
+2026-05-25 14:21:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:21:46] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:21:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:21:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:21:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:21:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:50:30 | INFO    | 127.0.0.1 - - [25/May/2026 14:50:30] "GET / HTTP/1.1" 200 -
+2026-05-25 14:50:30 | INFO    | 127.0.0.1 - - [25/May/2026 14:50:30] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:50:30 | INFO    | 127.0.0.1 - - [25/May/2026 14:50:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:50:30 | INFO    | 127.0.0.1 - - [25/May/2026 14:50:30] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:55:42 | INFO    | 127.0.0.1 - - [25/May/2026 14:55:42] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-25 14:55:42 | INFO    | 127.0.0.1 - - [25/May/2026 14:55:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:55:42 | INFO    | 127.0.0.1 - - [25/May/2026 14:55:42] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:55:42 | INFO    | 127.0.0.1 - - [25/May/2026 14:55:42] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:55:42 | INFO    | Demo mode analysis served (id=ad12e58a0a234e6b9c25eb0671f74e7a)
+2026-05-25 14:55:42 | INFO    | 127.0.0.1 - - [25/May/2026 14:55:42] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-25 14:56:23 | INFO    | 127.0.0.1 - - [25/May/2026 14:56:23] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:56:23 | INFO    | 127.0.0.1 - - [25/May/2026 14:56:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:56:23 | INFO    | 127.0.0.1 - - [25/May/2026 14:56:23] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:58:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:58:46] "GET / HTTP/1.1" 200 -
+2026-05-25 14:58:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:58:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:58:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:58:46] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 14:58:46 | INFO    | 127.0.0.1 - - [25/May/2026 14:58:46] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 14:59:51 | INFO    | 127.0.0.1 - - [25/May/2026 14:59:51] "GET /login HTTP/1.1" 200 -
+2026-05-25 14:59:51 | INFO    | 127.0.0.1 - - [25/May/2026 14:59:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 14:59:51 | INFO    | 127.0.0.1 - - [25/May/2026 14:59:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:00:04 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:04] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:00:04 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:00:04 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:04] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:00:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:15] "GET / HTTP/1.1" 200 -
+2026-05-25 15:00:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:00:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:15] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 15:00:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:00:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:14:51 | INFO    | 127.0.0.1 - - [25/May/2026 15:14:51] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-25 15:14:52 | INFO    | Demo mode analysis served (id=09d3ddeaae874bc2aba37d901ff25d5c)
+2026-05-25 15:14:52 | INFO    | 127.0.0.1 - - [25/May/2026 15:14:52] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-25 15:15:24 | INFO    | 127.0.0.1 - - [25/May/2026 15:15:24] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:15:24 | INFO    | 127.0.0.1 - - [25/May/2026 15:15:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:15:24 | INFO    | 127.0.0.1 - - [25/May/2026 15:15:24] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:32:43 | INFO    | 127.0.0.1 - - [25/May/2026 15:32:43] "GET /student?demo=1 HTTP/1.1" 200 -
+2026-05-25 15:32:43 | INFO    | 127.0.0.1 - - [25/May/2026 15:32:43] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 15:32:43 | INFO    | Demo mode analysis served (id=25fb90d6d0d0443f86aeef811c5b2059)
+2026-05-25 15:32:43 | INFO    | 127.0.0.1 - - [25/May/2026 15:32:43] "GET /api/demo-data HTTP/1.1" 200 -
+2026-05-25 15:32:44 | ERROR   | Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Shuddhodhan\.gemini\antigravity\scratch\careerforge\.venv\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Shuddhodhan\.gemini\antigravity\scratch\careerforge\.venv\lib\site-packages\werkzeug\serving.py", line 355, in execute
+    data = self.rfile.read(10_000_000)
+MemoryError
+2026-05-25 15:33:25 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:25] "GET / HTTP/1.1" 200 -
+2026-05-25 15:33:25 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:33:25 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:25] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 15:33:25 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:25] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:33:28 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:28] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:33:28 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:33:28 | INFO    | 127.0.0.1 - - [25/May/2026 15:33:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:37:40 | INFO    | 127.0.0.1 - - [25/May/2026 15:37:40] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:37:40 | INFO    | 127.0.0.1 - - [25/May/2026 15:37:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:37:40 | INFO    | 127.0.0.1 - - [25/May/2026 15:37:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:38:15 | INFO    | User logged in: ramesh@gmail.com (role=Student)
+2026-05-25 15:38:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 15:38:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:15] "GET /student HTTP/1.1" 200 -
+2026-05-25 15:38:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:38:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:15] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-25 15:38:15 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:38:45 | INFO    | Student resume uploaded: 336ab251_37242217.pdf (user=ramesh@gmail.com)
+2026-05-25 15:38:58 | INFO    | Student analysis complete: 336ab251_37242217.pdf | score=50 | skills=23 | id=36d3b5e0f8594f1e94e92bc2f6ff1a5e
+2026-05-25 15:38:58 | INFO    | 127.0.0.1 - - [25/May/2026 15:38:58] "POST /upload HTTP/1.1" 200 -
+2026-05-25 15:49:43 | INFO    | 127.0.0.1 - - [25/May/2026 15:49:43] "POST /simulate HTTP/1.1" 200 -
+2026-05-25 15:50:37 | INFO    | User logged out
+2026-05-25 15:50:37 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:37] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-25 15:50:37 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:37] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:50:37 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:50:37 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:37] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:50:50 | WARNING | Failed login attempt for: ganesh@gamil.com
+2026-05-25 15:50:50 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-25 15:50:50 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:50] "GET /login HTTP/1.1" 200 -
+2026-05-25 15:50:50 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:50:50 | INFO    | 127.0.0.1 - - [25/May/2026 15:50:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-25 15:51:00 | INFO    | 127.0.0.1 - - [25/May/2026 15:51:00] "GET /register HTTP/1.1" 200 -
+2026-05-25 15:51:00 | INFO    | 127.0.0.1 - - [25/May/2026 15:51:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-25 15:51:00 | INFO    | 127.0.0.1 - - [25/May/2026 15:51:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:00:31 | INFO    | CareerForge AI server starting up...
+2026-05-29 01:00:31 | INFO    | SQLite database initialised.
+2026-05-29 01:00:32 | INFO    | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.212:5000
+2026-05-29 01:00:32 | INFO    | [33mPress CTRL+C to quit[0m
+2026-05-29 01:00:32 | INFO    |  * Restarting with watchdog (windowsapi)
+2026-05-29 01:00:37 | INFO    | CareerForge AI server starting up...
+2026-05-29 01:00:37 | INFO    | SQLite database initialised.
+2026-05-29 01:00:37 | WARNING |  * Debugger is active!
+2026-05-29 01:00:37 | INFO    |  * Debugger PIN: 106-958-589
+2026-05-29 01:01:00 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:00] "GET / HTTP/1.1" 200 -
+2026-05-29 01:01:00 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:01:00 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:00] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:01:00 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:00] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:01:00 | WARNING | 404 Not Found: /favicon.ico
+2026-05-29 01:01:00 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-29 01:01:03 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:03] "GET /login HTTP/1.1" 200 -
+2026-05-29 01:01:03 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:01:03 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:01:07 | INFO    | User logged in: ramesh@gmail.com (role=Student)
+2026-05-29 01:01:07 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-29 01:01:07 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:07] "GET /student HTTP/1.1" 200 -
+2026-05-29 01:01:07 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:01:07 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:07] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:01:07 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:07] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:01:14 | INFO    | Student resume uploaded: f34c6da7_38753827.pdf (user=ramesh@gmail.com)
+2026-05-29 01:01:40 | INFO    | Student analysis complete: f34c6da7_38753827.pdf | score=48 | skills=19 | id=4f2c13f8e20c43c787267051e4de458f
+2026-05-29 01:01:40 | INFO    | 127.0.0.1 - - [29/May/2026 01:01:40] "POST /upload HTTP/1.1" 200 -
+2026-05-29 01:02:14 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:14] "GET /download-report/4f2c13f8e20c43c787267051e4de458f HTTP/1.1" 200 -
+2026-05-29 01:02:19 | INFO    | User logged out
+2026-05-29 01:02:19 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-29 01:02:19 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:19] "GET /login HTTP/1.1" 200 -
+2026-05-29 01:02:19 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:02:19 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:02:25 | INFO    | User logged in: suresh@gmail.com (role=Recruiter)
+2026-05-29 01:02:25 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-29 01:02:26 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:26] "GET /recruiter HTTP/1.1" 200 -
+2026-05-29 01:02:26 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:02:26 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:26] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:02:26 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:02:41 | INFO    | Recruiter analysis: 40e4c659_36434348.pdf | score=42
+2026-05-29 01:02:44 | INFO    | Recruiter analysis: bf01ce9c_36856210.pdf | score=29
+2026-05-29 01:02:48 | INFO    | Recruiter analysis: 986f3ea6_37242217.pdf | score=50
+2026-05-29 01:02:52 | INFO    | Recruiter analysis: 196fa1cb_37764298.pdf | score=30
+2026-05-29 01:02:52 | INFO    | Recruiter batch complete: 4 resumes (user=suresh@gmail.com)
+2026-05-29 01:02:52 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:52] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-29 01:02:53 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:02:53 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:53] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:02:53 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:02:57 | INFO    | Recruiter rejected: bf01ce9c_36856210.pdf (user=suresh@gmail.com)
+2026-05-29 01:02:57 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:57] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:02:58 | INFO    | Recruiter shortlisted: 196fa1cb_37764298.pdf (user=suresh@gmail.com)
+2026-05-29 01:02:58 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:58] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:02:59 | INFO    | Recruiter shortlisted: 40e4c659_36434348.pdf (user=suresh@gmail.com)
+2026-05-29 01:02:59 | INFO    | 127.0.0.1 - - [29/May/2026 01:02:59] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:03:01 | INFO    | Recruiter rejected: 986f3ea6_37242217.pdf (user=suresh@gmail.com)
+2026-05-29 01:03:01 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:01] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:03:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:02] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-29 01:03:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:02] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:03:10 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:10] "GET /recruiter HTTP/1.1" 200 -
+2026-05-29 01:03:15 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:15] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-29 01:03:15 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:15 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:15] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:15 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:03:32 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:32] "GET /recruiter HTTP/1.1" 200 -
+2026-05-29 01:03:32 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:32 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:32] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:32 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:32] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:03:42 | INFO    | Recruiter analysis: dcbbef7a_36434348.pdf | score=42
+2026-05-29 01:03:44 | INFO    | Recruiter analysis: 1a1eb3c5_36856210.pdf | score=29
+2026-05-29 01:03:44 | INFO    | Recruiter batch complete: 2 resumes (user=suresh@gmail.com)
+2026-05-29 01:03:44 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:44] "POST /recruiter-upload HTTP/1.1" 200 -
+2026-05-29 01:03:45 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:45 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:45] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:45 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:03:47 | INFO    | Recruiter shortlisted: dcbbef7a_36434348.pdf (user=suresh@gmail.com)
+2026-05-29 01:03:47 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:47] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:03:50 | INFO    | Recruiter rejected: 1a1eb3c5_36856210.pdf (user=suresh@gmail.com)
+2026-05-29 01:03:50 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:50] "POST /recruiter-decision HTTP/1.1" 200 -
+2026-05-29 01:03:55 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:55] "GET /recruiter-results HTTP/1.1" 200 -
+2026-05-29 01:03:55 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:55 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:55] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:03:55 | INFO    | 127.0.0.1 - - [29/May/2026 01:03:55] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:04:02 | INFO    | User logged out
+2026-05-29 01:04:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:02] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-29 01:04:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:02] "GET /login HTTP/1.1" 200 -
+2026-05-29 01:04:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:04:02 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2026-05-29 01:04:06 | INFO    | User logged in: ganesh@gmail.com (role=Admin)
+2026-05-29 01:04:06 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-29 01:04:06 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:06] "GET /admin HTTP/1.1" 200 -
+2026-05-29 01:04:06 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-29 01:04:06 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:06] "[36mGET /static/uiverse-components.css HTTP/1.1[0m" 304 -
+2026-05-29 01:04:06 | INFO    | 127.0.0.1 - - [29/May/2026 01:04:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -

@@ -5,74 +5,100 @@
 {% block title_suffix %}Recruiter Results{% endblock %}
 
 {% block content %}
-<h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:8px">
-    <span class="gradient-text">Hiring</span> Results
-</h2>
-<p class="section-desc" style="margin-bottom:24px">Track decisions and feedback for all reviewed candidates.</p>
+<div class="page-header card-anim">
+    <h2 class="hero-label" style="margin-bottom: 8px;">Recruiter Dashboard</h2>
+    <h1 class="gradient-text" style="font-family:var(--font-display); font-size: 2.5rem; margin-bottom: 12px;">Hiring
+        Results</h1>
+    <p class="section-desc">Track final decisions and intelligence insights for all reviewed candidates.</p>
+</div>
 
-<div class="results-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+<div class="results-layout">
     <!-- Shortlisted -->
     <div class="results-column">
-        <h3 class="column-title"
-            style="color:var(--accent-vibrant);margin-bottom:16px;display:flex;align-items:center;gap:10px">
-            <span class="icon-svg icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="column-header card-anim" style="animation-delay: 0.1s;">
+            <span class="icon-svg icon-lg" style="color:var(--accent)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
-                </svg></span>
-            Shortlisted ({{ shortlisted|length }})
-        </h3>
+                </svg>
+            </span>
+            <h3 class="column-title">Shortlisted <span style="opacity: 0.5;">({{ shortlisted|length }})</span></h3>
+        </div>
+
         <div class="card-stack">
             {% if shortlisted %}
             {% for r in shortlisted %}
-            <div class="decision-card glass-card">
+            <div class="decision-card shortlisted card-anim">
                 <div class="d-header">
-                    <span class="d-filename">{{ r.filename }}</span>
-                    <span class="stat-pill stat-score">{{ r.score }}</span>
+                    <span class="d-filename" title="{{ r.filename }}">{{ r.filename }}</span>
+                    <div class="stat-pill stat-score">Score: <b>{{ r.score }}</b></div>
                 </div>
                 <div class="d-body">
                     <div class="d-meta">
                         <span class="risk-dot risk-{{ r.risk_level|lower }}"></span>
-                        {{ r.risk_level }} Risk
+                        <span style="text-transform: uppercase; letter-spacing: 0.5px;">{{ r.risk_level }} Risk
+                            Profile</span>
                     </div>
-                    <div class="d-insight">{{ r.insight }}</div>
+                    <div class="d-insight">
+                        <span style="color: var(--accent); font-weight: 700;">AI Insight:</span> {{ r.insight }}
+                    </div>
                 </div>
             </div>
             {% endfor %}
             {% else %}
-            <p class="empty-note">No candidates shortlisted yet.</p>
+            <div class="empty-note card-anim">
+                <p>No candidates have been shortlisted yet.</p>
+            </div>
             {% endif %}
         </div>
     </div>
 
-    <!-- Declined / Passed Over -->
+    <!-- Declined -->
     <div class="results-column">
-        <h3 class="column-title"
-            style="color:var(--accent-danger);opacity:0.8;margin-bottom:16px;display:flex;align-items:center;gap:10px">
-            <span class="icon-svg icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="column-header card-anim" style="animation-delay: 0.2s;">
+            <span class="icon-svg icon-lg" style="color:var(--accent-danger)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <line x1="15" y1="9" x2="9" y2="15" />
                     <line x1="9" y1="9" x2="15" y2="15" />
-                </svg></span>
-            Declined ({{ rejected|length }})
-        </h3>
+                </svg>
+            </span>
+            <h3 class="column-title" style="color: var(--accent-danger);">Declined <span style="opacity: 0.5;">({{
+                    rejected|length }})</span></h3>
+        </div>
+
         <div class="card-stack">
             {% if rejected %}
             {% for r in rejected %}
-            <div class="decision-card glass-card declined" style="opacity:0.75;filter:grayscale(0.3)">
+            <div class="decision-card declined card-anim">
                 <div class="d-header">
-                    <span class="d-filename">{{ r.filename }}</span>
-                    <span class="stat-pill" style="background:rgba(255,100,100,0.1);color:var(--accent-danger)">{{
-                        r.score }}</span>
+                    <span class="d-filename" title="{{ r.filename }}">{{ r.filename }}</span>
+                    <div class="stat-pill"
+                        style="background:rgba(239, 68, 68, 0.1); color:var(--accent-danger); border: 1px solid rgba(239, 68, 68, 0.2)">
+                        Score: {{ r.score }}</div>
                 </div>
                 <div class="d-body">
-                    <div class="d-meta" style="font-size:0.8rem;color:var(--text-muted)">
-                        Candidate did not meet current benchmark
+                    <div class="d-meta" style="opacity: 0.7;">
+                        <span class="icon-svg icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M10 15v4a3 3 0 0 0 6 0v-4" />
+                                <path d="M10 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v4" />
+                                <path d="M10 9a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2V9Z" />
+                            </svg></span>
+                        Unmatched profile benchmarks
+                    </div>
+                    <div class="d-insight" style="border-style: dashed; opacity: 0.8;">
+                        Candidate passed over during initial screening stage.
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% else %}
-            <p class="empty-note">No candidates declined yet.</p>
+            <div class="empty-note card-anim">
+                <p>No candidates have been declined yet.</p>
+            </div>
             {% endif %}
         </div>
     </div>
