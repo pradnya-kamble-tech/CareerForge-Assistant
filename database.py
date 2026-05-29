@@ -18,9 +18,29 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "data", "careerforge.db")
 def _get_conn():
     """Returns a new database connection (PostgreSQL or SQLite)."""
     if DATABASE_URL and HAS_POSTGRES:
-        conn = psycopg2.connect(DATABASE_URL)
-        return conn
+        try:
+            conn = psycopg2.connect(DATABASE_URL)
+            return conn
+        except Exception as e:
+            # Import logger here or ensure it's available. 
+            # Since database.py might be imported by app.py which defines logger, 
+            # we should use a local printer or get a logger.
+            import logging
+            db_logger = logging.getLogger("CareerForge.DB")
+            db_logger.error("Failed to connect to Supabase: %s", str(e))
+            db_logger.warning("Falling back to local SQLite.")
+            
+            conn = sqlite3.connect(DB_PATH)
+            conn.row_factory = sqlite3.Row
+            return conn
     else:
+        import logging
+        db_logger = logging.getLogger("CareerForge.DB")
+        if not DATABASE_URL:
+            db_logger.warning("DATABASE_URL not set. Using local SQLite.")
+        if not HAS_POSTGRES:
+            db_logger.warning("psycopg2 not available. Using local SQLite.")
+            
         conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row
         return conn
