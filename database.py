@@ -185,20 +185,30 @@ def db_get_decisions(owner, decision_type=None):
     return db_query("SELECT * FROM decisions WHERE owner = ? ORDER BY id DESC", (owner,))
 
 def db_add_log(action, user="system", detail=""):
-    # Note: Using 'user' column for SQLite and 'user_id' for Supabase? No, let's stick to 'user' for now.
+    """Log an action to the database."""
+    column = "user_id" if DATABASE_URL else "user"
     try:
-        db_execute("INSERT INTO logs (user_id if DATABASE_URL else user, action, detail) VALUES (?, ?, ?)",
+        db_execute(f"INSERT INTO logs ({column}, action, detail) VALUES (?, ?, ?)",
                    (user, action, detail))
     except Exception:
-        # Fallback to column name 'user' if 'user_id' fails
+        # Fallback to column name 'user' if it fails
         try:
             db_execute("INSERT INTO logs (user, action, detail) VALUES (?, ?, ?)",
                        (user, action, detail))
         except Exception:
             pass
 
-def db_query_logs(limit=50):
+def db_get_logs_filtered(limit=50):
+    """Alias for db_query_logs used by app.py."""
     return db_query("SELECT * FROM logs ORDER BY id DESC LIMIT ?", (limit,))
+
+def db_get_logs(limit=50):
+    """Alias for db_query_logs used by app.py."""
+    return db_get_logs_filtered(limit)
+
+def db_query_logs(limit=50):
+    """Query logs from the database."""
+    return db_get_logs_filtered(limit)
 
 def db_count_logs():
     res = db_query("SELECT COUNT(*) as count FROM logs", one=True)
@@ -209,6 +219,7 @@ def db_get_admin_stats():
     total = len(rows)
     if total == 0:
         return {
+            "total": 0,
             "avg_score": 0, "highest_score": 0, "lowest_score": 0,
             "score_dist": {"0-39": 0, "40-69": 0, "70-100": 0},
             "risk_dist": {"Low": 0, "Medium": 0, "High": 0},
@@ -239,6 +250,7 @@ def db_get_admin_stats():
     trend_counts = Counter([r.get("created_at", "Unknown")[:10] for r in db_query("SELECT created_at FROM resumes")])
     
     return {
+        "total": total,
         "avg_score": avg_score, "highest_score": highest, "lowest_score": lowest,
         "score_dist": {"0-39": low, "40-69": mid, "70-100": high},
         "risk_dist": {"Low": risk_low, "Medium": risk_med, "High": risk_high},
