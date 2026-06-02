@@ -12,12 +12,14 @@ class CareerForgeSmokeTest(unittest.TestCase):
         self.app.testing = True
         init_db()
 
+    
     def test_01_home_page(self):
         """Verify home page loads."""
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'CareerForge', response.data)
 
+    
     def test_02_database_connectivity(self):
         """Verify database connection and user retrieval."""
         users = db_get_all_users()
