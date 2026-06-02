@@ -26,6 +26,7 @@ class CareerForgeSmokeTest(unittest.TestCase):
         self.assertIsInstance(users, list)
         print(f"\n[PASS] Verified DB: Found {len(users)} users.")
 
+    
     def test_03_skill_extraction_logic(self):
         """Verify skill extraction works on sample text."""
         test_text = "I am a Python developer with experience in SQL, React, and Machine Learning."
@@ -36,6 +37,7 @@ class CareerForgeSmokeTest(unittest.TestCase):
         self.assertTrue(results['total'] >= 3)
         print(f"[PASS] Verified Analyzer: Extracted {results['total']} skills.")
 
+    
     def test_04_scoring_logic(self):
         """Verify score calculation is within range."""
         test_text = "Python SQL React"
@@ -45,6 +47,7 @@ class CareerForgeSmokeTest(unittest.TestCase):
         self.assertLessEqual(score_data['score'], 100)
         print(f"[PASS] Verified Scoring: Score is {score_data['score']}/100")
 
+    
     def test_05_api_demo_data(self):
         """Verify demo data endpoint."""
         response = self.app.get('/api/demo-data')
@@ -54,11 +57,13 @@ class CareerForgeSmokeTest(unittest.TestCase):
         self.assertIn('analysis_id', data)
         print("[PASS] Verified API: Demo data retrieval successful.")
 
+    
     def test_06_resume_parsing(self):
         """Verify parser handles non-existent file gracefully."""
         text = extract_text_from_pdf("non_existent.pdf")
         self.assertIn("Error", text)
         print("[PASS] Verified Parser: Error handling working.")
+
 
 if __name__ == '__main__':
     unittest.main()
