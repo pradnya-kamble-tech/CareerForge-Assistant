@@ -10,6 +10,7 @@ import os
 from collections import Counter
 from datetime import datetime
 
+
 # ---------- Database Configuration ----------
 # Use DATABASE_URL for PostgreSQL (Supabase), otherwise fallback to local SQLite
 DATABASE_URL = os.environ.get("DATABASE_URL")
