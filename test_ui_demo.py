@@ -8,10 +8,13 @@ pip install pytest playwright pytest-playwright
 playwright install chromium
 """
 
+
+
 import os
 import uuid
 import time
 from playwright.sync_api import sync_playwright
+
 
 def create_valid_dummy_pdf():
     # A perfectly valid RAW PDF structure without external libraries!
